@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>35 位人物思维顾问 &middot; 女娲蒸馏目录</title>
+<title>人物思维顾问 &middot; 女娲蒸馏目录</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* ====== 墨水经典 (归藏 Style A) ====== */
-  --ink: #0a0a0b;
-  --ink-rgb: 10,10,11;
-  --paper: #f1efea;
-  --paper-rgb: 241,239,234;
-  --paper-tint: #e8e5de;
-  --ink-tint: #18181a;
+  /* ====== Anthropic warm ivory + clay ====== */
+  --ink: #141413;
+  --ink-rgb: 20,20,19;
+  --paper: #faf9f5;
+  --paper-rgb: 250,249,245;
+  --paper-tint: #f5f4ed;
+  --ink-tint: #1c1c1a;
 
-  /* ====== 五色 accent（朱砂/石青/石绿/花青/赭石）====== */
-  --cinnabar: #c04040;
-  --cinnabar-bg: rgba(192,64,64,0.08);
+  /* ====== 五色 accent（赤陶为主，余为辅助色相）====== */
+  --cinnabar: #d97757;
+  --cinnabar-bg: rgba(217,119,87,0.08);
   --azure: #5088b0;
   --azure-bg: rgba(80,136,176,0.08);
   --malachite: #509070;
@@ -29,20 +29,24 @@
   --ochre: #b89850;
   --ochre-bg: rgba(184,152,80,0.08);
 
-  /* ====== 字体 ====== */
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
-  --serif-en: "Playfair Display", Georgia, serif;
-  --serif-zh: "Noto Serif SC", source-han-serif-sc, serif;
-  --sans-zh: "Noto Sans SC", source-han-sans-sc, sans-serif;
-  --font-serif: "Playfair Display", "Noto Serif SC", serif;
-  --font-sans: "Noto Sans SC", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  /* ====== Typography: Anthropic stack + CJK fallback ====== */
+  --mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+  --serif-en: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+  --serif-zh: "Noto Serif SC", "Source Serif 4", serif;
+  --sans-zh: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+  --font-sans: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
 
   --col-width: 1200px;
   --reader-width: 720px;
+
+  /* Anthropic 8px radius + three-layer shadow */
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 1px 1px rgba(0,0,0,0.04), 0 4px 4px rgba(0,0,0,0.03), 0 16px 24px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.06), 0 20px 32px rgba(0,0,0,0.06);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 17px; }
@@ -50,8 +54,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans-zh);
-  font-weight: 300;
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -67,10 +71,10 @@ body {
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--cinnabar);
-  opacity: 0.7;
+  opacity: 0.8;
   margin-bottom: 2rem;
 }
 .hero h1 {
@@ -113,34 +117,43 @@ body {
 /* ── Hero Actions ── */
 .hero-actions {
   display: flex; align-items: center; justify-content: center;
-  gap: 2rem; margin-top: 1.8rem; flex-wrap: wrap;
+  gap: 2.5rem; margin-top: 1.8rem; flex-wrap: wrap;
 }
 .hero-github-btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono); font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  padding: 0.6rem 1.6rem;
-  border: 1px solid rgba(var(--ink-rgb), 0.25);
-  border-radius: 24px;
-  color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.75rem 2rem;
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--radius-md);
+  text-decoration: none;
   transition: all 0.25s;
+  box-shadow: var(--shadow-card);
 }
 .hero-github-btn:hover {
-  background: var(--ink); color: var(--paper);
-  border-color: var(--ink);
+  background: var(--ink-tint);
+  box-shadow: var(--shadow-card-hover);
+}
+.hero-github-btn svg {
+  width: 18px; height: 18px; opacity: 0.85; flex-shrink: 0;
 }
 .hero-qr {
-  display: flex; align-items: center; gap: 0.8rem;
-  text-align: left;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  text-align: center;
 }
 .hero-qr img {
-  width: 72px; height: 72px;
+  width: 80px; height: 80px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(var(--ink-rgb), 0.08);
+  opacity: 0.9;
 }
 .hero-qr span {
-  font-family: var(--serif-zh); font-size: 0.78rem;
-  color: rgba(var(--ink-rgb), 0.5); line-height: 1.5;
+  font-family: var(--serif-zh); font-size: 0.68rem;
+  color: rgba(var(--ink-rgb), 0.45); line-height: 1.5;
+}
+.hero-actions-divider {
+  width: 1px; height: 56px;
+  background: rgba(var(--ink-rgb), 0.1);
 }
 
 /* ═══════════════ CAT NAV ═══════════════ */
@@ -154,14 +167,14 @@ body {
 .cat-nav {
   max-width: var(--col-width); margin: 0 auto;
   display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 0.35rem; padding: 1rem 0;
+  gap: 0.5rem; padding: 1.2rem 0;
 }
 .cat-nav button {
   font-family: var(--mono);
-  font-size: 0.68rem; font-weight: 400;
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(var(--ink-rgb), 0.15);
-  background: transparent; color: rgba(var(--ink-rgb), 0.6);
+  font-size: 0.85rem; font-weight: 500;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid rgba(var(--ink-rgb), 0.18);
+  background: transparent; color: rgba(var(--ink-rgb), 0.7);
   cursor: pointer; border-radius: 20px;
   transition: all 0.2s; letter-spacing: 0.06em;
 }
@@ -171,12 +184,22 @@ body {
 /* ═══════════════ MAIN ═══════════════ */
 main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 
-/* ── Category Section Header ── */
-.cat-section { margin-bottom: 5rem; }
+/* ── Category Section ── */
+.cat-section {
+  margin-bottom: 3rem; padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(var(--ink-rgb), 0.05);
+  background: #fff;
+}
+.cat-section.pink  { background: var(--cinnabar-bg); }
+.cat-section.lemon { background: var(--azure-bg); }
+.cat-section.sage  { background: var(--malachite-bg); }
+.cat-section.lilac { background: var(--indigo-bg); }
+.cat-section.blush { background: var(--ochre-bg); }
 .cat-head {
   display: flex; align-items: baseline; gap: 1rem;
   margin-bottom: 0.3rem; padding-bottom: 0.7rem;
-  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 .cat-head h2 {
   font-family: var(--serif-zh);
@@ -198,7 +221,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   border-radius: var(--radius-md);
   border: 1px solid rgba(var(--ink-rgb), 0.06);
 }
-.card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.06); border-color: rgba(var(--ink-rgb), 0.14); }
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-hover); border-color: rgba(var(--ink-rgb), 0.12); }
 .card .card-bar { height: 3px; flex-shrink: 0; }
 .card:nth-child(5n+1) .card-bar { background: var(--cinnabar); }
 .card:nth-child(5n+2) .card-bar { background: var(--azure); }
@@ -233,7 +256,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   font-family: var(--mono); font-size: 0.64rem;
   color: rgba(var(--ink-rgb), 0.35);
   text-decoration: none; letter-spacing: 0.04em;
-  padding: 0.25rem 0.6rem; border-radius: 4px;
+  padding: 0.25rem 0.6rem; border-radius: var(--radius-md);
   border: 1px solid rgba(var(--ink-rgb), 0.1);
   transition: all 0.2s; white-space: nowrap;
   cursor: pointer;
@@ -282,7 +305,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 .feat-card .feat-sub { font-size: 0.82rem; color: rgba(var(--ink-rgb), 0.5); line-height: 1.5; }
 
 /* ═══════════════ RECOMMENDATION MATRIX ═══════════════ */
-.rec-section { margin-top: 5rem; }
+.rec-section { margin-top: 2rem; margin-bottom: 2rem; }
 .rec-head { text-align: center; margin-bottom: 2rem; }
 .rec-head h2 { font-family: var(--serif-zh); font-size: 2rem; font-weight: 600; color: var(--ink); }
 .rec-head p { font-family: var(--serif-zh); color: rgba(var(--ink-rgb), 0.5); margin-top: 0.2rem; }
@@ -330,7 +353,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   font-family: var(--mono); font-size: 0.68rem;
   color: rgba(var(--ink-rgb), 0.45);
   text-decoration: none; letter-spacing: 0.04em;
-  padding: 0.35rem 0.9rem; border-radius: 4px;
+  padding: 0.35rem 0.9rem; border-radius: var(--radius-md);
   border: 1px solid rgba(var(--ink-rgb), 0.15);
   transition: all 0.2s; margin-left: auto;
 }
@@ -509,45 +532,59 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 
 /* ═══════════════ GITHUB SECTION ═══════════════ */
 .github-section {
-  margin-top: 5rem; padding: 3rem 2rem;
+  margin-top: 4rem; padding: 3rem 2rem;
   text-align: center;
-  border-top: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 .github-section h3 {
-  font-family: var(--serif-zh); font-size: 1.6rem;
+  font-family: var(--serif-zh); font-size: 1.5rem;
   font-weight: 600; color: var(--ink);
   margin-bottom: 0.5rem;
 }
 .github-section p {
-  font-family: var(--serif-zh); font-size: 0.9rem;
+  font-family: var(--serif-zh); font-size: 0.88rem;
   color: rgba(var(--ink-rgb), 0.5);
-  max-width: 500px; margin: 0 auto 1.5rem;
-  line-height: 1.6;
+  max-width: 480px; margin: 0 auto 0;
+  line-height: 1.65;
 }
-.github-links {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 2rem;
+.github-section p a {
+  color: var(--cinnabar); text-decoration: none; font-weight: 500;
 }
-.github-btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: var(--mono); font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  padding: 0.5rem 1.4rem;
-  border: 1px solid rgba(var(--ink-rgb), 0.2);
-  border-radius: 20px;
-  color: var(--ink); text-decoration: none;
-  cursor: pointer; transition: all 0.2s;
-}
-.github-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.github-btn svg { width: 1em; height: 1em; opacity: 0.6; }
+.github-section p a:hover { opacity: 0.7; }
 
 .qr-section {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .qr-section p {
-  font-family: var(--serif-zh); font-size: 0.85rem;
+  font-family: var(--serif-zh); font-size: 0.82rem;
   color: rgba(var(--ink-rgb), 0.5);
-  margin-top: 0.8rem; line-height: 1.6;
+  margin-top: 0.6rem; line-height: 1.6;
+}
+
+/* ── Credit ── */
+.credit-section {
+  text-align: center; padding: 2rem 2rem 1rem;
+  max-width: 600px; margin: 0 auto;
+}
+.credit-rule {
+  width: 40px; height: 1px;
+  background: rgba(var(--ink-rgb), 0.15);
+  margin: 0 auto 1.5rem;
+}
+.credit-text {
+  font-family: var(--serif-zh); font-size: 0.92rem;
+  color: rgba(var(--ink-rgb), 0.55); line-height: 1.65;
+}
+.credit-text a {
+  color: var(--cinnabar); text-decoration: underline;
+  text-underline-offset: 0.2em; text-decoration-thickness: 1px;
+  font-weight: 600; transition: opacity 0.2s;
+}
+.credit-text a:hover { opacity: 0.65; }
+.credit-sub {
+  font-family: var(--mono); font-size: 0.65rem;
+  color: rgba(var(--ink-rgb), 0.35);
+  margin-top: 0.6rem; letter-spacing: 0.04em;
 }
 
 /* ═══════════════ FOOTER ═══════════════ */
@@ -582,12 +619,16 @@ footer {
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero">
   <div class="eyebrow">Huashu Nuwa · Perspective Catalog</div>
-  <h1>35 位人物<br><em>思维顾问</em></h1>
+  <h1><span class="char-count">35</span> 位人物<br><em>思维顾问</em></h1>
   <p class="deck">女娲蒸馏产物。每个人物是独立可用的思维镜片——点击任意一张卡片，进入那个人物的操作系统。</p>
   <div class="rule"></div>
-  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04 · 所有 35 位人物 SKILL.md 均已就位</p>
+  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04 · 所有 <span class="char-count">35</span> 位人物 SKILL.md 均已就位</p>
   <div class="hero-actions">
-    <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="hero-github-btn" target="_blank">GitHub 下载 35 个 Skill</a>
+    <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="hero-github-btn" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub 下载全部 Skill
+    </a>
+    <div class="hero-actions-divider"></div>
     <div class="hero-qr">
       <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="100" height="100">
       <span>扫码加入「思维顾问局」<br>提名你想蒸馏的人物</span>
@@ -615,24 +656,25 @@ footer {
   <div id="detail-container"></div>
 </main>
 
-<!-- ═══════════════ GITHUB + QR SECTION ═══════════════ -->
+<!-- ═══════════════ CREDITS + QR ═══════════════ -->
 <section class="github-section">
   <h3>开源下载</h3>
-  <p>35 位人物的完整 SKILL.md 文件在 GitHub 开放下载。每个文件可直接放入 Claude Code 的 skills 目录使用。</p>
-  <div class="github-links">
-    <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="github-btn" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      GitHub 仓库
-    </a>
-  </div>
+  <p>所有人物 SKILL.md 文件在 <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" target="_blank">GitHub</a> 开放下载，可放入 Claude Code、Cursor 或任意支持自定义指令的 AI 工具使用。</p>
   <div class="qr-section">
-    <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="140" height="140" style="border-radius:8px;border:1px solid rgba(10,10,11,0.08);">
-    <p>扫码加入「思维顾问局」交流群<br>提名你想蒸馏的人物</p>
+    <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="120" height="120" style="border-radius:var(--radius-md);border:1px solid rgba(var(--ink-rgb),0.08);">
+    <p>扫码加入「思维顾问局」交流群，提名你想蒸馏的人物</p>
   </div>
 </section>
 
+<section class="credit-section">
+  <div class="credit-rule"></div>
+  <p class="credit-text">蒸馏方法论与工具链来自 <a href="https://github.com/alchaincyf" target="_blank">花叔（AlchainHust / 陈云飞）</a></p>
+  <p class="credit-text">花叔开源项目：<a href="https://github.com/alchaincyf/nuwa-skill" target="_blank">女娲.skill</a> · <a href="https://github.com/alchaincyf/huashu-skills" target="_blank">花叔 Skills 合集</a> · <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog/blob/master/skills/perspective-alchainhust.md" target="_blank">花叔人物 SKILL</a></p>
+  <p class="credit-sub">基于公开信息蒸馏，非人物本人授权 · 调研截止 2026-04</p>
+</section>
+
 <footer>
-  女娲蒸馏目录 · 人物数据来自 perspective-* SKILL.md
+  女娲蒸馏目录 · 人物思维顾问
 </footer>
 
 <script src="_data/data.js"></script>
@@ -660,10 +702,14 @@ var allCharacters = [];
 function loadData() {
   if (!window.__CHARACTERS__ || !window.__CHARACTERS__.length) {
     document.getElementById('directory').innerHTML =
-      '<p style="text-align:center;padding:4rem;color:rgba(10,10,11,0.45);font-family:var(--mono)">数据加载失败<br><code style="font-size:0.85rem">请确认 _data/data.js 存在</code></p>';
+      '<p style="text-align:center;padding:4rem;color:rgba(var(--ink-rgb),0.45);font-family:var(--mono)">数据加载失败<br><code style="font-size:0.85rem">请确认 _data/data.js 存在</code></p>';
     return;
   }
   allCharacters = window.__CHARACTERS__;
+  // Populate dynamic counts
+  var countEls = document.querySelectorAll('.char-count');
+  for (var i = 0; i < countEls.length; i++) countEls[i].textContent = allCharacters.length;
+  document.title = allCharacters.length + ' 位人物思维顾问 · 女娲蒸馏目录';
   renderDirectory();
   setupDetailSections();
 }
@@ -672,15 +718,18 @@ function renderDirectory(filterCat) {
   filterCat = filterCat || 'all';
   var dir = document.getElementById('directory');
   dir.innerHTML = '';
+
+  if (filterCat === 'all') renderRecMatrix(dir);
+
   var cats = filterCat === 'all' ? CATEGORIES : [filterCat];
-  var colorIdx = 0;
 
   cats.forEach(function(cat) {
     var chars = allCharacters.filter(function(c) { return c.category === cat; });
     if (!chars.length) return;
 
+    var colorIdx = CATEGORIES.indexOf(cat) % PANEL_COLORS.length;
     var section = document.createElement('div');
-    section.className = 'cat-section';
+    section.className = 'cat-section ' + PANEL_COLORS[colorIdx];
     section.setAttribute('data-category', cat);
     section.innerHTML = '<div class="cat-head"><h2>' + cat + '</h2><span class="cat-count">' + chars.length + ' 位</span></div>';
 
@@ -697,15 +746,7 @@ card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class=
     });
     section.appendChild(grid);
     dir.appendChild(section);
-
-    if (filterCat === 'all' && colorIdx < PANEL_COLORS.length) {
-      var panel = makeFeaturePanel(cat, chars, PANEL_COLORS[colorIdx]);
-      dir.appendChild(panel);
-      colorIdx++;
-    }
   });
-
-  if (filterCat === 'all') renderRecMatrix(dir);
   if (!dir.children.length) {
     dir.innerHTML = '<p style="text-align:center;padding:4rem;color:rgba(var(--ink-rgb),0.45);font-family:var(--mono)">该分类暂无人物</p>';
   }

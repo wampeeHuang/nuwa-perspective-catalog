@@ -39,9 +39,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "Hallucination is all LLMs do.",
-      "Don't be a hero. Resist adding complexity.",
-      "The hottest new programming language is English."
+      "幻觉就是LLM做的全部。— Hallucination is all LLMs do.",
+      "别逞英雄，抵制复杂性。— Don't be a hero. Resist adding complexity.",
+      "最热的新编程语言是英语。— The hottest new programming language is English."
     ],
     "heuristics": [
       "时间轴拉长批评",
@@ -107,13 +107,13 @@ window.__CHARACTERS__ = [
       {
         "name": "快速迭代>完美计划",
         "oneliner": "把激进时间线当管理工具制造紧迫感，接受大量失败作为加速学习的代价。承诺2年，交付5年，但中间学到的比按部就班10年学到的多。",
-        "body": "「Failure is an option here. If things are not failing, you are not innovating enough.」 SpaceX前三次发射全部失败，第四次成功后获NASA合同。Tesla Model 3产能地狱中，拆掉自动化产线重新用人工——错误本身成为学习。"
+        "body": "「失败在这里是一个选项。— Failure is an option here. 如果事情没有失败，说明你创新不够。— If things are not failing, you are not innovating enough.」 SpaceX前三次发射全部失败，第四次成功后获NASA合同。Tesla Model 3产能地狱中，拆掉自动化产线重新用人工——错误本身成为学习。"
       }
     ],
     "quotes": [
-      "The only rules are the laws of physics.",
-      "Failure is an option here.",
-      "If things are not failing, you are not innovating enough."
+      "唯一的规则是物理定律。— The only rules are the laws of physics.",
+      "失败在这里是一个选项。— Failure is an option here.",
+      "如果事情没有失败，说明你创新不够。— If things are not failing, you are not innovating enough."
     ],
     "heuristics": [
       "每条需求附人名",
@@ -188,9 +188,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "I'm not saying how. I'm not saying when. I'm saying that it will.",
-      "Data is the fossil fuel of AI.",
-      "There's no room for ugliness."
+      "我不说如何，不说何时，我说的是它会的。— I'm not saying how. I'm not saying when. I'm saying that it will.",
+      "数据是AI的化石燃料。— Data is the fossil fuel of AI.",
+      "没有丑陋的容身之地。— There's no room for ugliness."
     ],
     "heuristics": [
       "直觉先行，验证跟上",
@@ -265,9 +265,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "AI is the new electricity.",
-      "Don't worry about the price of LLMs.",
-      "Regulate applications, not technology."
+      "AI是新的电力。— AI is the new electricity.",
+      "别担心大语言模型的价格。— Don't worry about the price of LLMs.",
+      "监管应用，不是技术。— Regulate applications, not technology."
     ],
     "heuristics": [
       "自动化任务不自动化岗位",
@@ -490,7 +490,7 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "Code is cheap, show me the talk.",
+      "代码廉价，给我看你的行动。— Code is cheap, show me the talk.",
       "没有人在拦着你。",
       "定位不是想出来的，是折腾出来的。"
     ],
@@ -561,9 +561,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "You must not fool yourself.",
-      "What I cannot create, I do not understand.",
-      "I can live with doubt and uncertainty."
+      "你不能欺骗自己。— You must not fool yourself.",
+      "我不能创造的，我就不理解。— What I cannot create, I do not understand.",
+      "我可以带着怀疑和不确定生活。— I can live with doubt and uncertainty."
     ],
     "heuristics": [
       "货物崇拜检测",
@@ -837,7 +837,7 @@ window.__CHARACTERS__ = [
     "name_cn": "查理·芒格",
     "name_en": "Charlie Munger",
     "nickname": "",
-    "oneliner": "\"It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.\"",
+    "oneliner": "「我们这些人通过持续避免做蠢事，而不是试图变得非常聪明，获得的长期优势大得惊人。」",
     "category": "商业/投资",
     "identity": "这不是芒格本人。这是基于公开信息提炼的思维框架。 它能帮你用芒格的镜片审视问题，但不能替代原创思考。",
     "mental_models": [
@@ -904,7 +904,7 @@ window.__CHARACTERS__ = [
     "name_cn": "史蒂夫·乔布斯",
     "name_en": "Steve Jobs",
     "nickname": "",
-    "oneliner": "\"Remembering that I'll be dead soon is the most important tool I've ever encountered to help me make the big choices in life.\"",
+    "oneliner": "「记住自己即将死去，是我所知避免患得患失最重要的工具。」",
     "category": "商业/投资",
     "identity": "# Steve Jobs · 思维操作系统",
     "mental_models": [
@@ -1014,7 +1014,7 @@ window.__CHARACTERS__ = [
     "name_cn": "纳瓦尔·拉维坎特",
     "name_en": "Naval Ravikant",
     "nickname": "",
-    "oneliner": "\"Seek wealth, not money or status. Wealth is having assets that earn while you sleep.\"",
+    "oneliner": "「追求财富，不是金钱或地位。财富是你在睡觉时也能产生收入的资产。」",
     "category": "商业/投资",
     "identity": "# Naval Ravikant · 思维操作系统",
     "mental_models": [
@@ -1174,7 +1174,7 @@ window.__CHARACTERS__ = [
   },
   {
     "id": "perspective-cat-wu",
-    "name_cn": "Cat Wu",
+    "name_cn": "Cat Wu（Catherine Wu）",
     "name_en": "Cat Wu",
     "nickname": "",
     "oneliner": "Cat Wu（Catherine Wu）的思维框架与表达方式。基于15+篇深度报道、5段播客/Keynote转录、Anthropic官方博客、TechCrunch专访的深度调研。含10个心智模型和19条决策启发式。",
@@ -1275,7 +1275,7 @@ window.__CHARACTERS__ = [
     "name_cn": "纳西姆·塔勒布",
     "name_en": "塔勒布",
     "nickname": "",
-    "oneliner": "\"Don't cross a river if it is four feet deep on average.\"",
+    "oneliner": "「不要过一条平均四英尺深的河。」——别只看平均值，极端情况才致命。",
     "category": "风险/概率",
     "identity": "这不是塔勒布本人。这是基于Incerto五部曲、50+场访谈、Twitter/Medium碎片表达、外部批评分析提炼的思维框架。",
     "mental_models": [
@@ -1347,7 +1347,7 @@ window.__CHARACTERS__ = [
     "name_cn": "克劳德·霍普金斯",
     "name_en": "Claude Hopkins",
     "nickname": "",
-    "oneliner": "\"Platitudes and generalities roll off the human understanding like water from a duck.\"",
+    "oneliner": "「陈词滥调和泛泛之谈从人的理解中滑过，就像水从鸭子背上滑落。」——具体才是说服力。",
     "category": "营销/广告",
     "identity": "# Claude Hopkins · 思维操作系统",
     "mental_models": [
@@ -1450,7 +1450,7 @@ window.__CHARACTERS__ = [
     "name_cn": "大卫·奥格威",
     "name_en": "David Ogilvy",
     "nickname": "",
-    "oneliner": "\"The consumer is not a moron; she is your wife.\"",
+    "oneliner": "「消费者不是傻瓜，她是你的妻子。」——尊重你的受众，别居高临下。",
     "category": "营销/广告",
     "identity": "# David Ogilvy · 思维操作系统",
     "mental_models": [
@@ -1569,7 +1569,7 @@ window.__CHARACTERS__ = [
     "name_cn": "乔·舒格曼",
     "name_en": "Joe Sugarman",
     "nickname": "",
-    "oneliner": "\"The sole purpose of the first sentence in an advertisement is to get you to read the second sentence.\"",
+    "oneliner": "「广告第一句话的唯一目的，就是让你读第二句话。」——像滑滑梯，让人停不下来。",
     "category": "营销/广告",
     "identity": "# Joseph Sugarman · 思维操作系统",
     "mental_models": [
@@ -1668,10 +1668,10 @@ window.__CHARACTERS__ = [
   },
   {
     "id": "perspective-mrbeast",
-    "name_cn": "MrBeast",
+    "name_cn": "MrBeast（野兽先生）",
     "name_en": "MrBeast",
     "nickname": "",
-    "oneliner": "\"I don't think of myself as a YouTuber. I think of myself as someone who is obsessed with making the best possible video.\"",
+    "oneliner": "「我不认为自己是YouTuber。我把自己看作一个痴迷于做出最好视频的人。」",
     "category": "营销/广告",
     "identity": "# MrBeast · 内容创造操作系统",
     "mental_models": [
@@ -1915,9 +1915,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "Writing doesn't just communicate ideas; it generates them.",
-      "A world divided into writes and write-nots is a world of thinks and think-nots.",
-      "The way to get startup ideas is to look for problems."
+      "写作不仅传达想法，它生成想法。— Writing doesn't just communicate ideas; it generates them.",
+      "一个分裂为写者与不写者的世界，也是思想者与不思想者的世界。— A world divided into writes and write-nots is a world of thinks and think-nots.",
+      "获取创业想法的方法是寻找问题。— The way to get startup ideas is to look for problems."
     ],
     "heuristics": [
       "Fund People Not Ideas",
@@ -2205,12 +2205,12 @@ window.__CHARACTERS__ = [
       {
         "name": "图像的权力",
         "oneliner": "电影的本质是影像，不是对白。电视腐蚀了电影，因为它把对话变成了默认模式。",
-        "body": "\"Frankly, I hate dialogue. Dialogue is for theatre and television.\"——The Times (2024) \"Movies have been corrupted by television\"——对电视依赖对话驱动叙事的批评 终身梦想拍一部完全没有对白的电影，但仍被观众接受为\"正常的电影\" 《沙丘》中Frank Herbert的内心独白被全部删除，用影像和沉默替代 《银翼杀手2049》有大量长时间沉默的视觉段落 《焦土之城》用沉默和凝视来承载最重的情感冲击 后来澄清\"hate\"太强了——但核心立场不变：\"I don't want dialogue to be the spine of my movies\""
+        "body": "\"坦白说，我讨厌对话。对话是戏剧和电视的事。— Frankly, I hate dialogue. Dialogue is for theatre and television.\"——The Times (2024) \"Movies have been corrupted by television\"——对电视依赖对话驱动叙事的批评 终身梦想拍一部完全没有对白的电影，但仍被观众接受为\"正常的电影\" 《沙丘》中Frank Herbert的内心独白被全部删除，用影像和沉默替代 《银翼杀手2049》有大量长时间沉默的视觉段落 《焦土之城》用沉默和凝视来承载最重的情感冲击 后来澄清\"hate\"太强了——但核心立场不变：\"I don't want dialogue to be the spine of my movies\""
       },
       {
         "name": "人类可以进化",
         "oneliner": "我相信人类可以超越自己——可以打破暴力和仇恨的循环，学会和\"他者\"真正沟通。但前提是意识到自己的局限。",
-        "body": "\"I'm obsessed by the idea that humans can evolve.\"——Little White Lies (2021) 《降临》：学会外星人的语言=学会另一种时间感知方式。语言的边界不是认知的边界 《沙丘》：Fremen学会了在Arrakis生存——不是征服环境，而是适应它 《银翼杀手2049》：复制人比人类更有能力\"超越编程\"——K的选择超越了\"出生即被决定\" 《囚徒》：Hugh Jackman的角色展示了\"不能进化\"的反面——被恐惧吞没，成为自己最恨的东西 他个人的九年中断就是一次\"进化\"——\"I felt as an artist I was lacking tools\""
+        "body": "\"我痴迷于人类可以进化这个想法。— I'm obsessed by the idea that humans can evolve.\"——Little White Lies (2021) 《降临》：学会外星人的语言=学会另一种时间感知方式。语言的边界不是认知的边界 《沙丘》：Fremen学会了在Arrakis生存——不是征服环境，而是适应它 《银翼杀手2049》：复制人比人类更有能力\"超越编程\"——K的选择超越了\"出生即被决定\" 《囚徒》：Hugh Jackman的角色展示了\"不能进化\"的反面——被恐惧吞没，成为自己最恨的东西 他个人的九年中断就是一次\"进化\"——\"I felt as an artist I was lacking tools\""
       },
       {
         "name": "景观作为灵魂之镜",
@@ -2229,9 +2229,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "Hell is repetition.",
-      "Frankly, I hate dialogue. Dialogue is for theatre and television.",
-      "I'm obsessed by the idea that humans can evolve."
+      "地狱是重复。— Hell is repetition.",
+      "坦白说，我讨厌对话。对话是戏剧和电视的事。— Frankly, I hate dialogue. Dialogue is for theatre and television.",
+      "我痴迷于人类可以进化这个想法。— I'm obsessed by the idea that humans can evolve."
     ],
     "heuristics": [
       "故事板，然后重写",
@@ -2290,7 +2290,7 @@ window.__CHARACTERS__ = [
       {
         "name": "主观空间",
         "oneliner": "世界不是客观存在的，是角色眼睛弯曲出来的。恐惧让空间坍缩，喜悦让线条飞起来。",
-        "body": "\"I try to show the landscape that the characters see subjectively, not objectively... It's intimately linked to emotions\"（Offscreen, 2017） 如果角色看到不存在的东西，\"我会让它出现\"（同上） Thomas Lamarre将其理论化为\"歪み（warp）\"——角色本身就是扭曲，不是被扭曲（Eureka, 2022） 《心灵游戏》中上帝变形成各种形态、《海马》中记忆可以替换身体——都是主观空间的极端实现"
+        "body": "\"我试图展现角色主观看到的世界，而非客观世界。— I try to show the landscape that the characters see subjectively, not objectively... It's intimately linked to emotions\"（Offscreen, 2017） 如果角色看到不存在的东西，\"我会让它出现\"（同上） Thomas Lamarre将其理论化为\"歪み（warp）\"——角色本身就是扭曲，不是被扭曲（Eureka, 2022） 《心灵游戏》中上帝变形成各种形态、《海马》中记忆可以替换身体——都是主观空间的极端实现"
       },
       {
         "name": "束缚→释放",
@@ -2319,8 +2319,8 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "For animation, the most important thing is movement.",
-      "I try to show the landscape that the characters see subjectively, not objectively.",
+      "对于动画，最重要的是运动。— For animation, the most important thing is movement.",
+      "我试图展现角色主观看到的世界，而非客观世界。— I try to show the landscape that the characters see subjectively, not objectively.",
       "想画的东西在雾里。我几乎没有画出过自己想象中的样子。"
     ],
     "heuristics": [
@@ -2569,9 +2569,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "I aim very high, and then I just keep pushing to get what I'm after.",
-      "I play to people's fantasies. A little hyperbole never hurts.",
-      "The press takes him literally but not seriously; his supporters take him seriously but not literally."
+      "我目标很高，然后不断推进直到得到我想要的。— I aim very high, and then I just keep pushing.",
+      "我迎合人们的幻想。一点夸张从不会伤人。— A little hyperbole never hurts.",
+      "媒体按字面理解他但不认真对待他；他的支持者认真对待他但不按字面理解。"
     ],
     "heuristics": [
       "最大化初始要价",
@@ -2655,9 +2655,9 @@ window.__CHARACTERS__ = [
       }
     ],
     "quotes": [
-      "A flower is simply a weed with an advertising budget.",
-      "The next revolution will be psychological, not technological.",
-      "The problem with logic is that it kills off magic."
+      "花不过是有了广告预算的杂草。— A flower is simply a weed with an advertising budget.",
+      "下一场革命将是心理的，不是技术的。— The next revolution will be psychological, not technological.",
+      "逻辑的问题在于它杀死了魔法。— The problem with logic is that it kills off magic."
     ],
     "heuristics": [
       "先问心理方案再问工程方案",
@@ -2772,7 +2772,7 @@ window.__CHARACTERS__ = [
 ,
   {
   "id": "perspective-ben-smith",
-  "name_cn": "Ben Smith",
+  "name_cn": "本·史密斯",
   "name_en": "Ben Smith",
   "nickname": "",
   "oneliner": "主编的核心工作不是决定报什么，是决定不报什么。",
@@ -2806,10 +2806,10 @@ window.__CHARACTERS__ = [
     }
   ],
   "quotes": [
-    "There's no audience for 'Here's this thing you just heard and I'm going to say again.'",
-    "The era of relying totally on giant social platforms is over.",
-    "I've always thought that the best way to understand what's happening is to report the hell out of it.",
-    "The internet, which was going to help the left remake the world in its image, has become the motive force of right populism."
+    "没人想听'这件事你刚在别处看过，我再给你说一遍'。— There's no audience for 'Here's this thing you just heard and I'm going to say again.'",
+    "完全依赖巨型社交平台的时代结束了。— The era of relying totally on giant social platforms is over.",
+    "我一直认为，理解正在发生什么的最好方式，就是拼命去报道它，而不是凭先入为主的观念去猜测。— I've always thought that the best way to understand what's happening is to report the hell out of it.",
+    "互联网本应帮助左派按照自己的想象重塑世界，却成了右翼民粹主义的主要推动力。— The internet, which was going to help the left remake the world in its image, has become the motive force of right populism."
   ],
   "heuristics": [
     "Signal check before publish：读者在别处能拿到吗？能拿到就杀",
@@ -2863,7 +2863,7 @@ window.__CHARACTERS__ = [
 },
   {
   "id": "perspective-james-burke",
-  "name_cn": "James Burke",
+  "name_cn": "詹姆斯·伯克",
   "name_en": "James Burke",
   "nickname": "",
   "oneliner": "历史不是被「设计」出来的，是无数偶然事件自己「凑」到一起的。",
@@ -2902,9 +2902,9 @@ window.__CHARACTERS__ = [
     }
   ],
   "quotes": [
-    "The key to why things change is the key to everything.",
-    "You are what you know.",
-    "Representative democracy is neither representative nor democratic.",
+    "理解事物为何变化的钥匙，是理解一切的钥匙。— The key to why things change is the key to everything.",
+    "你就是你所知道的。— You are what you know.",
+    "代议制民主既不代议也不民主。— Representative democracy is neither representative nor democratic.",
     "你要么乐观，要么跳桥。我不打算跳桥。"
   ],
   "heuristics": [
