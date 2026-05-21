@@ -14,18 +14,57 @@ Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本
 
 ### 方式二：只下载一个人物
 
-不想下全部 35 个？直接下载你需要的那个：
+不想下全部 35 个？两种办法：
+
+**A) 网站可视化挑选（推荐）**：打开 [blackcamellia.xin](https://blackcamellia.xin) → 浏览人物卡片 → 点 **下载 ↓**，直接拿到文件。
+
+**B) 命令行下载**：URL 模式为 `perspective-{英文名}.md`，查下表找到你要的人：
+
+| 你要谁 | 文件名 |
+|--------|--------|
+| 卡帕西 | `perspective-andrej-karpathy.md` |
+| 马斯克 | `perspective-elon-musk.md` |
+| Ilya | `perspective-ilya-sutskever.md` |
+| 吴恩达 | `perspective-andrew-ng.md` |
+| 张一鸣 | `perspective-zhang-yiming.md` |
+| 宝玉 | `perspective-dotey.md` |
+| Zara Zhang | `perspective-zara-zhang.md` |
+| 花叔 | `perspective-alchainhust.md` |
+| Cat Wu | `perspective-cat-wu.md` |
+| 费曼 | `perspective-richard-feynman.md` |
+| 爱因斯坦 | `perspective-einstein.md` |
+| 霍金 | `perspective-hawking.md` |
+| James Burke | `perspective-james-burke.md` |
+| 芒格 | `perspective-charlie-munger.md` |
+| 乔布斯 | `perspective-steve-jobs.md` |
+| Naval | `perspective-naval-ravikant.md` |
+| 塔勒布 | `perspective-nassim-taleb.md` |
+| 霍普金斯 | `perspective-claude-hopkins.md` |
+| 奥格威 | `perspective-david-ogilvy.md` |
+| 休格曼 | `perspective-joseph-sugarman.md` |
+| MrBeast | `perspective-mrbeast.md` |
+| 孙宇晨 | `perspective-sun-yuchen.md` |
+| Rory Sutherland | `perspective-rory-sutherland.md` |
+| Paul Graham | `perspective-paul-graham.md` |
+| X/Twitter运营 | `perspective-x-mentor.md` |
+| 张雪峰 | `perspective-zhang-xuefeng.md` |
+| Ben Smith | `perspective-ben-smith.md` |
+| 诺兰 | `perspective-nolan.md` |
+| 维伦纽瓦 | `perspective-villeneuve.md` |
+| 汤浅政明 | `perspective-masaaki-yuasa.md` |
+| Tim潘 | `perspective-tim-pan.md` |
+| 刘慈欣 | `perspective-liu-cixin.md` |
+| 沈奕斐 | `perspective-shen-yifei.md` |
+| 特朗普 | `perspective-donald-trump.md` |
+| 设计师有余 | `perspective-youyu-designer.md` |
 
 ```bash
-# 以卡帕西为例，换掉文件名即可
-# 国内推荐用 jsDelivr CDN（速度快、稳定）
-curl -O https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/perspective-karpathy.md
+# 国内用 jsDelivr CDN（速度快）
+curl -O https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/文件名
 
-# 或 GitHub 直链（国内可能慢）
-curl -O https://raw.githubusercontent.com/wampeeHuang/nuwa-perspective-catalog/master/skills/perspective-karpathy.md
+# GitHub 直链（国内可能慢）
+curl -O https://raw.githubusercontent.com/wampeeHuang/nuwa-perspective-catalog/master/skills/文件名
 ```
-
-**最简单的筛选方式**：打开 [blackcamellia.xin](https://blackcamellia.xin) → 浏览人物卡片 → 找到想要的 → 点卡片上的下载按钮，直接下载单个 SKILL.md。
 
 ### 安装
 
