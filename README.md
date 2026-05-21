@@ -4,15 +4,28 @@
 
 ## 快速开始
 
-```bash
-# 下载整个仓库
-git clone https://github.com/wampeeHuang/nuwa-perspective-catalog.git
+### 方式一：下载整个仓库（推荐）
 
-# 或者只下载你需要的 skill
-# 每个文件在 skills/ 目录下，可直接使用
+```bash
+git clone https://github.com/wampeeHuang/nuwa-perspective-catalog.git
 ```
 
-将 `skills/perspective-*.md` 放入 Claude Code 的 skills 目录：
+Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本地服务器：`python -m http.server 8090`）。
+
+### 方式二：只下载一个人物
+
+不想下全部 35 个？直接下载你需要的那个：
+
+```bash
+# 以卡帕西为例，换掉文件名即可
+curl -O https://raw.githubusercontent.com/wampeeHuang/nuwa-perspective-catalog/master/skills/perspective-karpathy.md
+```
+
+或在 GitHub 上浏览 [skills/](https://github.com/wampeeHuang/nuwa-perspective-catalog/tree/master/skills) 目录，点开文件 → 右键 Raw → 另存为。
+
+### 安装
+
+将 `perspective-*.md` 重命名为 `SKILL.md`，放入：
 
 - **Claude Code CLI**: `~/.claude/skills/<skill-name>/SKILL.md`
 - 放入后 Claude Code 会自动识别，用触发词即可激活
@@ -113,6 +126,6 @@ git clone https://github.com/wampeeHuang/nuwa-perspective-catalog.git
 
 ## 来源
 
-- 蒸馏工具：女娲.skill (huashu-nuwa)
+- 蒸馏工具：[女娲.skill](https://github.com/wampeeHuang/nuwa-perspective-catalog/blob/master/skills/perspective-alchainhust.md) — 感谢花叔（AlchainHust / 陈云飞）的原创方法论与工具链，让每个人的思维模型可被结构化蒸馏
 - 数据截止：2026-04
 - 所有内容基于公开信息提炼，非人物本人授权
