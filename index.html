@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>33 位人物思维顾问 &middot; 女娲蒸馏目录</title>
+<title>35 位人物思维顾问 &middot; 女娲蒸馏目录</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -108,6 +108,39 @@ body {
   color: rgba(var(--ink-rgb), 0.45);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* ── Hero Actions ── */
+.hero-actions {
+  display: flex; align-items: center; justify-content: center;
+  gap: 2rem; margin-top: 1.8rem; flex-wrap: wrap;
+}
+.hero-github-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.6rem;
+  border: 1px solid rgba(var(--ink-rgb), 0.25);
+  border-radius: 24px;
+  color: var(--ink); text-decoration: none;
+  transition: all 0.25s;
+}
+.hero-github-btn:hover {
+  background: var(--ink); color: var(--paper);
+  border-color: var(--ink);
+}
+.hero-qr {
+  display: flex; align-items: center; gap: 0.8rem;
+  text-align: left;
+}
+.hero-qr img {
+  width: 72px; height: 72px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+.hero-qr span {
+  font-family: var(--serif-zh); font-size: 0.78rem;
+  color: rgba(var(--ink-rgb), 0.5); line-height: 1.5;
 }
 
 /* ═══════════════ CAT NAV ═══════════════ */
@@ -482,23 +515,11 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 
 .qr-section {
   margin-top: 2rem;
-  padding: 2rem;
-  display: inline-block;
-}
-.qr-section .qr-placeholder {
-  width: 160px; height: 160px;
-  margin: 0 auto 1rem;
-  border: 1px dashed rgba(var(--ink-rgb), 0.2);
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--mono); font-size: 0.65rem;
-  color: rgba(var(--ink-rgb), 0.35);
-  letter-spacing: 0.06em;
-  background: #fff;
 }
 .qr-section p {
   font-family: var(--serif-zh); font-size: 0.85rem;
   color: rgba(var(--ink-rgb), 0.5);
+  margin-top: 0.8rem; line-height: 1.6;
 }
 
 /* ═══════════════ FOOTER ═══════════════ */
@@ -533,10 +554,17 @@ footer {
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero">
   <div class="eyebrow">Huashu Nuwa · Perspective Catalog</div>
-  <h1>33 位人物<br><em>思维顾问</em></h1>
+  <h1>35 位人物<br><em>思维顾问</em></h1>
   <p class="deck">女娲蒸馏产物。每个人物是独立可用的思维镜片——点击任意一张卡片，进入那个人物的操作系统。</p>
   <div class="rule"></div>
-  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04</p>
+  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04 · 所有 35 位人物 SKILL.md 均已就位</p>
+  <div class="hero-actions">
+    <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="hero-github-btn" target="_blank">GitHub 下载 35 个 Skill</a>
+    <div class="hero-qr">
+      <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="100" height="100">
+      <span>扫码加入「思维顾问局」<br>提名你想蒸馏的人物</span>
+    </div>
+  </div>
 </header>
 
 <!-- ═══════════════ CAT NAV ═══════════════ -->
@@ -562,16 +590,16 @@ footer {
 <!-- ═══════════════ GITHUB + QR SECTION ═══════════════ -->
 <section class="github-section">
   <h3>开源下载</h3>
-  <p>33 位人物的完整 SKILL.md 文件在 GitHub 开放下载。每个文件可直接放入 Claude Code 使用。</p>
+  <p>35 位人物的完整 SKILL.md 文件在 GitHub 开放下载。每个文件可直接放入 Claude Code 的 skills 目录使用。</p>
   <div class="github-links">
     <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="github-btn" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      查看 GitHub 仓库
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub 仓库
     </a>
   </div>
   <div class="qr-section">
-    <div class="qr-placeholder">交流群二维码</div>
-    <p>扫码加入交流群，提名你想蒸馏的人物</p>
+    <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="140" height="140" style="border-radius:8px;border:1px solid rgba(10,10,11,0.08);">
+    <p>扫码加入「思维顾问局」交流群<br>提名你想蒸馏的人物</p>
   </div>
 </section>
 
@@ -579,8 +607,8 @@ footer {
   女娲蒸馏目录 · 人物数据来自 perspective-* SKILL.md
 </footer>
 
+<script src="_data/data.js"></script>
 <script>
-var DATA_FILES = ['_data/group-a.json', '_data/group-b.json', '_data/group-c.json'];
 var CATEGORIES = ['科技/AI','科学/物理','商业/投资','风险/概率','营销/广告','内容/写作','影视/创作','社会/人文'];
 var REC_MATRIX = [
   ['做重大决策，怕自己骗自己','费曼、芒格、塔勒布'],
@@ -601,16 +629,15 @@ var REC_MATRIX = [
 var PANEL_COLORS = ['pink','lemon','sage','lilac','blush'];
 var allCharacters = [];
 
-async function loadData() {
-  try {
-    var results = await Promise.all(DATA_FILES.map(function(f) { return fetch(f).then(function(r) { return r.json(); }); }));
-    allCharacters = results.flatMap(function(d) { return d.characters; });
-    renderDirectory();
-    setupDetailSections();
-  } catch(err) {
+function loadData() {
+  if (!window.__CHARACTERS__ || !window.__CHARACTERS__.length) {
     document.getElementById('directory').innerHTML =
-      '<p style="text-align:center;padding:4rem;color:rgba(var(--ink-rgb),0.45);font-family:var(--mono)">请通过本地服务器打开此页面<br><code style="font-size:0.85rem">python -m http.server 8090</code></p>';
+      '<p style="text-align:center;padding:4rem;color:rgba(10,10,11,0.45);font-family:var(--mono)">数据加载失败<br><code style="font-size:0.85rem">请确认 _data/data.js 存在</code></p>';
+    return;
   }
+  allCharacters = window.__CHARACTERS__;
+  renderDirectory();
+  setupDetailSections();
 }
 
 function renderDirectory(filterCat) {
