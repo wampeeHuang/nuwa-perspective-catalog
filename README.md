@@ -18,10 +18,14 @@ Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本
 
 ```bash
 # 以卡帕西为例，换掉文件名即可
+# 国内推荐用 jsDelivr CDN（速度快、稳定）
+curl -O https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/perspective-karpathy.md
+
+# 或 GitHub 直链（国内可能慢）
 curl -O https://raw.githubusercontent.com/wampeeHuang/nuwa-perspective-catalog/master/skills/perspective-karpathy.md
 ```
 
-或在 GitHub 上浏览 [skills/](https://github.com/wampeeHuang/nuwa-perspective-catalog/tree/master/skills) 目录，点开文件 → 右键 Raw → 另存为。
+**最简单的筛选方式**：打开 [blackcamellia.xin](https://blackcamellia.xin) → 浏览人物卡片 → 找到想要的 → 点卡片上的下载按钮，直接下载单个 SKILL.md。
 
 ### 安装
 
