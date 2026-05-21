@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>33 位人物思维顾问 · 女娲目录</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F2EEDF;
+  --paper2: #EBE5D4;
+  --paper3: #E3DBC8;
+  --ink: #2B2315;
+  --ink2: #5C5240;
+  --ink3: #8C8270;
+  --pink: #D4A0A0; --pink-bg: #F0E0E0; --pink-dk: #B87070;
+  --lemon: #C8B86C; --lemon-bg: #F0EACC; --lemon-dk: #A8983C;
+  --blush: #D4B896; --blush-bg: #F0E4D4; --blush-dk: #B89870;
+  --sage: #A0B89C; --sage-bg: #DCE8D8; --sage-dk: #709870;
+  --lilac: #B8A0C0; --lilac-bg: #E4D8EC; --lilac-dk: #9078A0;
+  --rose: #C87070;
+  --border: #D8D0B8;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  --font-sans: 'Work Sans', 'Noto Sans SC', sans-serif;
+  --col-width: 1200px;
+  --reader-width: 720px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 17px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero {
+  padding: 6rem 2rem 5rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero .eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pink-dk);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+.hero h1 em { font-style: italic; color: var(--pink-dk); }
+.hero .deck {
+  font-size: 1.15rem;
+  color: var(--ink2);
+  font-style: italic;
+  max-width: 520px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+}
+.hero .rule {
+  width: 80px; height: 2px;
+  background: var(--pink);
+  margin: 1.8rem auto;
+}
+.hero .count {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--ink3);
+  font-style: italic;
+}
+
+/* ═══════════════ CAT NAV ═══════════════ */
+.cat-nav-wrap {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+  padding: 0 2rem;
+}
+.cat-nav-wrap.scrolled { border-color: var(--border); }
+.cat-nav {
+  max-width: var(--col-width); margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.4rem; padding: 1.2rem 0;
+}
+.cat-nav button {
+  font-family: var(--font-sans);
+  font-size: 0.78rem; font-weight: 400;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--ink2);
+  cursor: pointer; border-radius: 20px;
+  transition: all 0.2s; letter-spacing: 0.03em;
+}
+.cat-nav button:hover { background: var(--paper2); color: var(--ink); }
+.cat-nav button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* ═══════════════ MAIN ═══════════════ */
+main { max-width: var(--col-width); margin: 0 auto; padding: 2rem 2rem 5rem; }
+
+/* ── Category Section Header ── */
+.cat-section { margin-bottom: 5rem; }
+.cat-head {
+  display: flex; align-items: baseline; gap: 1rem;
+  margin-bottom: 0.3rem; padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.cat-head h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem; font-weight: 500;
+  color: var(--ink); letter-spacing: 0.02em;
+}
+.cat-head .cat-count { font-size: 0.85rem; color: var(--ink3); font-style: italic; }
+.cat-section .cat-desc { font-size: 0.9rem; color: var(--ink3); margin: 0.6rem 0 1.8rem; font-style: italic; }
+
+/* ── Cards Grid ── */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem; }
+.card {
+  background: #fff; cursor: pointer;
+  transition: all 0.3s; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 4px rgba(44,36,22,0.05);
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(44,36,22,0.1); }
+.card .card-bar { height: 4px; flex-shrink: 0; }
+.card .card-bar { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.card:nth-child(5n+1) .card-bar { background: var(--pink); }
+.card:nth-child(5n+2) .card-bar { background: var(--lemon); }
+.card:nth-child(5n+3) .card-bar { background: var(--sage); }
+.card:nth-child(5n+4) .card-bar { background: var(--lilac); }
+.card:nth-child(5n+5) .card-bar { background: var(--blush); }
+.card .card-body { padding: 1.5rem 1.6rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+.card .card-name {
+  font-family: var(--font-serif); font-size: 1.4rem;
+  font-weight: 600; color: var(--ink); line-height: 1.2;
+}
+.card .card-en { font-family: var(--font-serif); font-size: 0.9rem; color: var(--ink3); font-style: italic; margin-bottom: 0.6rem; }
+.card .card-line { font-size: 0.88rem; color: var(--ink2); line-height: 1.5; flex: 1; }
+.card .card-pills { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.card .card-pills span {
+  font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 12px;
+  background: var(--paper); color: var(--ink3); border: 1px solid var(--border);
+}
+.card .card-arrow { text-align: right; font-size: 0.8rem; color: var(--ink3); margin-top: 0.8rem; font-style: italic; transition: color 0.2s; }
+.card:hover .card-arrow { color: var(--pink-dk); }
+
+/* ═══════════════ FEATURE PANELS ═══════════════ */
+.feat-panel {
+  margin: 5rem 0; padding: 3rem 2.5rem;
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.feat-panel.pink { background: var(--pink-bg); }
+.feat-panel.lemon { background: var(--lemon-bg); }
+.feat-panel.sage { background: var(--sage-bg); }
+.feat-panel.lilac { background: var(--lilac-bg); }
+.feat-panel.blush { background: var(--blush-bg); }
+.feat-panel h3 {
+  font-family: var(--font-serif); font-size: 2rem;
+  font-weight: 500; color: var(--ink);
+  margin-bottom: 0.8rem; letter-spacing: 0.01em;
+}
+.feat-panel .feat-deck { font-size: 1rem; color: var(--ink2); max-width: 600px; line-height: 1.6; font-style: italic; }
+.feat-panel .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.feat-panel .feat-card {
+  background: #fff; padding: 1.4rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(44,36,22,0.05);
+}
+.feat-card .feat-head { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+.feat-card .feat-sub { font-size: 0.85rem; color: var(--ink2); line-height: 1.5; font-style: italic; }
+
+/* ═══════════════ RECOMMENDATION MATRIX ═══════════════ */
+.rec-section { margin-top: 5rem; }
+.rec-head { text-align: center; margin-bottom: 2rem; }
+.rec-head h2 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 500; color: var(--ink); }
+.rec-head p { color: var(--ink3); font-style: italic; margin-top: 0.3rem; }
+.rec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 0.8rem; }
+.rec-card {
+  display: flex; align-items: baseline; gap: 0.8rem;
+  padding: 0.9rem 1.3rem; background: #fff;
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.25s;
+}
+.rec-card:nth-child(5n+1):hover { border-left-color: var(--pink); }
+.rec-card:nth-child(5n+2):hover { border-left-color: var(--lemon); }
+.rec-card:nth-child(5n+3):hover { border-left-color: var(--sage); }
+.rec-card:nth-child(5n+4):hover { border-left-color: var(--lilac); }
+.rec-card:nth-child(5n+5):hover { border-left-color: var(--blush); }
+.rec-card .rec-need { font-weight: 500; font-size: 0.9rem; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
+.rec-card .rec-names { font-size: 0.85rem; color: var(--ink3); font-style: italic; }
+
+/* ═══════════════ DETAIL VIEW — READER MODE ═══════════════ */
+#detail-container { display: none; }
+#detail-container.active { display: block; }
+#directory.hidden { display: none; }
+
+.detail-nav {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem; flex-wrap: wrap;
+}
+.back-btn {
+  font-family: var(--font-sans); font-size: 0.82rem;
+  padding: 0.45rem 1.3rem; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink);
+  cursor: pointer; border-radius: 20px;
+  transition: all 0.2s; letter-spacing: 0.03em; flex-shrink: 0;
+}
+.back-btn:hover { background: var(--ink); color: var(--paper); }
+.detail-nav .dn-breadcrumb { font-size: 0.82rem; color: var(--ink3); font-style: italic; }
+
+/* ── Reader Hero ── */
+.detail-hero {
+  max-width: var(--reader-width); margin: 0 auto;
+  padding: 3rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+.detail-hero .dh-name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 600; line-height: 1.05;
+  color: var(--ink); letter-spacing: 0.01em;
+  margin-bottom: 0.4rem;
+}
+.detail-hero .dh-en {
+  font-family: var(--font-serif);
+  font-size: 1.2rem; color: var(--ink3);
+  font-style: italic; margin-bottom: 1.2rem;
+}
+.detail-hero .dh-oneliner {
+  font-size: 1.15rem; color: var(--ink2);
+  font-style: italic; line-height: 1.5;
+  padding-bottom: 1.2rem; margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+.detail-hero .dh-identity {
+  font-size: 1.05rem; line-height: 1.85;
+  color: var(--ink);
+  padding: 1.8rem 2rem;
+  background: var(--paper2);
+  border-left: 3px solid var(--pink);
+  border-radius: var(--radius-md);
+}
+
+/* ── Reader Body ── */
+.detail-body { max-width: var(--reader-width); margin: 0 auto; padding: 2rem 0 5rem; }
+
+.detail-body .d-section { margin-bottom: 3.5rem; }
+.detail-body .d-section h3 {
+  font-family: var(--font-serif); font-size: 1.7rem;
+  font-weight: 500; color: var(--ink);
+  margin-bottom: 1.5rem; letter-spacing: 0.01em;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+}
+
+/* ── Mental Models — flowing prose blocks ── */
+.model-list { display: flex; flex-direction: column; gap: 1rem; }
+.model-block {
+  padding: 1.6rem 2rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--pink);
+}
+.model-block:nth-child(5n+1) { background: var(--pink-bg); border-left-color: var(--pink); }
+.model-block:nth-child(5n+2) { background: var(--lemon-bg); border-left-color: var(--lemon); }
+.model-block:nth-child(5n+3) { background: var(--sage-bg); border-left-color: var(--sage); }
+.model-block:nth-child(5n+4) { background: var(--lilac-bg); border-left-color: var(--lilac); }
+.model-block:nth-child(5n+5) { background: var(--blush-bg); border-left-color: var(--blush); }
+.model-block .model-num {
+  font-family: var(--font-serif); font-size: 0.85rem;
+  color: var(--ink3); margin-bottom: 0.3rem;
+  letter-spacing: 0.04em; font-style: italic;
+}
+.model-block .model-name {
+  font-family: var(--font-serif); font-size: 1.25rem;
+  font-weight: 600; color: var(--ink);
+  margin-bottom: 0.5rem; line-height: 1.3;
+}
+.model-block .model-desc {
+  font-size: 0.95rem; color: var(--ink2);
+  line-height: 1.65; margin-bottom: 0.4rem;
+}
+.model-block .model-body {
+  font-size: 0.9rem; color: var(--ink);
+  line-height: 1.75; margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dotted var(--border);
+}
+
+/* ── Quotes — large pull quotes ── */
+.quote-list { display: flex; flex-direction: column; gap: 1.8rem; }
+.quote-item {
+  padding: 1.8rem 2.2rem;
+  background: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.2rem; font-style: italic;
+  color: var(--ink); line-height: 1.55;
+  letter-spacing: 0.02em;
+  border-left: 3px solid var(--pink);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(44,36,22,0.04);
+}
+.quote-item:nth-child(5n+2) { border-left-color: var(--lemon); }
+.quote-item:nth-child(5n+3) { border-left-color: var(--sage); }
+.quote-item:nth-child(5n+4) { border-left-color: var(--lilac); }
+.quote-item:nth-child(5n+5) { border-left-color: var(--blush); }
+
+/* ── Heuristics — numbered flowing list ── */
+.heuristic-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.heuristic-list li {
+  display: flex; align-items: baseline; gap: 0.8rem;
+  padding: 0.6rem 1rem; font-size: 0.95rem; color: var(--ink2);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+.heuristic-list li:hover { background: #fff; }
+.heuristic-list li .hnum {
+  font-family: var(--font-serif); font-size: 0.85rem;
+  color: var(--ink3); flex-shrink: 0; width: 1.6rem;
+  text-align: right; font-style: italic;
+}
+.heuristic-list li:nth-child(5n+1):hover { background: var(--pink-bg); }
+.heuristic-list li:nth-child(5n+2):hover { background: var(--lemon-bg); }
+.heuristic-list li:nth-child(5n+3):hover { background: var(--sage-bg); }
+.heuristic-list li:nth-child(5n+4):hover { background: var(--lilac-bg); }
+.heuristic-list li:nth-child(5n+5):hover { background: var(--blush-bg); }
+
+/* ── Timeline — narrative strip ── */
+.timeline-strip { display: flex; flex-wrap: wrap; gap: 1rem; }
+.timeline-strip .tl-item {
+  flex: 1; min-width: 160px;
+  padding: 1.2rem 1.4rem; background: #fff;
+  text-align: center; border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(44,36,22,0.04);
+}
+.tl-item .tl-year {
+  font-family: var(--font-serif); font-size: 1.3rem;
+  font-weight: 600; color: var(--pink-dk);
+  margin-bottom: 0.4rem;
+}
+.tl-item .tl-event { font-size: 0.85rem; color: var(--ink2); line-height: 1.5; }
+
+/* ── DNA — prose block ── */
+.dna-panel {
+  background: var(--paper2); padding: 2rem 2.2rem;
+  font-size: 1rem; line-height: 1.75; color: var(--ink);
+  border-left: 3px solid var(--pink);
+  border-radius: var(--radius-md);
+}
+
+/* ── Values — pill cloud ── */
+.value-strip { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.value-strip .vtag {
+  font-size: 0.85rem; padding: 0.4rem 1.1rem;
+  background: var(--paper3); border-radius: 20px;
+  color: var(--ink); font-weight: 400;
+}
+
+/* ── Tensions — prose pairs ── */
+.tension-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.tension-list li {
+  padding: 1.2rem 1.6rem; font-size: 0.95rem;
+  color: var(--ink2); line-height: 1.6;
+  border-radius: var(--radius-md);
+  display: flex; gap: 0.7rem; align-items: flex-start;
+}
+.tension-list li:nth-child(odd) { background: var(--pink-bg); }
+.tension-list li:nth-child(even) { background: var(--lemon-bg); }
+.tension-list li::before {
+  content: '×'; color: var(--rose);
+  font-weight: 700; font-size: 1.2rem;
+  flex-shrink: 0; line-height: 1.4;
+}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer {
+  text-align: center; padding: 4rem 2rem;
+  color: var(--ink3); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem; font-style: italic;
+}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media (max-width: 768px) {
+  .hero { padding: 3rem 1.5rem 2.5rem; }
+  .hero h1 { font-size: 2.4rem; }
+  main { padding: 1rem 1rem 3rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .rec-grid { grid-template-columns: 1fr; }
+  .detail-hero { padding: 2rem 0; }
+  .detail-hero .dh-name { font-size: 2rem; }
+  .detail-hero .dh-identity { padding: 1.3rem 1.3rem; }
+  .detail-body { padding: 1rem 0 3rem; }
+  .feat-panel { padding: 2rem 1.5rem; }
+  .model-block { padding: 1.2rem 1.3rem; }
+  .quote-item { padding: 1.3rem 1.5rem; font-size: 1.05rem; }
+  .timeline-strip { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="eyebrow">Huashu Nuwa · Perspective Catalog</div>
+  <h1>33 位人物<br><em>思维顾问</em></h1>
+  <p class="deck">女娲蒸馏产物。每个人物是独立可用的思维镜片——点击任意一张卡片，进入那个人物的操作系统。</p>
+  <div class="rule"></div>
+  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04 · 所有 33 位人物 SKILL.md 均已就位</p>
+</header>
+
+<!-- ═══════════════ CAT NAV ═══════════════ -->
+<div class="cat-nav-wrap" id="catNavWrap">
+  <div class="cat-nav" id="catNav">
+    <button data-cat="all" class="active">全部</button>
+    <button data-cat="科技/AI">科技/AI</button>
+    <button data-cat="科学/物理">科学/物理</button>
+    <button data-cat="商业/投资">商业/投资</button>
+    <button data-cat="风险/概率">风险/概率</button>
+    <button data-cat="营销/广告">营销/广告</button>
+    <button data-cat="内容/写作">内容/写作</button>
+    <button data-cat="影视/创作">影视/创作</button>
+    <button data-cat="社会/人文">社会/人文</button>
+  </div>
+</div>
+
+<main>
+  <div id="directory"></div>
+  <div id="detail-container"></div>
+</main>
+
+<footer>
+  新蒸馏人物需手动更新本目录 · 人物数据来自 perspective-* SKILL.md 蒸馏
+</footer>
+
+<script>
+var DATA_FILES = ['_data/group-a.json', '_data/group-b.json', '_data/group-c.json'];
+var CATEGORIES = ['科技/AI','科学/物理','商业/投资','风险/概率','营销/广告','内容/写作','影视/创作','社会/人文'];
+var REC_MATRIX = [
+  ['做重大决策，怕自己骗自己','费曼、芒格、塔勒布'],
+  ['评估 AI 产品/技术前景','卡帕西、吴恩达、张一鸣'],
+  ['写文章/做内容，提升传播力','Paul Graham、奥格威、休格曼'],
+  ['砍成本/优化流程','马斯克、芒格、乔布斯'],
+  ['学一个新技术/新领域','费曼、Naval、卡帕西'],
+  ['设计产品/用户体验','乔布斯、有余、卡帕西'],
+  ['搞营销/增长/拉新','孙宇晨、MrBeast、霍普金斯'],
+  ['职业迷茫，不知道做什么','Naval、花叔、张雪峰'],
+  ['谈判/博弈/权力局面','特朗普、塔勒布、张一鸣'],
+  ['写代码/架构设计','卡帕西、宝玉、Zara Zhang'],
+  ['拍视频/影视创作','Tim 潘、MrBeast、诺兰'],
+  ['教育/学习路径选择','费曼、张雪峰、吴恩达'],
+  ['内容创作/公众号写作','Paul Graham、奥格威、花叔']
+];
+
+var PANEL_COLORS = ['pink','lemon','sage','lilac','blush'];
+var allCharacters = [];
+
+async function loadData() {
+  try {
+    var results = await Promise.all(DATA_FILES.map(function(f) { return fetch(f).then(function(r) { return r.json(); }); }));
+    allCharacters = results.flatMap(function(d) { return d.characters; });
+    renderDirectory();
+    setupDetailSections();
+  } catch(err) {
+    document.getElementById('directory').innerHTML =
+      '<p style="text-align:center;padding:4rem;color:var(--ink3);font-style:italic">请通过本地服务器打开此页面<br><code style="font-size:0.85rem">python -m http.server 8090</code><br><br>' + err.message + '</p>';
+  }
+}
+
+function renderDirectory(filterCat) {
+  filterCat = filterCat || 'all';
+  var dir = document.getElementById('directory');
+  dir.innerHTML = '';
+  var cats = filterCat === 'all' ? CATEGORIES : [filterCat];
+  var colorIdx = 0;
+
+  cats.forEach(function(cat) {
+    var chars = allCharacters.filter(function(c) { return c.category === cat; });
+    if (!chars.length) return;
+
+    var section = document.createElement('div');
+    section.className = 'cat-section';
+    section.setAttribute('data-category', cat);
+    section.innerHTML = '<div class="cat-head"><h2>' + cat + '</h2><span class="cat-count">' + chars.length + ' 位</span></div>';
+
+    var grid = document.createElement('div');
+    grid.className = 'card-grid';
+    chars.forEach(function(ch) {
+      var card = document.createElement('div');
+      card.className = 'card';
+      card.onclick = function() { showDetail(ch.id); };
+      var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
+      card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-arrow">浏览人物 →</div></div>';
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    dir.appendChild(section);
+
+    if (filterCat === 'all' && colorIdx < PANEL_COLORS.length) {
+      var panel = makeFeaturePanel(cat, chars, PANEL_COLORS[colorIdx]);
+      dir.appendChild(panel);
+      colorIdx++;
+    }
+  });
+
+  if (filterCat === 'all') renderRecMatrix(dir);
+  if (!dir.children.length) {
+    dir.innerHTML = '<p style="text-align:center;padding:4rem;color:var(--ink3);font-style:italic">该分类暂无人物</p>';
+  }
+}
+
+function makeFeaturePanel(cat, chars, color) {
+  var panel = document.createElement('div');
+  panel.className = 'feat-panel ' + color;
+  var top3 = chars.slice(0, 3).map(function(c) { return c.name_cn; }).join('、');
+  panel.innerHTML = '<h3>' + cat + ' 精选</h3><div class="feat-deck">' + cat + ' 领域 ' + chars.length + ' 位人物。推荐切入点：' + top3 + '。</div><div class="feat-grid">' +
+    chars.map(function(ch) {
+      return '<div class="feat-card" onclick="showDetail(\'' + ch.id + '\')" style="cursor:pointer"><div class="feat-head">' + ch.name_cn + '</div><div class="feat-sub">' + ch.oneliner + '</div></div>';
+    }).join('') + '</div>';
+  return panel;
+}
+
+function renderRecMatrix(parent) {
+  var section = document.createElement('div');
+  section.className = 'rec-section';
+  section.innerHTML = '<div class="rec-head"><h2>按场景推荐</h2><p>不确定找谁时，从这里开始</p></div><div class="rec-grid">' +
+    REC_MATRIX.map(function(r) {
+      return '<div class="rec-card"><span class="rec-need">' + r[0] + '</span><span class="rec-names">→ ' + r[1] + '</span></div>';
+    }).join('') + '</div>';
+  parent.appendChild(section);
+}
+
+/* ═══════════════ DETAIL — READER MODE ═══════════════ */
+function setupDetailSections() {
+  var container = document.getElementById('detail-container');
+  allCharacters.forEach(function(ch) {
+    container.insertAdjacentHTML('beforeend', renderDetail(ch));
+  });
+}
+
+function renderDetail(ch) {
+  var h = '<div class="detail-pane" id="detail-' + ch.id + '" style="display:none">';
+
+  // Nav
+  h += '<div class="detail-nav"><button class="back-btn" onclick="hideDetail()">← 返回目录</button><span class="dn-breadcrumb">' + ch.category + '</span></div>';
+
+  // Hero — single column reader
+  h += '<div class="detail-hero">';
+  h += '<h2 class="dh-name">' + ch.name_cn + '</h2>';
+  h += '<div class="dh-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div>';
+  h += '<div class="dh-oneliner">' + ch.oneliner + '</div>';
+  h += '<div class="dh-identity">' + (ch.identity || '') + '</div>';
+  h += '</div>';
+
+  h += '<div class="detail-body">';
+
+  // Mental Models — flowing prose blocks, single column
+  if (ch.mental_models && ch.mental_models.length) {
+    h += '<div class="d-section"><h3>核心心智模型</h3><div class="model-list">';
+    ch.mental_models.forEach(function(m, i) {
+      h += '<div class="model-block"><div class="model-num">模型 ' + (i+1) + '</div><div class="model-name">' + m.name + '</div><div class="model-desc">' + (m.oneliner || '') + '</div>' + (m.body ? '<div class="model-body">' + m.body + '</div>' : '') + '</div>';
+    });
+    h += '</div></div>';
+  }
+
+  // Quotes — large pull quotes, single column
+  if (ch.quotes && ch.quotes.length) {
+    h += '<div class="d-section"><h3>代表性语录</h3><div class="quote-list">';
+    ch.quotes.forEach(function(q) { h += '<div class="quote-item">' + q + '</div>'; });
+    h += '</div></div>';
+  }
+
+  // Heuristics — numbered flowing list
+  if (ch.heuristics && ch.heuristics.length) {
+    h += '<div class="d-section"><h3>决策启发式</h3><ol class="heuristic-list">';
+    ch.heuristics.forEach(function(ht, i) { h += '<li><span class="hnum">' + (i+1) + '</span>' + ht + '</li>'; });
+    h += '</ol></div>';
+  }
+
+  // Timeline
+  if (ch.timeline_highlights && ch.timeline_highlights.length) {
+    h += '<div class="d-section"><h3>关键时间线</h3><div class="timeline-strip">';
+    ch.timeline_highlights.forEach(function(t) {
+      h += '<div class="tl-item"><div class="tl-year">' + t.year + '</div><div class="tl-event">' + t.event + '</div></div>';
+    });
+    h += '</div></div>';
+  }
+
+  // Expression DNA
+  if (ch.expression_dna) {
+    h += '<div class="d-section"><h3>表达 DNA</h3><div class="dna-panel">' + ch.expression_dna + '</div></div>';
+  }
+
+  // Values
+  if (ch.values && ch.values.length) {
+    h += '<div class="d-section"><h3>价值观</h3><div class="value-strip">';
+    ch.values.forEach(function(v) { h += '<span class="vtag">' + v + '</span>'; });
+    h += '</div></div>';
+  }
+
+  // Tensions — colored blocks
+  if (ch.tensions && ch.tensions.length) {
+    h += '<div class="d-section"><h3>内在张力</h3><ul class="tension-list">';
+    ch.tensions.forEach(function(t) { h += '<li>' + t + '</li>'; });
+    h += '</ul></div>';
+  }
+
+  h += '</div></div>';
+  return h;
+}
+
+function showDetail(id) {
+  document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
+  var pane = document.getElementById('detail-' + id);
+  if (pane) pane.style.display = 'block';
+  document.getElementById('directory').classList.add('hidden');
+  document.getElementById('detail-container').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function hideDetail() {
+  document.getElementById('directory').classList.remove('hidden');
+  document.getElementById('detail-container').classList.remove('active');
+  document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ═══════════════ CAT NAV EVENTS ═══════════════ */
+document.getElementById('catNav').addEventListener('click', function(e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  var cat = e.target.dataset.cat;
+  document.querySelectorAll('#catNav button').forEach(function(b) { b.classList.remove('active'); });
+  e.target.classList.add('active');
+  hideDetail();
+  renderDirectory(cat);
+});
+
+window.addEventListener('scroll', function() {
+  var wrap = document.getElementById('catNavWrap');
+  if (window.scrollY > 50) wrap.classList.add('scrolled');
+  else wrap.classList.remove('scrolled');
+});
+
+/* ═══════════════ INIT ═══════════════ */
+loadData();
+</script>
+</body>
+</html>
