@@ -1,14 +1,14 @@
 # 女娲人物蒸馏 公开网站
 
 ## 项目
-- 33位人物思维顾问目录站，归藏水墨风
+- 35位人物思维顾问目录站，归藏水墨风
 - 单 HTML 文件 + JSON 数据，纯静态
 - 部署：Vercel，域名 blackcamellia.xin
 
 ## 结构
 ```
 index.html      # 主站（CSS + HTML + JS 合一）
-_data/          # 33人JSON数据（3文件）
+_data/          # 35人JSON数据（data.js）
 assets/         # SVG印章、笔触等静态资源
 ```
 
