@@ -361,6 +361,17 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   color: var(--cinnabar); border-color: var(--cinnabar);
   background: var(--cinnabar-bg);
 }
+.dl-install-hint {
+  font-family: var(--mono); font-size: 0.62rem;
+  color: rgba(var(--ink-rgb), 0.35);
+  padding: 0.6rem 0 0; letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.dl-install-hint code {
+  font-family: var(--mono); font-size: 0.6rem;
+  background: rgba(var(--ink-rgb), 0.06);
+  padding: 0.1rem 0.4rem; border-radius: 3px;
+}
 
 /* ── Reader Hero ── */
 .detail-hero {
@@ -741,7 +752,7 @@ function renderDirectory(filterCat) {
       card.onclick = function() { showDetail(ch.id); };
       var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
       var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
-card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
+card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 .md → 放入 skills/ 目录即可用">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
       grid.appendChild(card);
     });
     section.appendChild(grid);
@@ -783,7 +794,8 @@ function setupDetailSections() {
 function renderDetail(ch) {
   var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
   var h = '<div class="detail-pane" id="detail-' + ch.id + '" style="display:none">';
-  h += '<div class="detail-nav"><button class="back-btn" onclick="hideDetail()">← 返回目录</button><span class="dn-breadcrumb">' + ch.category + '</span><a class="dn-dl" href="' + dlUrl + '">下载 SKILL.md ↓</a></div>';
+  h += '<div class="detail-nav"><button class="back-btn" onclick="hideDetail()">← 返回目录</button><span class="dn-breadcrumb">' + ch.category + '</span><a class="dn-dl" href="' + dlUrl + '" title="下载后放入 Claude Code 的 skills/ 目录即可调用">下载 SKILL.md ↓</a></div>';
+  h += '<div class="dl-install-hint">下载 .md 文件 → 放入 <code>skills/</code> 目录 → 输入人物名即可调用此思维顾问</div>';
   h += '<div class="detail-hero">';
   h += '<h2 class="dh-name">' + ch.name_cn + '</h2>';
   h += '<div class="dh-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div>';
