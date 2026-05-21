@@ -740,8 +740,8 @@ function renderDirectory(filterCat) {
       card.className = 'card';
       card.onclick = function() { showDetail(ch.id); };
       var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
-      var dlUrl = 'https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/' + ch.id + '.md';
-card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" download onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
+      var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
+card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
       grid.appendChild(card);
     });
     section.appendChild(grid);
@@ -781,9 +781,9 @@ function setupDetailSections() {
 }
 
 function renderDetail(ch) {
-  var dlUrl = 'https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/' + ch.id + '.md';
+  var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
   var h = '<div class="detail-pane" id="detail-' + ch.id + '" style="display:none">';
-  h += '<div class="detail-nav"><button class="back-btn" onclick="hideDetail()">← 返回目录</button><span class="dn-breadcrumb">' + ch.category + '</span><a class="dn-dl" href="' + dlUrl + '" download>下载 SKILL.md ↓</a></div>';
+  h += '<div class="detail-nav"><button class="back-btn" onclick="hideDetail()">← 返回目录</button><span class="dn-breadcrumb">' + ch.category + '</span><a class="dn-dl" href="' + dlUrl + '">下载 SKILL.md ↓</a></div>';
   h += '<div class="detail-hero">';
   h += '<h2 class="dh-name">' + ch.name_cn + '</h2>';
   h += '<div class="dh-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div>';

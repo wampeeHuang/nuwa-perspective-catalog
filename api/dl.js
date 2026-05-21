@@ -1,4 +1,4 @@
-// /api/dl?name=karpathy → 302 → jsDelivr CDN
+// /api/dl?name=karpathy → download .md file (proxy via CDN)
 const MAP = [
   ['perspective-andrej-karpathy.md', '安德烈·卡帕西', 'Andrej Karpathy', '安德烈', '卡帕西', 'Andrej', 'andrej', 'Karpathy', 'karpathy'],
   ['perspective-elon-musk.md', '埃隆·马斯克', 'Elon Musk', '硅谷钢铁侠', '埃隆', '马斯克', 'Elon', 'elon', 'Musk', 'musk'],
@@ -44,16 +44,27 @@ for (const [file, ...aliases] of MAP) {
 
 const CDN = 'https://cdn.jsdelivr.net/gh/wampeeHuang/nuwa-perspective-catalog@master/skills/';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const raw = (req.query.name || '').trim();
   if (!raw) {
-    res.status(400).json({ error: 'Missing ?name=', hint: 'Example: /api/dl?name=卡帕西', browse: 'https://blackcamellia.xin' });
+    res.status(400).json({ error: 'Missing ?name=', hint: 'Example: /api/dl?name=卡帕西' });
     return;
   }
   const file = LOOKUP[raw.toLowerCase()];
   if (!file) {
-    res.status(404).json({ error: `"${raw}" not found`, hint: 'Try Chinese or English name', browse: 'https://blackcamellia.xin' });
+    res.status(404).json({ error: `"${raw}" not found`, hint: 'Try Chinese or English name' });
     return;
   }
-  res.redirect(302, CDN + file);
+  const url = CDN + file;
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`CDN ${r.status}`);
+    const body = await r.text();
+    res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(file)}"`);
+    res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+    res.status(200).send(body);
+  } catch (e) {
+    // Fallback: redirect to CDN
+    res.redirect(302, url);
+  }
 }
