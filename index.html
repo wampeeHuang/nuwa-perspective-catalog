@@ -803,7 +803,15 @@ function filterByRec(namesStr) {
   var matched = allCharacters.filter(function(ch) {
     return names.some(function(n) { return ch.name_cn.indexOf(n) !== -1 || (ch.nickname && ch.nickname.indexOf(n) !== -1); });
   });
-  matched.forEach(function(ch, i) { grid.appendChild(renderCard(ch, i)); });
+  matched.forEach(function(ch) {
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = function() { showDetail(ch.id); };
+    var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
+    var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
+    card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 .md → 放入 skills/ 目录即可用">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
+    grid.appendChild(card);
+  });
   if (matched.length === 0) {
     grid.innerHTML = '<p style="text-align:center;padding:3rem;color:rgba(var(--ink-rgb),0.4);grid-column:1/-1">未匹配到角色</p>';
   }
