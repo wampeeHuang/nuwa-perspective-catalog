@@ -318,6 +318,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   transition: border-left-color 0.25s;
   border: 1px solid rgba(var(--ink-rgb), 0.04);
   border-left: 2px solid rgba(var(--ink-rgb), 0.12);
+  cursor: pointer;
 }
 .rec-card:nth-child(5n+1):hover { border-left-color: var(--cinnabar); }
 .rec-card:nth-child(5n+2):hover { border-left-color: var(--azure); }
@@ -633,7 +634,7 @@ footer {
   <h1><span class="char-count">35</span> 位人物<br><em>思维顾问</em></h1>
   <p class="deck">女娲蒸馏产物。每个人物是独立可用的思维镜片——点击任意一张卡片，进入那个人物的操作系统。</p>
   <div class="rule"></div>
-  <p class="count">基于公开信息蒸馏 · 调研截止 2026-04 · 所有 <span class="char-count">35</span> 位人物 SKILL.md 均已就位</p>
+  <p class="count">基于公开信息蒸馏 · 调研截止 2026-05 · 所有 <span class="char-count">35</span> 位人物 SKILL.md 均已就位</p>
   <div class="hero-actions">
     <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" class="hero-github-btn" target="_blank">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -681,7 +682,7 @@ footer {
   <div class="credit-rule"></div>
   <p class="credit-text">蒸馏方法论与工具链来自 <a href="https://github.com/alchaincyf" target="_blank">花叔（AlchainHust / 陈云飞）</a></p>
   <p class="credit-text">花叔开源项目：<a href="https://github.com/alchaincyf/nuwa-skill" target="_blank">女娲.skill</a> · <a href="https://github.com/alchaincyf/huashu-skills" target="_blank">花叔 Skills 合集</a> · <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog/blob/master/skills/perspective-alchainhust.md" target="_blank">花叔人物 SKILL</a></p>
-  <p class="credit-sub">基于公开信息蒸馏，非人物本人授权 · 调研截止 2026-04</p>
+  <p class="credit-sub">基于公开信息蒸馏，非人物本人授权 · 调研截止 2026-05</p>
 </section>
 
 <footer>
@@ -777,11 +778,45 @@ function makeFeaturePanel(cat, chars, color) {
 function renderRecMatrix(parent) {
   var section = document.createElement('div');
   section.className = 'rec-section';
-  section.innerHTML = '<div class="rec-head"><h2>按场景推荐</h2><p>不确定找谁时，从这里开始</p></div><div class="rec-grid">' +
+  section.innerHTML = '<div class="rec-head"><h2>按场景推荐</h2><p>不确定找谁时，从这里开始 &mdash; 点击卡片筛选人物</p></div><div class="rec-grid">' +
     REC_MATRIX.map(function(r) {
-      return '<div class="rec-card"><span class="rec-need">' + r[0] + '</span><span class="rec-names">&rarr; ' + r[1] + '</span></div>';
+      return '<div class="rec-card" onclick="filterByRec(\'' + r[1].replace(/'/g, "\\'") + '\')"><span class="rec-need">' + r[0] + '</span><span class="rec-names">&rarr; ' + r[1] + '</span></div>';
     }).join('') + '</div>';
   parent.appendChild(section);
+}
+
+var _recActive = false;
+function filterByRec(namesStr) {
+  _recActive = true;
+  var names = namesStr.split('、');
+  var dir = document.getElementById('directory');
+  dir.innerHTML = '';
+  // Back bar
+  var bar = document.createElement('div');
+  bar.style.cssText = 'text-align:center;padding:0.5rem 0 1.5rem';
+  bar.innerHTML = '<button onclick="clearRecFilter()" style="background:rgba(var(--ink-rgb),0.06);border:1px solid rgba(var(--ink-rgb),0.12);padding:0.4rem 1.2rem;border-radius:20px;cursor:pointer;font-family:var(--sans);font-size:0.85rem;color:rgba(var(--ink-rgb),0.7)">← 返回全部目录</button><span style="margin-left:1rem;font-family:var(--mono);font-size:0.8rem;color:rgba(var(--ink-rgb),0.4)">' + names.length + ' 位推荐</span>';
+  dir.appendChild(bar);
+  // Cards
+  var grid = document.createElement('div');
+  grid.className = 'card-grid';
+  var matched = allCharacters.filter(function(ch) {
+    return names.some(function(n) { return ch.name_cn.indexOf(n) !== -1 || (ch.nickname && ch.nickname.indexOf(n) !== -1); });
+  });
+  matched.forEach(function(ch, i) { grid.appendChild(renderCard(ch, i)); });
+  if (matched.length === 0) {
+    grid.innerHTML = '<p style="text-align:center;padding:3rem;color:rgba(var(--ink-rgb),0.4);grid-column:1/-1">未匹配到角色</p>';
+  }
+  dir.appendChild(grid);
+  // Remove rec section (already replaced)
+  var recSec = document.querySelector('.rec-section');
+  if (recSec) recSec.style.display = 'none';
+}
+
+function clearRecFilter() {
+  _recActive = false;
+  var recSec = document.querySelector('.rec-section');
+  if (recSec) recSec.style.display = '';
+  renderDirectory('all');
 }
 
 function setupDetailSections() {
