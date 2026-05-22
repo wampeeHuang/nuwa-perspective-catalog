@@ -191,16 +191,55 @@ body {
 }
 .cat-nav button:hover { background: var(--paper-tint); color: var(--ink); border-color: rgba(var(--ink-rgb), 0.3); }
 .cat-nav button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cat-nav-sep { color: rgba(var(--ink-rgb), 0.15); font-size: 0.85rem; align-self: center; user-select: none; }
+.cat-nav-board-btn {
+  font-family: var(--serif-zh) !important;
+  font-weight: 500 !important; letter-spacing: 0.03em !important;
+  font-size: 0.82rem !important;
+  color: var(--cinnabar) !important;
+  border-color: rgba(217,119,87,0.3) !important;
+  background: transparent !important;
+}
+.cat-nav-board-btn:hover { background: var(--cinnabar-bg) !important; color: var(--cinnabar) !important; }
+.cat-nav-sort-btn {
+  font-family: var(--serif-zh) !important;
+  font-weight: 600 !important; letter-spacing: 0.03em !important;
+  font-size: 0.82rem !important;
+  color: var(--malachite) !important;
+  border-color: rgba(80,144,112,0.3) !important;
+  background: transparent !important;
+}
+.cat-nav-sort-btn:hover { background: var(--malachite-bg) !important; }
+.cat-nav-sort-btn.active { background: var(--malachite) !important; color: #fff !important; border-color: var(--malachite) !important; }
+
+/* ── Sort hint ── */
+.sort-hint {
+  text-align: center; padding: 0.3rem 0 1.5rem;
+  font-family: var(--mono); font-size: 0.65rem;
+  color: rgba(var(--ink-rgb), 0.28);
+  letter-spacing: 0.06em;
+}
+/* ── Heat badge on cards ── */
+.card-heat {
+  font-family: var(--mono); font-size: 0.6rem;
+  color: var(--malachite); white-space: nowrap;
+}
+.cat-heat {
+  font-family: var(--mono); font-size: 0.68rem;
+  color: var(--malachite); opacity: 0.7;
+  margin-left: auto; white-space: nowrap;
+}
 
 /* ═══════════════ MAIN ═══════════════ */
-main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
 
 /* ── Category Section ── */
 .cat-section {
-  margin-bottom: 3rem; padding: 2.5rem 2rem;
+  margin-bottom: 3.5rem; padding: 2.8rem 2.2rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(var(--ink-rgb), 0.05);
   background: #fff;
+  scroll-margin-top: 6rem;
 }
 .cat-section.pink  { background: var(--cinnabar-bg); }
 .cat-section.lemon { background: var(--azure-bg); }
@@ -209,8 +248,9 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 .cat-section.blush { background: var(--ochre-bg); }
 .cat-head {
   display: flex; align-items: baseline; gap: 1rem;
-  margin-bottom: 0.3rem; padding-bottom: 0.7rem;
+  margin-bottom: 0.8rem; padding-bottom: 1rem;
   border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
+  scroll-margin-top: 7rem;
 }
 .cat-head h2 {
   font-family: var(--serif-zh);
@@ -222,9 +262,20 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   font-size: 0.72rem; color: rgba(var(--ink-rgb), 0.45);
   letter-spacing: 0.08em;
 }
+.empty-cat {
+  text-align: center; padding: 2rem;
+}
+.empty-cat p {
+  font-family: var(--serif-zh); font-size: 1rem;
+  color: rgba(var(--ink-rgb), 0.4); line-height: 1.7;
+}
+.empty-cat .empty-cat-hint {
+  font-size: 0.85rem; color: rgba(var(--ink-rgb), 0.3);
+  margin-top: 0.6rem;
+}
 
 /* ── Cards Grid ── */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.4rem; }
 .card {
   background: #fff; cursor: pointer;
   transition: all 0.3s; position: relative; overflow: hidden;
@@ -282,8 +333,8 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   cursor: pointer; transition: color 0.2s; white-space: nowrap;
 }
 .card .card-act:hover { color: var(--ink); }
-.card .card-act.card-chat-act { color: var(--cinnabar); }
-.card .card-act.card-chat-act:hover { color: var(--cinnabar); opacity: 0.7; }
+.card .card-act.card-chat-act { color: var(--ink); font-weight: 600; }
+.card .card-act.card-chat-act:hover { opacity: 0.6; }
 
 /* ═══════════════ FEATURE PANELS ═══════════════ */
 .feat-panel {
@@ -422,10 +473,61 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   border-radius: var(--radius-md);
 }
 
+/* ── Section Nav ── */
+.section-nav {
+  max-width: var(--reader-width); margin: 0 auto 1.6rem;
+  position: sticky; top: 60px; z-index: 15;
+  display: flex; align-items: center; flex-wrap: nowrap; gap: 0.28rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(250,249,245,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.nav-sep {
+  width: 1px; height: 1rem;
+  background: rgba(var(--ink-rgb), 0.1);
+  margin: 0 0.2rem; flex-shrink: 0;
+}
+.section-nav-pill {
+  font-family: var(--sans-zh); font-size: 0.76rem;
+  padding: 0.32rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  background: rgba(255,255,255,0.5); color: rgba(var(--ink-rgb), 0.5);
+  cursor: pointer; transition: all 0.25s;
+  white-space: nowrap; font-weight: 500; flex-shrink: 0;
+}
+.section-nav-pill:hover { border-color: var(--cinnabar); color: var(--cinnabar); background: #fff; }
+.section-nav-pill.main {
+  background: rgba(var(--ink-rgb), 0.06);
+  color: rgba(var(--ink-rgb), 0.7);
+  border-color: rgba(var(--ink-rgb), 0.18);
+}
+.section-nav-pill.ref {
+  font-size: 0.72rem;
+  padding: 0.28rem 0.6rem;
+}
+.section-nav-pill.active {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transform: scale(1.04);
+}
+.nav-chat-pill {
+  color: var(--ink) !important;
+  border-color: rgba(var(--ink-rgb), 0.25) !important;
+  background: rgba(var(--ink-rgb), 0.06) !important;
+  font-weight: 600 !important;
+}
+.nav-chat-pill:hover {
+  background: rgba(var(--ink-rgb), 0.12) !important;
+}
+
 /* ── Reader Body ── */
 .detail-body { max-width: var(--reader-width); margin: 0 auto; padding: 2rem 0 5rem; }
 
-.detail-body .d-section { margin-bottom: 3.5rem; }
+.detail-body .d-section { margin-bottom: 3.5rem; scroll-margin-top: 9rem; }
 .detail-body .d-section h3 {
   font-family: var(--serif-zh); font-size: 1.55rem;
   font-weight: 600; color: var(--ink);
@@ -433,112 +535,222 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   padding-bottom: 0.4rem; border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 
-/* ── Detail Tabs ── */
-.detail-tabs {
-  display: flex; gap: 0; margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
-  max-width: var(--reader-width); margin-left: auto; margin-right: auto;
-  padding: 0 0.5rem;
+/* ── Hero Quote ── */
+.hero-quote {
+  max-width: var(--reader-width); margin: 0 auto 1.8rem;
+  font-family: var(--serif-zh); font-size: 1.6rem;
+  font-weight: 600; color: var(--ink);
+  line-height: 1.5; letter-spacing: 0.01em;
+  text-align: center;
+  opacity: 0.75;
 }
-.dt-tab {
-  font-family: var(--serif-zh); font-size: 0.95rem;
-  font-weight: 500; color: rgba(var(--ink-rgb), 0.35);
-  background: none; border: none; cursor: pointer;
-  padding: 0.8rem 1.4rem; transition: all 0.2s;
-  border-bottom: 2px solid transparent; margin-bottom: -1px;
+@media (max-width: 768px) { .hero-quote { font-size: 1.2rem; } }
+
+/* ── Chat Container (monochrome dialog — stands out because everything else has color) ── */
+.chat-zone {
+  max-width: var(--reader-width); margin: 0 auto 2rem;
+  padding: 2rem 2.2rem;
+  background: #eae7e0;
+  border: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-top: 4px solid var(--ink);
+  border-radius: 16px;
+  scroll-margin-top: 8rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
-.dt-tab:hover { color: rgba(var(--ink-rgb), 0.6); }
-.dt-tab.active {
-  color: var(--ink); font-weight: 700;
-  border-bottom-color: var(--cinnabar);
+/* chat heading — same level as d-section h3, arrow distinguishes action */
+.chat-section-head {
+  max-width: var(--reader-width); margin: 0 auto 1rem;
+  font-family: var(--serif-zh); font-size: 1.55rem;
+  font-weight: 600; color: var(--ink);
+  letter-spacing: 0.01em;
+  scroll-margin-top: 9rem;
+  display: flex; align-items: baseline; gap: 0.6rem;
 }
-.dt-tab.chat-tab {
-  font-family: var(--serif-zh); color: var(--cinnabar); opacity: 0.55;
+.chat-zone .chat-hint {
+  font-family: var(--mono); font-size: 0.6rem;
+  color: rgba(var(--ink-rgb), 0.25);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 1.2rem;
 }
-.dt-tab.chat-tab.active { color: var(--cinnabar); opacity: 1; font-weight: 700; }
-.dt-panel { min-height: 300px; }
+.chat-welcome { margin-bottom: 1rem; }
+
+/* ── Tail CTA ── */
+.tail-cta {
+  max-width: var(--reader-width); margin: 2rem auto 0;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.06);
+  font-family: var(--serif-zh); font-size: 0.92rem;
+  color: rgba(var(--ink-rgb), 0.45); text-align: center;
+  letter-spacing: 0.02em;
+}
+.tail-cta a {
+  color: var(--ink); text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.2);
+  transition: border-color 0.2s;
+}
+.tail-cta a:hover { border-color: var(--ink); }
 
 /* ── Chat Widget ── */
-.chat-section {
-  padding: 1.5rem 0;
-}
-.chat-section h3 {
-  display: none;
-}
 .chat-hint {
   font-family: var(--mono); font-size: 0.62rem;
   color: rgba(var(--ink-rgb), 0.3); margin-bottom: 1.5rem;
   letter-spacing: 0.06em; text-transform: uppercase;
 }
 .chat-presets {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;
 }
 .chat-preset-btn {
-  font-family: var(--serif-zh); font-size: 0.8rem;
-  color: var(--cinnabar); background: var(--cinnabar-bg);
-  border: 1px solid rgba(var(--ink-rgb), 0.06);
-  border-radius: 20px; padding: 0.45rem 1rem;
+  font-family: var(--serif-zh); font-size: 0.78rem;
+  color: rgba(var(--ink-rgb), 0.6);
+  background: rgba(var(--ink-rgb), 0.04);
+  border: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-radius: 20px; padding: 0.4rem 0.9rem;
   cursor: pointer; transition: all 0.2s;
 }
 .chat-preset-btn:hover {
-  background: rgba(217,119,87,0.18); border-color: var(--cinnabar);
+  background: rgba(var(--ink-rgb), 0.08); border-color: rgba(var(--ink-rgb), 0.25); color: var(--ink);
 }
 .chat-messages {
-  display: flex; flex-direction: column; gap: 0.8rem;
-  min-height: 60px; margin-bottom: 1rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  min-height: 80px; margin-bottom: 1rem;
 }
 .chat-msg {
-  max-width: 88%; padding: 0.7rem 1rem; border-radius: var(--radius-sm);
-  font-family: var(--serif-zh); font-size: 0.88rem; line-height: 1.65;
+  max-width: 85%; padding: 0.65rem 0.9rem; border-radius: 14px;
+  font-family: var(--serif-zh); font-size: 0.86rem; line-height: 1.6;
   animation: fadeIn 0.3s ease;
 }
 .chat-msg.user {
   align-self: flex-end; background: var(--ink);
-  color: var(--paper); border-bottom-right-radius: 2px;
+  color: var(--paper); border-bottom-right-radius: 4px;
 }
 .chat-msg.bot {
-  align-self: flex-start; background: rgba(var(--ink-rgb), 0.03);
-  color: var(--ink); border-bottom-left-radius: 2px;
-  border-left: 3px solid var(--cinnabar); padding-left: 0.9rem;
+  align-self: flex-start; background: #fff;
+  color: var(--ink); border-bottom-left-radius: 4px;
+  border-left: 3px solid rgba(var(--ink-rgb), 0.15);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .chat-msg .msg-label {
-  display: block; font-family: var(--serif-zh); font-size: 0.72rem;
-  font-weight: 700; color: var(--cinnabar);
-  margin-bottom: 0.3rem;
+  display: block; font-family: var(--serif-zh); font-size: 0.7rem;
+  font-weight: 700; color: rgba(var(--ink-rgb), 0.45);
+  margin-bottom: 0.25rem;
 }
 .chat-msg.thinking {
   opacity: 0.5; font-style: italic;
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 .chat-input-row {
-  display: flex; gap: 0.6rem;
+  display: flex; gap: 0.5rem; align-items: center;
+  background: #fff; border-radius: 28px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  padding: 0.3rem 0.3rem 0.3rem 1.1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: border-color 0.2s;
+}
+.chat-input-row:focus-within {
+  border-color: rgba(var(--ink-rgb), 0.5);
+  box-shadow: 0 0 0 3px rgba(var(--ink-rgb), 0.06);
 }
 .chat-input {
-  flex: 1; font-family: var(--serif-zh); font-size: 0.88rem;
-  padding: 0.65rem 1rem;
-  border: 1px solid rgba(var(--ink-rgb), 0.12);
-  border-radius: var(--radius-sm);
-  background: var(--paper); color: var(--ink);
-  outline: none; transition: border-color 0.2s;
+  flex: 1; font-family: var(--serif-zh); font-size: 0.86rem;
+  padding: 0.4rem 0;
+  border: none; background: transparent; color: var(--ink);
+  outline: none;
 }
-.chat-input:focus { border-color: var(--cinnabar); }
+.chat-input::placeholder { color: rgba(var(--ink-rgb), 0.25); }
 .chat-send {
-  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.04em;
-  padding: 0.65rem 1.4rem;
-  background: var(--cinnabar); color: #fff;
-  border: none; border-radius: var(--radius-sm);
+  padding: 0.45rem 1.2rem;
+  background: var(--ink); color: var(--paper);
+  border: none; border-radius: 24px;
   cursor: pointer; transition: all 0.2s;
 }
-.chat-send:hover { opacity: 0.85; }
-.chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+.chat-send:hover { opacity: 0.8; }
+.chat-send:disabled { opacity: 0.3; cursor: not-allowed; }
 .chat-limit {
   display: none; text-align: center;
-  font-family: var(--serif-zh); font-size: 0.8rem;
-  color: rgba(var(--ink-rgb), 0.45);
-  padding: 0.6rem; margin-top: 0.8rem;
-  border: 1px solid rgba(var(--ink-rgb), 0.08);
-  border-radius: var(--radius-sm);
+  font-family: var(--serif-zh); font-size: 0.78rem;
+  color: rgba(var(--ink-rgb), 0.4);
+  padding: 0.5rem; margin-top: 0.7rem;
+}
+.chat-rounds-left {
+  text-align: center;
+  font-family: var(--serif-zh); font-size: 0.76rem;
+  color: rgba(var(--ink-rgb), 0.28);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+.chat-rounds-left.warning { color: var(--cinnabar); }
+.chat-rounds-left.exhausted {
+  color: var(--cinnabar); font-weight: 600;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ── Next/Prev Character Nav ── */
+.next-prev-nav {
+  max-width: var(--reader-width); margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+.np-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.8rem;
+}
+.np-btn {
+  font-family: var(--serif-zh); font-size: 0.9rem;
+  color: rgba(var(--ink-rgb), 0.55);
+  background: none; border: 1px solid rgba(var(--ink-rgb), 0.1);
+  padding: 0.5rem 1.2rem; border-radius: 20px;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; flex: 1; text-align: center;
+}
+.np-btn:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.np-empty { border: none; cursor: default; opacity: 0; pointer-events: none; }
+.np-cat {
+  font-family: var(--mono); font-size: 0.65rem;
+  color: rgba(var(--ink-rgb), 0.3); letter-spacing: 0.06em;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* ── Floating Back-to-Chat Button ── */
+.float-chat-btn {
+  position: fixed; right: 1.5rem; bottom: 2rem; z-index: 100;
+  font-family: var(--serif-zh); font-size: 0.88rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--ink); color: var(--paper);
+  border: none; border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+}
+.float-chat-btn.visible {
+  opacity: 1; transform: translateY(0); pointer-events: auto;
+}
+.float-chat-btn:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+.float-board-btn {
+  position: fixed; right: 1.5rem; bottom: 5.5rem; z-index: 100;
+  font-family: var(--serif-zh); font-size: 0.82rem;
+  padding: 0.55rem 1.3rem;
+  background: #fff; color: var(--cinnabar);
+  border: 1px solid rgba(217,119,87,0.3);
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+}
+.float-board-btn.visible {
+  opacity: 1; transform: translateY(0); pointer-events: auto;
+}
+.float-board-btn:hover {
+  box-shadow: 0 6px 24px rgba(217,119,87,0.15);
+  border-color: var(--cinnabar);
 }
 
 /* ── Mental Models ── */
@@ -800,6 +1012,258 @@ footer {
   .quote-item { padding: 1.2rem 1.3rem; font-size: 1rem; }
   .timeline-strip { flex-direction: column; }
 }
+
+/* ── Message Board (归藏水墨便签) ── */
+.board-section {
+  max-width: 880px; margin: 5rem auto 5rem;
+  padding: 3rem 2.5rem 3rem;
+  position: relative;
+  scroll-margin-top: 6rem;
+  background: rgba(var(--ink-rgb), 0.012);
+  border: 1px solid rgba(var(--ink-rgb), 0.06);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), 0.02), 0 2px 16px rgba(0,0,0,0.04);
+}
+.board-title {
+  font-family: var(--serif-zh); font-size: 1.5rem;
+  font-weight: 600; color: var(--ink);
+  text-align: center; margin-bottom: 0.3rem;
+}
+.board-sub {
+  text-align: center;
+  font-family: var(--serif-zh); font-size: 0.85rem;
+  color: rgba(var(--ink-rgb), 0.4);
+  margin-bottom: 2.2rem;
+}
+.board-grid {
+  display: flex; flex-direction: column;
+  gap: 0.8rem; margin-bottom: 2rem;
+  min-height: 60px; max-width: 600px; margin-left: auto; margin-right: auto;
+}
+.board-note {
+  background: #fff;
+  border: 1px solid rgba(var(--ink-rgb), 0.06);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow-card);
+  font-family: var(--serif-zh); font-size: 0.88rem;
+  line-height: 1.7; color: rgba(var(--ink-rgb), 0.85);
+  position: relative;
+  transition: box-shadow 0.2s;
+  word-break: break-word;
+}
+.board-note:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+.note-char-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: 0.65rem;
+  color: var(--cinnabar);
+  background: var(--cinnabar-bg);
+  border-radius: 10px; padding: 0.1rem 0.5rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.note-index {
+  font-family: var(--mono); font-size: 0.6rem;
+  color: rgba(var(--ink-rgb), 0.18);
+  margin-right: 0.5rem; float: left;
+}
+.board-note .note-char {
+  display: block; margin-top: 0.5rem;
+  font-family: var(--mono); font-size: 0.64rem;
+  color: rgba(var(--ink-rgb), 0.35);
+  text-align: right;
+}
+.board-note .note-time {
+  font-family: var(--mono); font-size: 0.6rem;
+  color: rgba(var(--ink-rgb), 0.22);
+  display: block; text-align: right; margin-top: 0.15rem;
+}
+.note-toggle {
+  display: inline-block; margin-top: 0.5rem;
+  font-family: var(--serif-zh); font-size: 0.7rem;
+  color: rgba(var(--ink-rgb), 0.3);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.note-toggle:hover { color: var(--ink); }
+.note-replies {
+  margin-top: 0.5rem; padding-top: 0.5rem;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.06);
+}
+.board-reply {
+  padding: 0.45rem 0;
+  font-size: 0.78rem; line-height: 1.55;
+  color: rgba(var(--ink-rgb), 0.6);
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.04);
+}
+.board-reply:last-child { border-bottom: none; }
+.board-reply .reply-text { display: block; }
+.reply-input-row {
+  display: flex; gap: 0.4rem; margin-top: 0.5rem;
+  align-items: center;
+}
+.reply-input {
+  flex: 1; border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background: rgba(var(--ink-rgb), 0.02);
+  font-family: var(--serif-zh); font-size: 0.76rem;
+  padding: 0.35rem 0.6rem; border-radius: 12px;
+  outline: none; color: var(--ink);
+}
+.reply-input::placeholder { color: rgba(var(--ink-rgb), 0.2); }
+.reply-send {
+  font-family: var(--serif-zh); font-size: 0.72rem;
+  padding: 0.3rem 0.7rem; border: none; border-radius: 12px;
+  background: rgba(var(--ink-rgb), 0.06); color: rgba(var(--ink-rgb), 0.5);
+  cursor: pointer; transition: all 0.2s;
+}
+.reply-send:hover { background: var(--ink); color: var(--paper); }
+.board-empty {
+  width: 100%; text-align: center;
+  font-family: var(--serif-zh); font-size: 0.9rem;
+  color: rgba(var(--ink-rgb), 0.3);
+  padding: 2rem 0;
+}
+.board-examples {
+  display: flex; flex-direction: column; gap: 0.6rem;
+  margin-top: 1.2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+}
+.board-note.example {
+  opacity: 0.5; border-style: dashed;
+  pointer-events: none;
+}
+.board-note.example .note-toggle { display: none; }
+
+/* write area */
+.board-write {
+  max-width: 600px; margin: 0 auto 2rem;
+  background: #fff;
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  box-shadow: var(--shadow-card);
+}
+.board-input {
+  width: 100%; min-height: 64px;
+  border: none; background: transparent;
+  font-family: var(--serif-zh); font-size: 0.88rem;
+  line-height: 1.7; color: var(--ink);
+  resize: none; outline: none;
+}
+.board-input::placeholder { color: rgba(var(--ink-rgb), 0.2); }
+.board-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.6rem; margin-top: 0.6rem;
+}
+.board-count {
+  font-family: var(--mono); font-size: 0.65rem;
+  color: rgba(var(--ink-rgb), 0.25);
+  flex-shrink: 0;
+}
+.board-submit {
+  font-family: var(--serif-zh); font-size: 0.82rem;
+  padding: 0.35rem 1.2rem;
+  border: none; border-radius: 16px;
+  background: var(--ink); color: var(--paper);
+  cursor: pointer; transition: opacity 0.2s;
+}
+.board-submit:hover { opacity: 0.8; }
+.board-submit:disabled { opacity: 0.3; cursor: not-allowed; }
+.board-rate {
+  font-family: var(--mono); font-size: 0.62rem;
+  color: rgba(var(--ink-rgb), 0.25);
+}
+.board-msg {
+  text-align: center; margin-top: 0.4rem;
+  font-family: var(--serif-zh); font-size: 0.72rem;
+  color: var(--malachite);
+  display: none;
+}
+.board-msg.error { color: var(--cinnabar); }
+/* leaderboard */
+.board-leaderboard {
+  max-width: 600px; margin: 0 auto 1.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.board-leaderboard-label {
+  font-family: var(--mono); font-size: 0.62rem;
+  color: rgba(var(--ink-rgb), 0.3);
+  flex-shrink: 0;
+}
+.board-lb-item {
+  display: inline-flex; align-items: center; gap: 0.2rem;
+  font-family: var(--mono); font-size: 0.6rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(var(--ink-rgb), 0.04);
+  border: 1px solid rgba(var(--ink-rgb), 0.06);
+  color: rgba(var(--ink-rgb), 0.5);
+  cursor: pointer; transition: all 0.2s;
+  white-space: nowrap;
+}
+.board-lb-item:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.board-lb-item .lb-rank { color: rgba(var(--ink-rgb), 0.2); font-size: 0.55rem; }
+.board-lb-item .lb-count { color: rgba(var(--ink-rgb), 0.18); font-size: 0.55rem; }
+@media (max-width: 768px) {
+  .board-grid { gap: 0.7rem; }
+  .board-note { max-width: 100%; }
+}
+
+/* detail-page embedded board */
+.detail-board {
+  margin: 2rem 0 3rem;
+  padding: 1.8rem 1.6rem 2rem;
+  scroll-margin-top: 9rem;
+  border: 1px solid rgba(217,119,87,0.25);
+  border-radius: var(--radius-md);
+  animation: board-breathe 3s ease-in-out infinite;
+}
+@keyframes board-breathe {
+  0%, 100% { border-color: rgba(217,119,87,0.12); box-shadow: 0 0 0 0 rgba(217,119,87,0); }
+  50% { border-color: rgba(217,119,87,0.30); box-shadow: 0 0 12px 0 rgba(217,119,87,0.06); }
+}
+.detail-board-head {
+  font-family: var(--serif-zh); font-size: 1rem;
+  font-weight: 600; color: var(--ink);
+  margin-bottom: 1rem;
+}
+.detail-board .board-write {
+  max-width: 100%; margin: 0 0 1.5rem;
+}
+.detail-board .board-grid {
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+/* like button */
+.note-like {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  font-family: var(--mono); font-size: 0.7rem;
+  color: rgba(var(--ink-rgb), 0.3);
+  cursor: pointer; transition: color 0.2s;
+  border: none; background: none; padding: 0.2rem 0.4rem;
+  margin-left: 0.6rem;
+}
+.note-like:hover { color: var(--cinnabar); }
+.note-like.liked { color: var(--cinnabar); }
+.note-like .like-count { font-size: 0.68rem; }
+.note-delete {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; line-height: 1;
+  font-size: 0.65rem; color: rgba(var(--ink-rgb), 0.2);
+  background: none; border: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-radius: 50%; cursor: pointer; padding: 0;
+  margin-left: 0.35rem; transition: color 0.2s, border-color 0.2s;
+  vertical-align: middle;
+}
+.note-delete:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
+/* user name on note */
+.note-user {
+  font-family: var(--serif-zh); font-size: 0.72rem;
+  font-weight: 600; color: var(--cinnabar);
+  display: block; margin-bottom: 0.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -835,31 +1299,50 @@ footer {
 <div class="cat-nav-wrap" id="catNavWrap">
   <div class="cat-nav" id="catNav">
     <button data-cat="all" class="active">全部</button>
-    <button data-cat="科技/AI">科技/AI</button>
-    <button data-cat="科学/物理">科学/物理</button>
-    <button data-cat="商业/投资">商业/投资</button>
-    <button data-cat="风险/概率">风险/概率</button>
-    <button data-cat="营销/广告">营销/广告</button>
-    <button data-cat="内容/写作">内容/写作</button>
+    <button data-cat="人工智能">人工智能</button>
+    <button data-cat="科学/技术">科学/技术</button>
+    <button data-cat="商业/经济">商业/经济</button>
+    <button data-cat="营销/传播">营销/传播</button>
+    <button data-cat="写作/内容">写作/内容</button>
     <button data-cat="影视/创作">影视/创作</button>
-    <button data-cat="空间/设计">空间/设计</button>
-    <button data-cat="社会/人文">社会/人文</button>
+    <button data-cat="设计/艺术">设计/艺术</button>
+    <button data-cat="社会/政治">社会/政治</button>
+    <button data-cat="教育/学习">教育/学习</button>
+    <button data-cat="哲学/思想">哲学/思想</button>
+    <button data-cat="心理/认知">心理/认知</button>
+    <button data-cat="文学/人文">文学/人文</button>
+    <span class="cat-nav-sep">|</span>
+    <button class="cat-nav-sort-btn" id="sortToggle" onclick="toggleSort()" title="按留言数量排序">热度</button>
+    <button class="cat-nav-board-btn" onclick="scrollToBoard()">留言广场 ↓</button>
   </div>
 </div>
 
 <main>
   <div id="directory"></div>
   <div id="detail-container"></div>
+
+  <!-- ═══════════════ MESSAGE BOARD ═══════════════ -->
+  <section class="board-section" id="board-section">
+    <h2 class="board-title">留言板</h2>
+    <p class="board-sub">写下你想问的，或者看看别人留下了什么</p>
+    <div class="board-write">
+      <textarea class="board-input" id="board-input" placeholder="写点什么..." maxlength="200" oninput="updateBoardCount()"></textarea>
+      <div class="board-actions">
+        <span class="board-count" id="board-count">0/200</span>
+        <button class="board-submit" id="board-submit" onclick="postBoardMsg()">贴上</button>
+        <span class="board-rate" id="board-rate"></span>
+      </div>
+      <p class="board-msg" id="board-msg"></p>
+    </div>
+    <div class="board-leaderboard" id="board-leaderboard"></div>
+    <div class="board-grid" id="board-grid"><div class="board-empty">加载中...</div></div>
+  </section>
 </main>
 
 <!-- ═══════════════ CREDITS + QR ═══════════════ -->
 <section class="github-section">
   <h3>开源下载</h3>
   <p>所有人物 SKILL.md 文件在 <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog" target="_blank">GitHub</a> 开放下载，可放入 Claude Code、Cursor 或任意支持自定义指令的 AI 工具使用。</p>
-  <div class="qr-section">
-    <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="120" height="120" style="border-radius:var(--radius-md);border:1px solid rgba(var(--ink-rgb),0.08);">
-    <p>扫码加入「思维顾问局」交流群，提名你想蒸馏的人物</p>
-  </div>
 </section>
 
 <section class="creator-section">
@@ -896,7 +1379,41 @@ footer {
 
 <script src="_data/data.js"></script>
 <script>
-var CATEGORIES = ['科技/AI','科学/物理','商业/投资','风险/概率','营销/广告','内容/写作','影视/创作','空间/设计','社会/人文'];
+var CATEGORIES = ['人工智能','科学/技术','商业/经济','营销/传播','写作/内容','影视/创作','设计/艺术','社会/政治','教育/学习','哲学/思想','心理/认知','文学/人文'];
+var _sortMode = 'category'; // 'category' | 'heat'
+var _heatStats = {}; // { characterId: count }
+
+function fetchHeatStats() {
+  fetch('/api/board?stats=true')
+    .then(function(r) { return r.json(); })
+    .then(function(stats) {
+      _heatStats = {};
+      stats.forEach(function(s) { _heatStats[s.characterId] = s.count; });
+    }).catch(function() {});
+}
+
+function toggleSort() {
+  _sortMode = _sortMode === 'category' ? 'heat' : 'category';
+  var btn = document.getElementById('sortToggle');
+  if (_sortMode === 'heat') {
+    btn.innerHTML = '热度 ✓';
+    btn.classList.add('active');
+    btn.title = '再点回到分类排序';
+  } else {
+    btn.innerHTML = '热度';
+    btn.classList.remove('active');
+    btn.title = '按留言数量排序';
+  }
+  document.getElementById('directory').classList.remove('hidden');
+  document.getElementById('detail-container').classList.remove('active');
+  document.getElementById('board-section').style.display = '';
+  document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
+  if (location.hash) history.pushState({}, '', window.location.pathname);
+  var activeCat = document.querySelector('#catNav button[data-cat].active');
+  var cat = activeCat ? activeCat.dataset.cat : 'all';
+  renderDirectory(cat);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 var REC_MATRIX = [
   ['做重大决策，怕自己骗自己','费曼、芒格、塔勒布'],
   ['评估 AI 产品/技术前景','卡帕西、吴恩达、张一鸣'],
@@ -927,6 +1444,7 @@ function loadData() {
   var countEls = document.querySelectorAll('.char-count');
   for (var i = 0; i < countEls.length; i++) countEls[i].textContent = allCharacters.length;
   document.title = allCharacters.length + ' 位人物思维顾问 · 女娲蒸馏目录';
+  fetchHeatStats();
   renderDirectory();
   setupDetailSections();
 }
@@ -938,27 +1456,57 @@ function renderDirectory(filterCat) {
 
   if (filterCat === 'all') renderRecMatrix(dir);
 
-  var cats = filterCat === 'all' ? CATEGORIES : [filterCat];
+  if (_sortMode === 'heat') {
+    var hint = document.createElement('div');
+    hint.className = 'sort-hint';
+    hint.textContent = '按留言数量排序';
+    dir.appendChild(hint);
+  }
+
+  var cats = filterCat === 'all' ? CATEGORIES.slice() : [filterCat];
+
+  if (_sortMode === 'heat' && filterCat === 'all') {
+    cats.sort(function(a, b) {
+      var aTotal = allCharacters.filter(function(c) { return c.category === a; }).reduce(function(s, c) { return s + (_heatStats[c.id] || 0); }, 0);
+      var bTotal = allCharacters.filter(function(c) { return c.category === b; }).reduce(function(s, c) { return s + (_heatStats[c.id] || 0); }, 0);
+      return bTotal - aTotal;
+    });
+  }
 
   cats.forEach(function(cat) {
     var chars = allCharacters.filter(function(c) { return c.category === cat; });
-    if (!chars.length) return;
+    if (!chars.length) {
+      var emptySection = document.createElement('div');
+      emptySection.className = 'cat-section';
+      emptySection.setAttribute('data-category', cat);
+      emptySection.innerHTML = '<div class="cat-head"><h2>' + cat + '</h2><span class="cat-count">0 位</span></div><div class="empty-cat"><p>该领域暂无人物</p><p class="empty-cat-hint">有你想要但还没蒸馏的思维顾问？<br>扫码加入「思维顾问局」提名</p></div>';
+      dir.appendChild(emptySection);
+      return;
+    }
+
+    if (_sortMode === 'heat') {
+      chars = chars.slice().sort(function(a, b) { return (_heatStats[b.id] || 0) - (_heatStats[a.id] || 0); });
+    }
+
+    var catTotal = chars.reduce(function(s, c) { return s + (_heatStats[c.id] || 0); }, 0);
+    var catHeatHtml = (_sortMode === 'heat' && catTotal > 0) ? '<span class="cat-heat">' + catTotal + ' 留言</span>' : '';
 
     var colorIdx = CATEGORIES.indexOf(cat) % PANEL_COLORS.length;
     var section = document.createElement('div');
     section.className = 'cat-section ' + PANEL_COLORS[colorIdx];
     section.setAttribute('data-category', cat);
-    section.innerHTML = '<div class="cat-head"><h2>' + cat + '</h2><span class="cat-count">' + chars.length + ' 位</span></div>';
+    section.innerHTML = '<div class="cat-head"><h2>' + cat + '</h2><span class="cat-count">' + chars.length + ' 位</span>' + catHeatHtml + '</div>';
 
     var grid = document.createElement('div');
     grid.className = 'card-grid';
     chars.forEach(function(ch) {
       var card = document.createElement('div');
       card.className = 'card';
-      card.onclick = function() { showDetail(ch.id, 'read'); };
+      card.onclick = function() { showDetail(ch.id); };
       var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
       var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
-card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><span class="card-act" onclick="event.stopPropagation();showDetail(\'' + ch.id + '\',\'read\')">浏览</span><span class="card-act card-chat-act" onclick="event.stopPropagation();showDetail(\'' + ch.id + '\',\'chat\')">对话</span></div></div>';
+      var heatBadge = _sortMode === 'heat' ? '<span class="card-heat">' + (_heatStats[ch.id] || 0) + ' 留言</span>' : '';
+card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions">' + heatBadge + '<a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><span class="card-act" onclick="event.stopPropagation();showDetail(\'' + ch.id + '\')">浏览</span><span class="card-act card-chat-act" onclick="event.stopPropagation();showDetailChat(\'' + ch.id + '\')">对话</span></div></div>';
       grid.appendChild(card);
     });
     section.appendChild(grid);
@@ -1037,6 +1585,7 @@ function setupDetailSections() {
   allCharacters.forEach(function(ch) {
     container.insertAdjacentHTML('beforeend', renderDetail(ch));
   });
+  updateAllRoundsDisplays();
 }
 
 function renderDetail(ch) {
@@ -1050,12 +1599,49 @@ function renderDetail(ch) {
   h += '<div class="dh-oneliner">' + ch.oneliner + '</div>';
   h += '<div class="dh-identity">' + (ch.identity || '') + '</div>';
   h += '</div>';
-  h += '<div class="detail-tabs"><button class="dt-tab active" id="tab-read-' + ch.id + '" onclick="switchTab(\'' + ch.id + '\',\'read\')">人物资料</button><button class="dt-tab chat-tab" id="tab-chat-' + ch.id + '" onclick="switchTab(\'' + ch.id + '\',\'chat\')">问' + ch.name_cn + '</button></div>';
-  h += '<div class="dt-panel" id="panel-read-' + ch.id + '">';
+  if (ch.quotes && ch.quotes.length) {
+    h += '<div class="hero-quote">&ldquo;' + ch.quotes[0] + '&rdquo;</div>';
+  }
+
+  var mainPills = '', refPills = '';
+  function pillBtn(label, sid, cls) { return '<button class="section-nav-pill ' + cls + '" data-sec="sec-' + sid + '-' + ch.id + '" onclick="scrollToSection(\'' + sid + '\',\'' + ch.id + '\',this)">' + label + '</button>'; }
+  if (ch.mental_models && ch.mental_models.length) mainPills += pillBtn('心智模型', 'models', 'main');
+  if (ch.quotes && ch.quotes.length) mainPills += pillBtn('语录', 'quotes', 'main');
+  if (ch.heuristics && ch.heuristics.length) mainPills += pillBtn('启发式', 'heuristics', 'main');
+  if (ch.timeline_highlights && ch.timeline_highlights.length) refPills += pillBtn('时间线', 'timeline', 'ref');
+  if (ch.expression_dna) refPills += pillBtn('表达DNA', 'dna', 'ref');
+  if (ch.values && ch.values.length) refPills += pillBtn('价值观', 'values', 'ref');
+  if (ch.tensions && ch.tensions.length) refPills += pillBtn('张力', 'tensions', 'ref');
+  var hasNav = mainPills || refPills;
+  if (hasNav) {
+    h += '<div class="section-nav" id="section-nav-' + ch.id + '">';
+    h += '<button class="section-nav-pill nav-chat-pill" data-sec="chat-head-' + ch.id + '" onclick="scrollToChat(\'' + ch.id + '\')">对话</button>';
+    h += '<span class="nav-sep"></span>';
+    if (mainPills) h += mainPills;
+    if (mainPills && refPills) h += '<span class="nav-sep"></span>';
+    if (refPills) h += refPills;
+    h += '<span class="nav-sep"></span>';
+    h += '<button class="section-nav-pill nav-board-pill" data-sec="detail-board-' + ch.id + '" onclick="scrollToDetailBoard(\'' + ch.id + '\')">留言</button>';
+    h += '</div>';
+  }
+
+  h += '<h3 class="chat-section-head" id="chat-head-' + ch.id + '">→ 问' + ch.name_cn + '</h3>';
+  h += '<div class="chat-zone" id="chat-zone-' + ch.id + '">';
+  h += '<p class="chat-hint">尝鲜版 · 每轮独立提问</p>';
+  h += '<div class="chat-welcome" id="chat-welcome-' + ch.id + '"><div class="chat-msg bot"><span class="msg-label">' + ch.name_cn + '</span>有什么想聊的？直接问我。</div></div>';
+  h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
+  h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
+  h += '<div class="chat-rounds-left" id="chat-rounds-' + ch.id + '"></div>';
+  h += '<div class="chat-input-row">';
+  h += '<input class="chat-input" id="chat-input-' + ch.id + '" placeholder="向' + ch.name_cn + '提问..." onkeydown="if(event.key===\'Enter\')sendChat(\'' + ch.id + '\')">';
+  h += '<button class="chat-send" id="chat-send-' + ch.id + '" onclick="sendChat(\'' + ch.id + '\')">发送</button>';
+  h += '</div>';
+  h += '<div class="chat-limit" id="chat-limit-' + ch.id + '">聊了不少了，喝杯茶歇一下，一小时后再来。</div>';
+  h += '</div>';
   h += '<div class="detail-body">';
 
   if (ch.mental_models && ch.mental_models.length) {
-    h += '<div class="d-section"><h3>核心心智模型</h3><div class="model-list">';
+    h += '<div class="d-section" id="sec-models-' + ch.id + '"><h3>核心心智模型</h3><div class="model-list">';
     ch.mental_models.forEach(function(m, i) {
       h += '<div class="model-block"><div class="model-num">模型 ' + (i+1) + '</div><div class="model-name">' + m.name + '</div><div class="model-desc">' + (m.oneliner || '') + '</div>' + (m.body ? '<div class="model-body">' + m.body + '</div>' : '') + '</div>';
     });
@@ -1063,19 +1649,19 @@ function renderDetail(ch) {
   }
 
   if (ch.quotes && ch.quotes.length) {
-    h += '<div class="d-section"><h3>代表性语录</h3><div class="quote-list">';
+    h += '<div class="d-section" id="sec-quotes-' + ch.id + '"><h3>代表性语录</h3><div class="quote-list">';
     ch.quotes.forEach(function(q) { h += '<div class="quote-item">' + q + '</div>'; });
     h += '</div></div>';
   }
 
   if (ch.heuristics && ch.heuristics.length) {
-    h += '<div class="d-section"><h3>决策启发式</h3><ol class="heuristic-list">';
+    h += '<div class="d-section" id="sec-heuristics-' + ch.id + '"><h3>决策启发式</h3><ol class="heuristic-list">';
     ch.heuristics.forEach(function(ht, i) { h += '<li><span class="hnum">' + (i+1) + '</span>' + ht + '</li>'; });
     h += '</ol></div>';
   }
 
   if (ch.timeline_highlights && ch.timeline_highlights.length) {
-    h += '<div class="d-section"><h3>关键时间线</h3><div class="timeline-strip">';
+    h += '<div class="d-section" id="sec-timeline-' + ch.id + '"><h3>关键时间线</h3><div class="timeline-strip">';
     ch.timeline_highlights.forEach(function(t) {
       h += '<div class="tl-item"><div class="tl-year">' + t.year + '</div><div class="tl-event">' + t.event + '</div></div>';
     });
@@ -1083,63 +1669,173 @@ function renderDetail(ch) {
   }
 
   if (ch.expression_dna) {
-    h += '<div class="d-section"><h3>表达 DNA</h3><div class="dna-panel">' + ch.expression_dna + '</div></div>';
+    h += '<div class="d-section" id="sec-dna-' + ch.id + '"><h3>表达 DNA</h3><div class="dna-panel">' + ch.expression_dna + '</div></div>';
   }
 
   if (ch.values && ch.values.length) {
-    h += '<div class="d-section"><h3>价值观</h3><div class="value-strip">';
+    h += '<div class="d-section" id="sec-values-' + ch.id + '"><h3>价值观</h3><div class="value-strip">';
     ch.values.forEach(function(v) { h += '<span class="vtag">' + v + '</span>'; });
     h += '</div></div>';
   }
 
   if (ch.tensions && ch.tensions.length) {
-    h += '<div class="d-section"><h3>内在张力</h3><ul class="tension-list">';
+    h += '<div class="d-section" id="sec-tensions-' + ch.id + '"><h3>内在张力</h3><ul class="tension-list">';
     ch.tensions.forEach(function(t) { h += '<li>' + t + '</li>'; });
     h += '</ul></div>';
   }
 
   h += '</div>';
+  var ci = -1;
+  for (var i2 = 0; i2 < allCharacters.length; i2++) { if (allCharacters[i2].id === ch.id) { ci = i2; break; } }
+  var prevCh = null, nextCh = null;
+  for (var i2 = ci - 1; i2 >= 0; i2--) { if (allCharacters[i2].category === ch.category) { prevCh = allCharacters[i2]; break; } }
+  for (var i2 = ci + 1; i2 < allCharacters.length; i2++) { if (allCharacters[i2].category === ch.category) { nextCh = allCharacters[i2]; break; } }
+  h += '<div class="tail-cta"><p>以上是我公开表达过的思考。有些话我没写在文章里——<a href="javascript:scrollToChat(\'' + ch.id + '\')">直接问我</a>。</p></div>';
+  if (prevCh || nextCh) {
+    h += '<div class="next-prev-nav"><div class="np-row">';
+    h += prevCh ? '<button class="np-btn np-prev" onclick="showDetail(\'' + prevCh.id + '\')">&larr; ' + prevCh.name_cn + '</button>' : '<span class="np-btn np-empty"></span>';
+    h += '<span class="np-cat">' + ch.category + '</span>';
+    h += nextCh ? '<button class="np-btn np-next" onclick="showDetail(\'' + nextCh.id + '\')">' + nextCh.name_cn + ' &rarr;</button>' : '<span class="np-btn np-empty"></span>';
+    h += '</div></div>';
+  }
+  // message board at bottom
+  h += '<div class="detail-board" id="detail-board-' + ch.id + '">';
+  h += '<h3 class="detail-board-head">' + ch.name_cn + ' 的留言区</h3>';
+  h += '<div class="board-write">';
+  h += '<textarea class="board-input" id="board-input-detail-' + ch.id + '" placeholder="关于' + ch.name_cn + '，想说点什么..." maxlength="200" oninput="updateDetailBoardCount(\'' + ch.id + '\')"></textarea>';
+  h += '<div class="board-actions">';
+  h += '<span class="board-count" id="board-count-detail-' + ch.id + '">0/200</span>';
+  h += '<button class="board-submit" id="board-submit-detail-' + ch.id + '" onclick="postDetailBoardMsg(\'' + ch.id + '\')">贴上</button>';
   h += '</div>';
-  h += '<div class="dt-panel" id="panel-chat-' + ch.id + '" style="display:none">';
-  h += '<div class="chat-section"><h3>与 ' + ch.name_cn + ' 对话</h3><p class="chat-hint">尝鲜版 · 单轮对话 · 每次独立提问</p>';
-  h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
-  h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
-  h += '<div class="chat-input-row">';
-  h += '<input class="chat-input" id="chat-input-' + ch.id + '" placeholder="向' + ch.name_cn + '提问..." onkeydown="if(event.key===\'Enter\')sendChat(\'' + ch.id + '\')">';
-  h += '<button class="chat-send" id="chat-send-' + ch.id + '" onclick="sendChat(\'' + ch.id + '\')">发送</button>';
+  h += '<p class="board-msg" id="board-msg-detail-' + ch.id + '"></p>';
   h += '</div>';
-  h += '<div class="chat-limit" id="chat-limit-' + ch.id + '">聊了不少了，喝杯茶歇一下，一小时后再来。</div>';
+  h += '<div class="board-grid" id="detail-board-grid-' + ch.id + '"><div class="board-empty">加载中...</div></div>';
   h += '</div>';
-  h += '</div>';
+  h += '<button class="float-chat-btn" id="float-chat-' + ch.id + '" onclick="scrollToChat(\'' + ch.id + '\')">问' + ch.name_cn + '</button>';
+  h += '<button class="float-board-btn" id="float-board-' + ch.id + '" onclick="scrollToDetailBoard(\'' + ch.id + '\')">留言</button>';
   h += '</div>';
   return h;
 }
 
-function switchTab(id, tab) {
-  var readTab = document.getElementById('tab-read-' + id);
-  var chatTab = document.getElementById('tab-chat-' + id);
-  var readPanel = document.getElementById('panel-read-' + id);
-  var chatPanel = document.getElementById('panel-chat-' + id);
-  if (!readTab || !chatTab || !readPanel || !chatPanel) return;
-  if (tab === 'chat') {
-    readTab.classList.remove('active'); chatTab.classList.add('active');
-    readPanel.style.display = 'none'; chatPanel.style.display = 'block';
-  } else {
-    chatTab.classList.remove('active'); readTab.classList.add('active');
-    chatPanel.style.display = 'none'; readPanel.style.display = 'block';
+// IntersectionObserver for floating chat buttons
+var floatObservers = {};
+function setupFloatObserver(id) {
+  var zone = document.getElementById('chat-zone-' + id);
+  var btn = document.getElementById('float-chat-' + id);
+  var board = document.getElementById('detail-board-' + id);
+  var boardBtn = document.getElementById('float-board-' + id);
+  if (floatObservers[id]) floatObservers[id].disconnect();
+  if (zone && btn) {
+    floatObservers[id] = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.target === zone) {
+          if (entry.isIntersecting) btn.classList.remove('visible');
+          else btn.classList.add('visible');
+        }
+        if (entry.target === board) {
+          // show board float when board is below viewport, hide when reached
+          if (entry.isIntersecting) boardBtn.classList.remove('visible');
+          else boardBtn.classList.add('visible');
+        }
+      });
+    }, { threshold: 0 });
+    floatObservers[id].observe(zone);
+    if (board && boardBtn) floatObservers[id].observe(board);
+  }
+}
+// IntersectionObserver for section nav pill highlighting
+var sectionObservers = {};
+function setupSectionObserver(id) {
+  var nav = document.getElementById('section-nav-' + id);
+  if (!nav) return;
+  if (sectionObservers[id]) sectionObservers[id].disconnect();
+  var pills = nav.querySelectorAll('.section-nav-pill');
+  var secIds = [];
+  pills.forEach(function(p) { secIds.push(p.getAttribute('data-sec')); });
+  sectionObservers[id] = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        pills.forEach(function(p) { p.classList.remove('active'); });
+        var active = nav.querySelector('[data-sec="' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '-120px 0px 0px 0px' });
+  // also observe chat heading (has data-sec from nav-chat-pill)
+  var chatHead = document.getElementById('chat-head-' + id);
+  if (chatHead) sectionObservers[id].observe(chatHead);
+  secIds.forEach(function(sid) {
+    var el = document.getElementById(sid);
+    if (el) sectionObservers[id].observe(el);
+  });
+}
+function scrollToSection(sid, chId, btn) {
+  var el = document.getElementById('sec-' + sid + '-' + chId);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (btn) {
+    var nav = btn.parentNode;
+    nav.querySelectorAll('.section-nav-pill').forEach(function(p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+}
+function scrollToChat(id) {
+  var head = document.getElementById('chat-head-' + id);
+  if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  var nav = document.getElementById('section-nav-' + id);
+  if (nav) {
+    nav.querySelectorAll('.section-nav-pill').forEach(function(p) { p.classList.remove('active'); });
+    var chatPill = nav.querySelector('.nav-chat-pill');
+    if (chatPill) chatPill.classList.add('active');
   }
 }
 
-function showDetail(id, tab) {
+function scrollToBoard() {
+  document.getElementById('directory').classList.remove('hidden');
+  document.getElementById('detail-container').classList.remove('active');
+  document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
+  var bs = document.getElementById('board-section');
+  bs.style.display = '';
+  if (location.hash) history.pushState({}, '', window.location.pathname);
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      if (bs) bs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function scrollToDetailBoard(id) {
+  var board = document.getElementById('detail-board-' + id);
+  if (board) board.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  var nav = document.getElementById('section-nav-' + id);
+  if (nav) {
+    nav.querySelectorAll('.section-nav-pill').forEach(function(p) { p.classList.remove('active'); });
+    var boardPill = nav.querySelector('.nav-board-pill');
+    if (boardPill) boardPill.classList.add('active');
+  }
+}
+
+function showDetail(id, noPush) {
+  _lastScrollY = window.scrollY;
   document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
   var pane = document.getElementById('detail-' + id);
   if (pane) pane.style.display = 'block';
   document.getElementById('directory').classList.add('hidden');
   document.getElementById('detail-container').classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('board-section').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'instant' });
   var ch = findCharById(id);
   if (ch) renderPresets(ch);
-  switchTab(id, tab || 'read');
+  setupFloatObserver(id);
+  setupSectionObserver(id);
+  loadDetailBoard(id);
+  updateAllRoundsDisplays();
+  if (!noPush && location.hash !== '#' + id) {
+    history.pushState({ detailId: id }, '', '#' + id);
+  }
+}
+function showDetailChat(id) {
+  showDetail(id);
+  setTimeout(function() { scrollToChat(id); }, 400);
 }
 
 function findCharById(id) {
@@ -1157,8 +1853,24 @@ function renderPresets(ch) {
       presets.push('「' + ch.mental_models[0].name + '」和「' + ch.mental_models[1].name + '」之间有关联吗？');
     }
   }
-  presets.push('如果我想提升自己的判断力，你会怎么建议？');
-  presets.push('用一两句话概括你最重要的原则');
+  // Q3: domain-specific, from heuristic or quote
+  if (ch.heuristics && ch.heuristics.length) {
+    var h = ch.heuristics[0];
+    var hShort = h.length > 40 ? h.slice(0, 40) + '…' : h;
+    presets.push('你说「' + hShort + '」——能举个例子吗？');
+  } else if (ch.quotes && ch.quotes.length) {
+    var q = ch.quotes[0];
+    var qShort = q.length > 40 ? q.slice(0, 40) + '…' : q;
+    presets.push('你说过「' + qShort + '」——当时是什么情境？');
+  } else {
+    presets.push('在' + ch.category + '领域，你最重要的洞察是什么？');
+  }
+  // Q4: values-driven
+  if (ch.values && ch.values.length) {
+    presets.push('为什么「' + ch.values[0] + '」对你这么重要？');
+  } else {
+    presets.push('如果只留一条建议给后来者，会是什么？');
+  }
   var container = document.getElementById('presets-' + ch.id);
   if (!container) return;
   container.innerHTML = presets.map(function(p) {
@@ -1171,21 +1883,50 @@ function askPreset(id, text) {
   if (input) { input.value = text; sendChat(id); }
 }
 
+var ROUND_KEY = 'nw-rounds-total';
+var MAX_ROUNDS = 15;
+var COOLDOWN_MS = 1800000;
+
+function getRoundData() {
+  var d = JSON.parse(localStorage.getItem(ROUND_KEY) || '{"c":0,"t":0}');
+  if (Date.now() - d.t > COOLDOWN_MS) d = {c: 0, t: Date.now()};
+  return d;
+}
+function roundsLeft() { return Math.max(0, MAX_ROUNDS - getRoundData().c); }
+
+function updateAllRoundsDisplays() {
+  var left = roundsLeft();
+  document.querySelectorAll('[id^="chat-rounds-"]').forEach(function(el) {
+    var id = el.id.replace('chat-rounds-', '');
+    var input = document.getElementById('chat-input-' + id);
+    var sendBtn = document.getElementById('chat-send-' + id);
+    var welcome = document.getElementById('chat-welcome-' + id);
+    el.classList.remove('warning', 'exhausted');
+    if (left <= 0) {
+      el.textContent = '今天聊了不少了，30 分钟后恢复';
+      el.classList.add('exhausted');
+      if (input) { input.disabled = true; input.placeholder = '30 分钟后再来'; }
+      if (sendBtn) sendBtn.disabled = true;
+    } else {
+      el.textContent = '还可以对话 ' + left + ' 轮';
+      if (left <= 3) el.classList.add('warning');
+      if (input) { input.disabled = false; input.placeholder = '想说点什么？'; }
+      if (sendBtn) sendBtn.disabled = false;
+    }
+    if (welcome) welcome.style.display = (left <= 0) ? 'none' : '';
+  });
+}
+
 function sendChat(id) {
   var input = document.getElementById('chat-input-' + id);
   var sendBtn = document.getElementById('chat-send-' + id);
   var msgs = document.getElementById('chat-msgs-' + id);
-  var limit = document.getElementById('chat-limit-' + id);
   if (!input || !sendBtn || !msgs) return;
   var msg = input.value.trim();
   if (!msg) return;
 
-  var now = Date.now();
-  var key = 'nw-chat-' + Math.floor(now / 3600000);
-  var count = parseInt(localStorage.getItem(key) || '0', 10);
-  if (count >= 15) { limit.style.display = 'block'; return; }
+  if (roundsLeft() <= 0) { updateAllRoundsDisplays(); return; }
 
-  limit.style.display = 'none';
   sendBtn.disabled = true;
   input.disabled = true;
 
@@ -1212,14 +1953,15 @@ function sendChat(id) {
   .then(function(data) {
     thinkDiv.remove();
     addMsg(msgs, data.reply || '（对方沉默了片刻）', 'bot', ch.name_cn);
-    localStorage.setItem(key, count + 1);
+    var d = getRoundData();
+    d.c++; d.t = Date.now();
+    localStorage.setItem(ROUND_KEY, JSON.stringify(d));
+    updateAllRoundsDisplays();
   }).catch(function() {
     thinkDiv.remove();
     addMsg(msgs, '对话暂时中断，请稍后再试。', 'bot', '');
-  }).finally(function() {
     sendBtn.disabled = false;
     input.disabled = false;
-    input.focus();
   });
 }
 
@@ -1235,20 +1977,50 @@ function addMsg(container, text, cls, label) {
   return div;
 }
 
-function hideDetail() {
+var _lastScrollY = 0;
+function hideDetail(noPop) {
   document.getElementById('directory').classList.remove('hidden');
   document.getElementById('detail-container').classList.remove('active');
+  document.getElementById('board-section').style.display = '';
   document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: _lastScrollY, behavior: 'instant' });
+  if (!noPop && location.hash) {
+    history.pushState({}, '', window.location.pathname);
+  }
 }
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.detailId) {
+    showDetail(e.state.detailId, true);
+  } else {
+    hideDetail(true);
+  }
+});
 
 document.getElementById('catNav').addEventListener('click', function(e) {
   if (e.target.tagName !== 'BUTTON') return;
   var cat = e.target.dataset.cat;
+  if (!cat) return; // skip board button (no data-cat)
   document.querySelectorAll('#catNav button').forEach(function(b) { b.classList.remove('active'); });
   e.target.classList.add('active');
-  hideDetail();
+  document.getElementById('directory').classList.remove('hidden');
+  document.getElementById('detail-container').classList.remove('active');
+  document.getElementById('board-section').style.display = '';
+  document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
+  if (location.hash) history.pushState({}, '', window.location.pathname);
   renderDirectory(cat);
+  if (cat !== 'all') {
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        var section = document.querySelector('.cat-section[data-category="' + cat + '"]');
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  } else {
+    requestAnimationFrame(function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
 
 window.addEventListener('scroll', function() {
@@ -1258,6 +2030,299 @@ window.addEventListener('scroll', function() {
 });
 
 loadData();
+
+// ═══ Message Board ═══
+var BOARD_KEY = 'nw-board-posts';
+var BOARD_MAX_PER_HOUR = 5;
+var LIKE_KEY = 'nw-board-likes';
+var TOKEN_KEY = 'nw-board-tokens';
+
+function getBoardRate() {
+  var d = JSON.parse(localStorage.getItem(BOARD_KEY) || '{"c":0,"t":0}');
+  if (Date.now() - d.t > 3600000) d = {c: 0, t: Date.now()};
+  return d;
+}
+function boardPostsLeft() { return Math.max(0, BOARD_MAX_PER_HOUR - getBoardRate().c); }
+
+function getLikedSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(LIKE_KEY) || '[]')); } catch(e) { return new Set(); }
+}
+function markLiked(msgId) {
+  var s = getLikedSet(); s.add(msgId);
+  localStorage.setItem(LIKE_KEY, JSON.stringify(Array.from(s)));
+}
+
+function getTokens() {
+  try { return JSON.parse(localStorage.getItem(TOKEN_KEY) || '{}'); } catch(e) { return {}; }
+}
+function saveToken(msgId, delToken) {
+  var t = getTokens(); t[msgId] = delToken;
+  localStorage.setItem(TOKEN_KEY, JSON.stringify(t));
+}
+function removeToken(msgId) {
+  var t = getTokens(); delete t[msgId];
+  localStorage.setItem(TOKEN_KEY, JSON.stringify(t));
+}
+
+function updateBoardCount() {
+  var input = document.getElementById('board-input');
+  var count = document.getElementById('board-count');
+  if (input && count) count.textContent = input.value.length + '/200';
+}
+function updateDetailBoardCount(id) {
+  var input = document.getElementById('board-input-detail-' + id);
+  var count = document.getElementById('board-count-detail-' + id);
+  if (input && count) count.textContent = input.value.length + '/200';
+}
+
+function updateBoardRate() {
+  var left = boardPostsLeft();
+  var el = document.getElementById('board-rate');
+  var btn = document.getElementById('board-submit');
+  if (el) el.textContent = left > 0 ? '还可以写 ' + left + ' 条' : '稍等再写';
+  if (btn) btn.disabled = left <= 0;
+}
+
+function fmtTime(ts) {
+  var d = new Date(ts);
+  return (d.getMonth()+1) + '/' + d.getDate() + ' ' +
+    String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+}
+
+function renderBoard(msgList, gridId) {
+  var grid = document.getElementById(gridId);
+  if (!grid) return;
+  var allMsgs = msgList || [];
+  if (!allMsgs.length) {
+    var isDetail = gridId.indexOf('detail-') === 0;
+    grid.innerHTML = '<div class="board-empty">' + (isDetail ? '还没有留言。写下第一条吧。' : '还没有便签。写下第一张吧。') + '</div>' +
+      '<div class="board-examples">' +
+        '<div class="board-note example"><span class="note-user">小雨</span><span class="note-index">例</span>问卡帕西一个问题，看他的回答能到第几轮</div>' +
+        '<div class="board-note example"><span class="note-user">阿哲</span><span class="note-index">例</span>在 Bret Victor 的卡片里我看到了"可见性"——原来我一直在黑箱里工作，只是没意识到</div>' +
+        '<div class="board-note example"><span class="note-user">老陈</span><span class="note-index">例</span>用你的话描述这本书，它会直接从作者的脑子里说话</div>' +
+      '</div>';
+    return;
+  }
+  var likedSet = getLikedSet();
+  var tokensMap = getTokens();
+  var filterCharId = gridId.indexOf('detail-board-grid-') === 0 ? gridId.replace('detail-board-grid-', '') : null;
+  var parents = allMsgs.filter(function(m) { return !m.parentId; });
+  var replies = {};
+  allMsgs.forEach(function(m) {
+    if (m.parentId) {
+      if (!replies[m.parentId]) replies[m.parentId] = [];
+      replies[m.parentId].push(m);
+    }
+  });
+  grid.innerHTML = parents.map(function(m) {
+    var reps = replies[m.id] || [];
+    var repCount = reps.length;
+    var userName = m.characterName ? '<span class="note-user">' + escHtml(m.characterName) + '</span>' : '';
+    var charTag = m.characterId ? '<span class="note-char-tag">@' + escHtml(getCharName(m.characterId) || m.characterId) + '</span>' : '';
+    var likes = m.likes || 0;
+    var liked = likedSet.has(m.id);
+    var owned = tokensMap.hasOwnProperty(m.id);
+    var delBtn = owned ? '<button class="note-delete" onclick="event.stopPropagation();deleteMsg(\'' + m.id + '\',\'' + (filterCharId||'') + '\',\'' + gridId + '\')" title="删除">✕</button>' : '';
+    var repHTML = repCount ? '<div class="note-replies" id="replies-' + m.id + '" style="display:none">' +
+      reps.map(function(r) {
+        var rName = r.characterName ? '<span class="note-user">' + escHtml(r.characterName) + '</span>' : '';
+        return '<div class="board-reply">' + rName + '<span class="reply-text">' + escHtml(r.text) + '</span><span class="note-time">' + fmtTime(r.time) + '</span></div>';
+      }).join('') +
+      '</div>' +
+      '<div class="reply-input-row" id="reply-row-' + m.id + '" style="display:none">' +
+      '<input class="reply-input" id="reply-input-' + m.id + '" placeholder="回应..." maxlength="140" onkeydown="if(event.key===\'Enter\')postReply(\'' + m.id + '\')">' +
+      '<button class="reply-send" onclick="postReply(\'' + m.id + '\')">回</button>' +
+      '</div>' : '';
+    var toggle = repCount ? '<span class="note-toggle" onclick="toggleReplies(\'' + m.id + '\')">' + repCount + ' 条回应</span>' :
+      '<span class="note-toggle" onclick="toggleReplies(\'' + m.id + '\')">回应</span>';
+    return '<div class="board-note">' +
+      userName +
+      '<span class="note-index">#' + (parents.length - parents.indexOf(m)) + '</span>' +
+      escHtml(m.text) +
+      charTag +
+      '<span class="note-time">' + fmtTime(m.time) + '</span>' +
+      toggle +
+      '<button class="note-like' + (liked ? ' liked' : '') + '" onclick="likeMsg(\'' + m.id + '\',this)">♥ <span class="like-count">' + (likes || '') + '</span></button>' +
+      delBtn +
+      repHTML +
+      '</div>';
+  }).join('');
+}
+
+function loadBoard(filterCharId, gridId) {
+  gridId = gridId || 'board-grid';
+  var url = '/api/board';
+  if (filterCharId) url += '?characterId=' + encodeURIComponent(filterCharId);
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(allMsgs) { renderBoard(allMsgs, gridId); })
+    .catch(function() {
+      var grid = document.getElementById(gridId);
+      if (grid) grid.innerHTML = '<div class="board-empty">便签暂时加载不了</div>';
+    });
+}
+
+function loadDetailBoard(charId) {
+  loadBoard(charId, 'detail-board-grid-' + charId);
+}
+
+function likeMsg(msgId, btn) {
+  if (!msgId) return;
+  var likedSet = getLikedSet();
+  if (likedSet.has(msgId)) return;
+  markLiked(msgId);
+  if (btn) {
+    btn.classList.add('liked');
+    var countEl = btn.querySelector('.like-count');
+    if (countEl) countEl.textContent = (Number(countEl.textContent) || 0) + 1;
+  }
+  fetch('/api/board', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'like', id: msgId })
+  }).catch(function() {});
+}
+
+function toggleReplies(id) {
+  var reps = document.getElementById('replies-' + id);
+  var row = document.getElementById('reply-row-' + id);
+  if (!reps && !row) return;
+  var show = reps ? (reps.style.display === 'none') : true;
+  if (reps) reps.style.display = show ? '' : 'none';
+  if (row) row.style.display = show ? '' : 'none';
+}
+
+function postReply(parentId, charId) {
+  var input = document.getElementById('reply-input-' + parentId);
+  if (!input) return;
+  var text = input.value.trim();
+  if (!text || text.length > 140) return;
+  if (boardPostsLeft() <= 0) { updateBoardRate(); return; }
+  input.disabled = true;
+  fetch('/api/board', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: text, parentId: parentId, characterId: charId || null })
+  }).then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.ok) {
+      input.value = '';
+      var d = getBoardRate();
+      d.c++; d.t = Date.now();
+      localStorage.setItem(BOARD_KEY, JSON.stringify(d));
+      updateBoardRate();
+      if (charId) loadDetailBoard(charId);
+      else loadBoard();
+    }
+  }).catch(function() { input.disabled = false; });
+}
+
+function deleteMsg(msgId, charId, gridId) {
+  var tokens = getTokens();
+  var dt = tokens[msgId];
+  if (!dt) return;
+  if (!confirm('删除这条留言？')) return;
+  fetch('/api/board', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'delete', id: msgId, delToken: dt })
+  }).then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.ok) {
+      removeToken(msgId);
+      if (charId) loadDetailBoard(charId);
+      else loadBoard();
+    }
+  });
+}
+
+function postBoardMsg(charId) {
+  var inputId = charId ? 'board-input-detail-' + charId : 'board-input';
+  var submitId = charId ? 'board-submit-detail-' + charId : 'board-submit';
+  var msgId = charId ? 'board-msg-detail-' + charId : 'board-msg';
+  var input = document.getElementById(inputId);
+  if (!input) return;
+  var text = input.value.trim();
+  var msgEl = document.getElementById(msgId);
+  if (msgEl) { msgEl.style.display = 'none'; msgEl.classList.remove('error'); }
+  if (!text) {
+    if (msgEl) { msgEl.textContent = '写点内容再贴上'; msgEl.style.display = 'block'; msgEl.classList.add('error'); }
+    return;
+  }
+  if (text.length > 200) {
+    if (msgEl) { msgEl.textContent = '最多200字'; msgEl.style.display = 'block'; msgEl.classList.add('error'); }
+    return;
+  }
+  if (boardPostsLeft() <= 0) {
+    if (msgEl) { msgEl.textContent = '写得有点快，稍等再写'; msgEl.style.display = 'block'; msgEl.classList.add('error'); }
+    updateBoardRate();
+    return;
+  }
+  var btn = document.getElementById(submitId);
+  if (btn) btn.disabled = true;
+  fetch('/api/board', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: text, characterId: charId || null })
+  }).then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.ok) {
+      input.value = '';
+      if (charId) updateDetailBoardCount(charId);
+      else updateBoardCount();
+      var d = getBoardRate();
+      d.c++; d.t = Date.now();
+      localStorage.setItem(BOARD_KEY, JSON.stringify(d));
+      updateBoardRate();
+      if (data.msg && data.msg.delToken) saveToken(data.msg.id, data.msg.delToken);
+      if (charId) loadDetailBoard(charId);
+      else loadBoard();
+      if (msgEl) { msgEl.textContent = '贴上了 ✓'; msgEl.style.display = 'block'; msgEl.classList.remove('error'); }
+      setTimeout(function() { if (msgEl) msgEl.style.display = 'none'; }, 3000);
+    } else {
+      if (msgEl) { msgEl.textContent = '发送失败，稍后再试'; msgEl.style.display = 'block'; msgEl.classList.add('error'); }
+    }
+  }).catch(function() {
+    if (msgEl) { msgEl.textContent = '网络问题，稍后再试'; msgEl.style.display = 'block'; msgEl.classList.add('error'); }
+  }).finally(function() {
+    if (btn) btn.disabled = false;
+  });
+}
+
+function postDetailBoardMsg(charId) {
+  postBoardMsg(charId);
+}
+
+function getCharName(charId) {
+  if (!charId) return '';
+  var found = allCharacters.filter(function(c) { return c.id === charId || c.id === 'perspective-' + charId; });
+  if (!found.length) found = allCharacters.filter(function(c) { return c.id.replace(/^perspective-/, '') === charId; });
+  return found.length ? found[0].name_cn : charId;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function loadLeaderboard() {
+  fetch('/api/board?stats=true')
+    .then(function(r) { return r.json(); })
+    .then(function(stats) {
+      var el = document.getElementById('board-leaderboard');
+      if (!el || !stats.length) return;
+      var top5 = stats.slice(0, 5);
+      el.innerHTML = '<span class="board-leaderboard-label">热议人物</span>' +
+        top5.map(function(s, i) {
+          var name = getCharName(s.characterId) || s.characterId;
+          return '<a class="board-lb-item" href="#' + s.characterId + '" onclick="scrollToDetailBoard(\'' + s.characterId + '\')"><span class="lb-rank">' + (i+1) + '</span> ' + escHtml(name) + ' <span class="lb-count">' + s.count + '</span></a>';
+        }).join('');
+    }).catch(function() {});
+}
+
+// init board
+loadBoard();
+loadLeaderboard();
+updateBoardRate();
 </script>
 </body>
 </html>

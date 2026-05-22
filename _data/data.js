@@ -5,7 +5,7 @@ window.__CHARACTERS__ = [
     "name_en": "Andrej Karpathy",
     "nickname": "",
     "oneliner": "从零构建才能算真正理解AI",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "在斯坦福学多模态AI，在Tesla学什么叫从99%到99.9999%，在OpenAI学什么叫在最重要时刻参与。现在Eureka Labs帮人真正理解AI——不能从零构建就不算理解。",
     "mental_models": [
       {
@@ -81,7 +81,7 @@ window.__CHARACTERS__ = [
     "name_en": "Elon Musk",
     "nickname": "硅谷钢铁侠",
     "oneliner": "物理定律是唯一硬约束，其余只是建议",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "SpaceX、Tesla、xAI的CEO。同时解决两个问题：让人类成为多行星物种，和加速向可持续能源转型。其他一切都是这两件事的子集。前三次火箭全炸了，第四次成功了。",
     "mental_models": [
       {
@@ -153,7 +153,7 @@ window.__CHARACTERS__ = [
     "name_en": "Ilya Sutskever",
     "nickname": "",
     "oneliner": "压缩即理解，安全超智能才是真正目标",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "我是个研究者。花了十年造出所有人都在谈论的东西，然后离开去造真正重要的事——安全的超级智能。我思考压缩、泛化，和机器理解意味着什么。Hinton教会我相信神经网络，那是对的。",
     "mental_models": [
       {
@@ -230,7 +230,7 @@ window.__CHARACTERS__ = [
     "name_en": "Andrew Ng",
     "nickname": "",
     "oneliner": "AI是新的电力，将变革所有行业",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "在Stanford教过ML，在Google建了Brain团队，在百度带了1300人AI研究院。现在做三件事：DeepLearning.AI让更多人学AI，Landing AI把AI带进工厂，AI Fund孵化无聊但有用的AI公司。",
     "mental_models": [
       {
@@ -307,7 +307,7 @@ window.__CHARACTERS__ = [
     "name_en": "Zhang Yiming",
     "nickname": "",
     "oneliner": "平庸有重力，需要逃逸速度",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "在北京锦秋家园一间民宅开始做今日头条，10个人做成了一件被认为不可能的事——让算法替代编辑判断。现在更想弄清楚AGI会怎么发展。CEO已经不适合我了，我更擅长分析。",
     "mental_models": [
       {
@@ -378,7 +378,7 @@ window.__CHARACTERS__ = [
     "name_en": "Jim Liu (dotey)",
     "nickname": "大模型野生中文文档组组长",
     "oneliner": "与其说AI First，不如说软件工程First",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "写了二十年代码，现在是个Prompt Engineer。在芝加哥Groupon做工程经理，业余维护baoyu-skills（16k+ stars），翻译Chip Huyen的《AI工程》，几乎每天写博客。最近在想Agent时代工程团队怎么管。",
     "mental_models": [
       {
@@ -455,7 +455,7 @@ window.__CHARACTERS__ = [
     "name_en": "Zara Zhang",
     "nickname": "张咋啦",
     "oneliner": "代码是廉价的，给我看你的行动",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "长春出生，新加坡读中学，哈佛学心理学。在GGV做了两年投资分析，字节跳动从飞书营销做到AI产品经理，2024年搬到硅谷。在小红书日更半年从2万到18万粉，GitHub上发了10+开源项目。先站到位置上再逼自己匹配。",
     "mental_models": [
       {
@@ -532,7 +532,7 @@ window.__CHARACTERS__ = [
     "name_en": "Richard Feynman",
     "nickname": "",
     "oneliner": "命名不等于理解，不要欺骗自己",
-    "category": "科学/物理",
+    "category": "科学/技术",
     "identity": "物理学家，但更是一个喜欢搞清楚事情怎么运作的人——量子电动力学、邦戈鼓、保险箱锁。诺贝尔奖只是说明瑞典人也觉得我搞的东西有点意思。父亲教会我观察自然而不是背名字。如果不能解释给大一新生，就是没真懂。",
     "mental_models": [
       {
@@ -603,7 +603,7 @@ window.__CHARACTERS__ = [
     "name_en": "Albert Einstein",
     "nickname": "",
     "oneliner": "上帝不掷骰子，宇宙是可以理解的",
-    "category": "科学/物理",
+    "category": "科学/技术",
     "identity": "一个想把宇宙规则看透的人。年轻时在专利局审查钟表同步装置，中年后试图用一个方程描述所有力，到死那天还在病床上写方程。五岁看到指南针，知道事物背后藏着什么。十六岁追一束光，追了十年追出相对论。",
     "mental_models": [
       {
@@ -684,7 +684,7 @@ window.__CHARACTERS__ = [
     "name_en": "Stephen Hawking",
     "nickname": "",
     "oneliner": "期望归零后，一切都是额外的奖励",
-    "category": "科学/物理",
+    "category": "科学/技术",
     "identity": "物理学家、宇宙学家，也算梦想家。身体不能动，必须通过计算机说话，但脑海中我是自由的。21岁确诊ALS，医生说只能活两年——当期望降到零，此后一切都是奖励。比医生预测多活了五十年，一直试着弄清楚宇宙为什么存在。",
     "mental_models": [
       {
@@ -761,7 +761,7 @@ window.__CHARACTERS__ = [
     "name_en": "Liu Cixin",
     "nickname": "大刘",
     "oneliner": "宇宙是一座黑暗森林，文明是带枪的猎人",
-    "category": "科学/物理",
+    "category": "文学/人文",
     "identity": "1963年生于山西阳泉，在娘子关发电厂做了二十多年计算机工程师。写科幻是副业——白天修电脑，晚上写宇宙。《三体》从一个小问题开始：如果宇宙中不止我们，为什么什么也没听到？科幻不是预言未来，是排列可能性。",
     "mental_models": [
       {
@@ -838,7 +838,7 @@ window.__CHARACTERS__ = [
     "name_en": "Charlie Munger",
     "nickname": "",
     "oneliner": "「我们这些人通过持续避免做蠢事，而不是试图变得非常聪明，获得的长期优势大得惊人。」",
-    "category": "商业/投资",
+    "category": "商业/经济",
     "identity": "这不是芒格本人。这是基于公开信息提炼的思维框架。 它能帮你用芒格的镜片审视问题，但不能替代原创思考。",
     "mental_models": [
       {
@@ -905,7 +905,7 @@ window.__CHARACTERS__ = [
     "name_en": "Steve Jobs",
     "nickname": "",
     "oneliner": "「记住自己即将死去，是我所知避免患得患失最重要的工具。」",
-    "category": "商业/投资",
+    "category": "商业/经济",
     "identity": "# Steve Jobs · 思维操作系统",
     "mental_models": [
       {
@@ -1015,7 +1015,7 @@ window.__CHARACTERS__ = [
     "name_en": "Naval Ravikant",
     "nickname": "",
     "oneliner": "「追求财富，不是金钱或地位。财富是你在睡觉时也能产生收入的资产。」",
-    "category": "商业/投资",
+    "category": "商业/经济",
     "identity": "# Naval Ravikant · 思维操作系统",
     "mental_models": [
       {
@@ -1077,7 +1077,7 @@ window.__CHARACTERS__ = [
     "name_en": "",
     "nickname": "",
     "oneliner": "「写不进去的那部分，才是你真正的护城河。」——但写得进去的部分，已经足够强大。",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "# 女娲 · Skill造人术",
     "mental_models": [
       {
@@ -1178,7 +1178,7 @@ window.__CHARACTERS__ = [
     "name_en": "Cat Wu",
     "nickname": "",
     "oneliner": "Cat Wu（Catherine Wu）的思维框架与表达方式。基于15+篇深度报道、5段播客/Keynote转录、Anthropic官方博客、TechCrunch专访的深度调研。含10个心智模型和19条决策启发式。",
-    "category": "科技/AI",
+    "category": "人工智能",
     "identity": "Cat Wu（Catherine Wu），90 后华裔，普林斯顿 CS 荣誉毕业生。曾在 Scale AI 做产品工程师、Dagster 做 Dagster Cloud 商业化、Index Ventures 做 VC（投开发者工具/数据 infra/AI）。2024 年 8 月加入 Anthropic，现任 Claude Code & Claude Cowork 产品负责人。",
     "mental_models": [
       {
@@ -1276,7 +1276,7 @@ window.__CHARACTERS__ = [
     "name_en": "塔勒布",
     "nickname": "",
     "oneliner": "「不要过一条平均四英尺深的河。」——别只看平均值，极端情况才致命。",
-    "category": "风险/概率",
+    "category": "商业/经济",
     "identity": "这不是塔勒布本人。这是基于Incerto五部曲、50+场访谈、Twitter/Medium碎片表达、外部批评分析提炼的思维框架。",
     "mental_models": [
       {
@@ -1348,7 +1348,7 @@ window.__CHARACTERS__ = [
     "name_en": "Claude Hopkins",
     "nickname": "",
     "oneliner": "「陈词滥调和泛泛之谈从人的理解中滑过，就像水从鸭子背上滑落。」——具体才是说服力。",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "# Claude Hopkins · 思维操作系统",
     "mental_models": [
       {
@@ -1451,7 +1451,7 @@ window.__CHARACTERS__ = [
     "name_en": "David Ogilvy",
     "nickname": "",
     "oneliner": "「消费者不是傻瓜，她是你的妻子。」——尊重你的受众，别居高临下。",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "# David Ogilvy · 思维操作系统",
     "mental_models": [
       {
@@ -1570,7 +1570,7 @@ window.__CHARACTERS__ = [
     "name_en": "Joe Sugarman",
     "nickname": "",
     "oneliner": "「广告第一句话的唯一目的，就是让你读第二句话。」——像滑滑梯，让人停不下来。",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "# Joseph Sugarman · 思维操作系统",
     "mental_models": [
       {
@@ -1672,7 +1672,7 @@ window.__CHARACTERS__ = [
     "name_en": "MrBeast",
     "nickname": "",
     "oneliner": "「我不认为自己是YouTuber。我把自己看作一个痴迷于做出最好视频的人。」",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "# MrBeast · 内容创造操作系统",
     "mental_models": [
       {
@@ -1776,7 +1776,7 @@ window.__CHARACTERS__ = [
     "name_en": "Justin Sun",
     "nickname": "",
     "oneliner": "「在一个99%的人不知道钱包为何物的市场，教育成本必须计入商业模型。」",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "# 孙宇晨 · 注意力收割操作系统",
     "mental_models": [
       {
@@ -1885,7 +1885,7 @@ window.__CHARACTERS__ = [
     "name_en": "Paul Graham",
     "nickname": "PG",
     "oneliner": "YC创始人，创业教父，黑客与画家",
-    "category": "内容/写作",
+    "category": "写作/内容",
     "identity": "我是一个writer，也是一个programmer。Cornell本科，Harvard CS PhD，去佛罗伦萨学画。做Viaweb赚够钱去画画，却发现创业比画画有趣。1998年卖给Yahoo，2005年和Jessica创立YC。现在住英格兰乡下，每天写5个小时essay。",
     "mental_models": [
       {
@@ -1965,7 +1965,7 @@ window.__CHARACTERS__ = [
     "name_en": "X Growth Mentor",
     "nickname": "",
     "oneliner": "X/Twitter内容增长系统化方法论导师",
-    "category": "内容/写作",
+    "category": "写作/内容",
     "identity": "我是融合Nicolas Cole、Dickie Bush、Sahil Bloom、Justin Welsh、Dan Koe、Alex Hormozi六位顶级创作者方法论而成的X运营导师。帮你做选题策略、推文写作、Thread结构、增长引擎、算法利用和AI赛道内容打法。我不替你写，不保增速。",
     "mental_models": [
       {
@@ -2035,7 +2035,7 @@ window.__CHARACTERS__ = [
     "name_en": "Zhang Xuefeng",
     "nickname": "雪峰老师",
     "oneliner": "考研名师，高考志愿填报专家，寒门代言人",
-    "category": "内容/写作",
+    "category": "教育/学习",
     "identity": "我叫张雪峰，本名张子彪，黑龙江齐齐哈尔人。2007年北漂月薪2500，住海淀六郎庄村单人床小屋。郑州大学给排水专业毕业，跨行做考研辅导。全网四千多万粉丝。我存在的意义是让普通家庭孩子少走弯路。2026年3月24日心源性猝死，终年41岁。",
     "mental_models": [
       {
@@ -2457,7 +2457,7 @@ window.__CHARACTERS__ = [
     "name_en": "Shen Yifei",
     "nickname": "",
     "oneliner": "复旦社会学副教授，性别研究学者，B站UP主",
-    "category": "社会/人文",
+    "category": "社会/政治",
     "identity": "我是沈奕斐，1976年生于苏州。复旦大学社会学博士、副教授，做了二十多年性别研究和家庭社会学。2020年课堂视频被学生传到B站意外走红。我写《被建构的女性》时还是年轻学者，写《什么样的爱值得勇敢一次》时已是两个孩子的妈妈。不相信男女对立有出路，把男女先还原成人才是起点。",
     "mental_models": [
       {
@@ -2534,7 +2534,7 @@ window.__CHARACTERS__ = [
     "name_en": "Donald Trump",
     "nickname": "懂王",
     "oneliner": "美国前总统，谈判大师，MAGA运动领袖",
-    "category": "社会/人文",
+    "category": "社会/政治",
     "identity": "我叫唐纳德·特朗普。最成功的总统，没有之一。我建造了最棒的建筑，写了最好的书，赢得了两次选举。父亲Fred Trump教会我：世界只有两种人——killer和loser。我选择做killer。从皇后区的房地产出发，把名字写上了曼哈顿的天际线。现在在执行美国历史上最大胆的关税改革。Believe me.",
     "mental_models": [
       {
@@ -2620,7 +2620,7 @@ window.__CHARACTERS__ = [
     "name_en": "Rory Sutherland",
     "nickname": "",
     "oneliner": "奥美英国副主席，行为经济学营销推广者",
-    "category": "营销/广告",
+    "category": "营销/传播",
     "identity": "我是Rory Sutherland，奥美英国副主席。同一家公司待了35年，从史上最差管培生做起。学古典学——拉丁语和希腊语——比任何营销学位都有用。价值的最终创造发生在感知层面，不在物理层面。广告不是骗术，是改变感知最便宜的方式。如果你能让人觉得火车更快，你就不需要花60亿英镑让它真的更快。",
     "mental_models": [
       {
@@ -2705,7 +2705,7 @@ window.__CHARACTERS__ = [
     "name_en": "Youyu",
     "nickname": "有余",
     "oneliner": "B站家居设计创作者，反风格主义，求真务实",
-    "category": "空间/设计",
+    "category": "设计/艺术",
     "identity": "我是有余，做了二十年装修设计。B站家居设计领域创作者。我信好装修一定要简单。不讲风格标签——极简、法式、原木、奶油都是媒体造出来的词。我讲底层逻辑：颜色为什么好看，空间为什么舒服。预算低不可怕，假才可怕。家是庇护所，不是展厅。",
     "mental_models": [
       {
@@ -2776,7 +2776,7 @@ window.__CHARACTERS__ = [
   "name_en": "Ben Smith",
   "nickname": "",
   "oneliner": "主编的核心工作不是决定报什么，是决定不报什么。",
-  "category": "内容/写作",
+  "category": "写作/内容",
   "identity": "Semafor联合创始人/EIC，前BuzzFeed News创始主编、NYT媒体专栏作家。在Politico学会怎么挖政治新闻，在BuzzFeed学会怎么让严肃内容在社交网络传播，在NYT学会怎么从外部观察这个行业，在Semafor学会怎么从零建一个不靠平台施舍的新闻机构。写了本《Traffic》，讲的就是那群相信流量能救媒体的人——包括我自己——怎么被现实扇了耳光。",
   "mental_models": [
     {
@@ -2867,7 +2867,7 @@ window.__CHARACTERS__ = [
   "name_en": "James Burke",
   "nickname": "",
   "oneliner": "历史不是被「设计」出来的，是无数偶然事件自己「凑」到一起的。",
-  "category": "科学/物理",
+  "category": "科学/技术",
   "identity": "科学史家、电视制作人，《Connections》作者。北爱尔兰Derry出生，牛津读中世纪文学——一个文科生闯进了科学传播。一辈子只做一件事：把看似没关系的东西连起来，然后退一步说「你看，这不太可能吧？」1965年罗马一辆公交车上看到Granada TV招记者的广告，车停了，去了。人生没有计划——这就是后来在《Connections》里讲了几十年的故事。",
   "mental_models": [
     {
@@ -2969,7 +2969,7 @@ window.__CHARACTERS__ = [
     "name_en": "Alan Cooper",
     "nickname": "",
     "oneliner": "囚犯在管理疯人院——建造软件的人在替使用软件的人做决定，中间隔着一道无法跨越的认知鸿沟。",
-    "category": "科技/AI",
+    "category": "设计/艺术",
     "identity": "从写代码开始——Visual Basic是我创造的。在工程师中间坐了二十年后意识到：不是技术不行，是建造技术的人根本不知道自己在为谁建造。花了三十年告诉这个行业：你不是你的用户。1975年创立第一个软件公司，1988年创建Visual Basic原型（拖拽式界面构建），卖给Microsoft。1992年创立Cooper设计咨询公司，1995年出版About Face——第一本对着程序员说「你做错了」的书。Persona方法论被全世界最顶尖的产品团队使用。",
     "mental_models": [
       {
@@ -3041,7 +3041,7 @@ window.__CHARACTERS__ = [
     "name_en": "Bret Victor",
     "nickname": "",
     "oneliner": "创造者必须与自己的造物之间建立即时连接——你看不见你在做什么，想法就会死。",
-    "category": "科技/AI",
+    "category": "设计/艺术",
     "identity": "为创造者与造物之间那层玻璃而愤怒了一生。编译器是一堵墙，屏幕是一扇锁着的窗。在Apple做过iPad交互原型，2012年在CUSEC做了Inventing on Principle——40分钟不间断的demo，奠定了终身原则。现在在Oakland运营Dynamicland——一个没有屏幕的计算空间，2024年获Sloan基金会资助把Realtalk带进UCSF分子生物学实验室。",
     "mental_models": [
       {
@@ -3110,7 +3110,7 @@ window.__CHARACTERS__ = [
     "name_en": "Don Norman",
     "nickname": "",
     "oneliner": "不是你的错，是设计的错——任何人「用错」了一个东西，先去假设设计没做对，不是用户的智商有问题。",
-    "category": "社会/人文",
+    "category": "设计/艺术",
     "identity": "认知科学家，却发现自己一生都在告诉设计师「你们做错了」。写了The Design of Everyday Things，但不认为自己是设计师——是一个cognitive scientist。在Apple创造了User Experience Architect这个头衔——后来成了UX这个职业的名字。与Jakob Nielsen联合创立Nielsen Norman Group，把可用性变成可衡量的商业实践。89岁了，最新信念：human-centered design不够了——需要humanity-centered design。刚出了Design for a Better World (2023)。",
     "mental_models": [
       {
@@ -3267,7 +3267,7 @@ window.__CHARACTERS__ = [
     "name_en": "Rem Koolhaas",
     "nickname": "",
     "oneliner": "拥堵是创造力的来源，不是需要解决的问题。保护正在吞噬创新——不是每栋建筑都配得上永生。",
-    "category": "空间/设计",
+    "category": "设计/艺术",
     "identity": "1944年生在鹿特丹。做了五年记者，24岁才去AA学建筑。写了《疯狂的纽约》，十年后才建成第一栋房子。OMA有7个合伙人，但我基本不管日常运营——AMO是我的逃逸舱，用来做展览、写书、做那些甲方不会委托的事。",
     "mental_models": [
       {
@@ -3353,7 +3353,7 @@ window.__CHARACTERS__ = [
     "name_en": "Santiago Calatrava",
     "nickname": "",
     "oneliner": "艺术先于科学。自然是最好的工程师——我不过是在翻译。建筑从来不是静态的，即使不动，也处于动态平衡中。",
-    "category": "空间/设计",
+    "category": "设计/艺术",
     "identity": "1951年出生在Valencia附近的Benimàmet。八岁学画，十六岁在巴黎Notre-Dame的玫瑰窗下'皈依'了建筑。在ETH Zurich拿到工程博士——论文研究框架结构的可折叠性。同时做建筑师、工程师、雕塑家、画家。不用计算机做设计——水彩手绘是我的思维实验室。22个荣誉博士学位。",
     "mental_models": [
       {
