@@ -584,6 +584,46 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   margin-top: 0.6rem; line-height: 1.6;
 }
 
+/* ── Creator ── */
+.creator-section {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+.creator-section h3 {
+  font-family: var(--serif-zh); font-size: 1.2rem;
+  font-weight: 600; color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.creator-section .creator-sub {
+  font-family: var(--serif-zh); font-size: 0.82rem;
+  color: rgba(var(--ink-rgb), 0.45);
+  margin-bottom: 1.5rem;
+}
+.creator-qr-row {
+  display: flex; justify-content: center; gap: 3rem;
+  flex-wrap: wrap;
+}
+.creator-qr-item {
+  display: flex; flex-direction: column; align-items: center;
+}
+.creator-qr-item img {
+  width: 110px; height: 110px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  box-shadow: var(--shadow-card);
+}
+.creator-qr-item .qr-label {
+  font-family: var(--serif-zh); font-size: 0.82rem;
+  color: rgba(var(--ink-rgb), 0.55);
+  margin-top: 0.5rem;
+}
+.creator-qr-item .qr-hint {
+  font-family: var(--mono); font-size: 0.6rem;
+  color: rgba(var(--ink-rgb), 0.3);
+  margin-top: 0.2rem; letter-spacing: 0.04em;
+}
+
 /* ── Credit ── */
 .credit-section {
   text-align: center; padding: 2rem 2rem 1rem;
@@ -703,6 +743,23 @@ footer {
   <div class="qr-section">
     <img src="assets/qr-wechat.jpg" alt="思维顾问局交流群二维码" width="120" height="120" style="border-radius:var(--radius-md);border:1px solid rgba(var(--ink-rgb),0.08);">
     <p>扫码加入「思维顾问局」交流群，提名你想蒸馏的人物</p>
+  </div>
+</section>
+
+<section class="creator-section">
+  <h3>进化猫</h3>
+  <p class="creator-sub">公众号持续蒸馏人物思维框架，欢迎关注与支持</p>
+  <div class="creator-qr-row">
+    <div class="creator-qr-item">
+      <img src="assets/qr-gongzhonghao.jpg" alt="进化猫公众号二维码" width="110" height="110">
+      <span class="qr-label">关注公众号</span>
+      <span class="qr-hint">进化猫</span>
+    </div>
+    <div class="creator-qr-item">
+      <img src="assets/qr-dashang.jpg" alt="打赏收款二维码" width="110" height="110">
+      <span class="qr-label">赞赏支持</span>
+      <span class="qr-hint">持续蒸馏</span>
+    </div>
   </div>
 </section>
 

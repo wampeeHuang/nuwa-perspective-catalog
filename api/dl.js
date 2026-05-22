@@ -39,6 +39,8 @@ const MAP = [
   ['perspective-bret-victor.md', '布雷特·维克托', 'Bret Victor', '布雷特', '维克托', 'Bret', 'bret', 'Victor', 'victor'],
   ['perspective-don-norman.md', '唐·诺曼', 'Don Norman', '诺曼', 'Don', 'don', 'Norman', 'norman'],
   ['perspective-hoyte-van-hoytema.md', '霍伊特·范·霍伊特玛', 'Hoyte van Hoytema', '霍伊特', '霍伊特玛', 'Hoyte', 'hoyte', 'van', 'Hoytema', 'hoytema', 'van hoytema'],
+  ['perspective-rem-koolhaas.md', '雷姆·库哈斯', 'Rem Koolhaas', '雷姆', '库哈斯', 'Rem', 'rem', 'Koolhaas', 'koolhaas'],
+  ['perspective-santiago-calatrava.md', '圣地亚哥·卡拉特拉瓦', 'Santiago Calatrava', '圣地亚哥', '卡拉特拉瓦', 'Santiago', 'santiago', 'Calatrava', 'calatrava'],
 ];
 
 const LOOKUP = {};

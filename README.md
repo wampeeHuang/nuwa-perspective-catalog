@@ -1,4 +1,4 @@
-# 女娲人物蒸馏 · 39位思维顾问
+# 女娲人物蒸馏 · 41位思维顾问
 
 基于公开信息蒸馏的思维操作系统。每个人物是独立可用的思维镜片——下载 SKILL.md，放入 Claude Code，即可进入那个人物的心智模式。
 
@@ -16,7 +16,7 @@ Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本
 
 ### 方式二：只下载一个人物
 
-不想下全部 39 个？两种办法：
+不想下全部 41 个？两种办法：
 
 **A) 网站可视化挑选（推荐）**：打开 [nuwa-perspective-catalog.vercel.app](https://nuwa-perspective-catalog.vercel.app) → 浏览人物卡片 → 点 **下载 ↓**，直接拿到文件。
 
@@ -82,6 +82,8 @@ curl -L -O "https://nuwa-perspective-catalog.vercel.app/api/dl?name=张一鸣"
 | 布雷特·维克托 | `维克托` `Bret Victor` |
 | 唐·诺曼 | `诺曼` `Norman` `Don Norman` |
 | 霍伊特·范·霍伊特玛 | `霍伊特` `Hoyte van Hoytema` |
+| 雷姆·库哈斯 | `库哈斯` `Koolhaas` `Rem Koolhaas` |
+| 圣地亚哥·卡拉特拉瓦 | `卡拉特拉瓦` `Calatrava` `Santiago Calatrava` |
 
 ## 按场景选人
 
@@ -102,19 +104,21 @@ curl -L -O "https://nuwa-perspective-catalog.vercel.app/api/dl?name=张一鸣"
 | 拍视频/影视创作 | Tim 潘、霍伊特、诺兰 |
 | 教育/学习路径选择 | 费曼、张雪峰、吴恩达 |
 | 内容创作/公众号写作 | Paul Graham、奥格威、花叔 |
+| 建筑设计/空间思考 | 库哈斯、卡拉特拉瓦 |
 
-## 人物全表（35位）
+## 人物全表（41位）
 
 | 分类 | 人物 |
 |------|------|
-| 科技/AI | 卡帕西、吴恩达、张一鸣、Ilya Sutskever、Zara Zhang、宝玉、马斯克、花叔、Cat Wu、库珀、维克托 |
+| 科技/AI | 卡帕西、吴恩达、张一鸣、Ilya Sutskever、Zara Zhang、宝玉、马斯克、花叔、Cat Wu |
 | 科学/物理 | 费曼、爱因斯坦、霍金、James Burke、刘慈欣 |
 | 商业/投资 | 芒格、Naval、乔布斯 |
 | 风险/概率 | 塔勒布 |
 | 营销/广告 | 奥格威、霍普金斯、休格曼、孙宇晨、MrBeast、Rory Sutherland |
 | 内容/写作 | Paul Graham、花叔、张雪峰、Ben Smith |
 | 影视/创作 | 诺兰、Tim潘、汤浅政明、Villeneuve、霍伊特 |
-| 社会/人文 | 特朗普、沈奕斐、Rory Sutherland、有余、Cat Wu、诺曼 |
+| 建筑/城市/设计 | 库哈斯、卡拉特拉瓦、库珀、维克托、诺曼、有余 |
+| 社会/人文 | 特朗普、沈奕斐、Rory Sutherland、Cat Wu |
 
 ## Skill 结构
 
