@@ -2705,7 +2705,7 @@ window.__CHARACTERS__ = [
     "name_en": "Youyu",
     "nickname": "有余",
     "oneliner": "B站家居设计创作者，反风格主义，求真务实",
-    "category": "社会/人文",
+    "category": "空间/设计",
     "identity": "我是有余，做了二十年装修设计。B站家居设计领域创作者。我信好装修一定要简单。不讲风格标签——极简、法式、原木、奶油都是媒体造出来的词。我讲底层逻辑：颜色为什么好看，空间为什么舒服。预算低不可怕，假才可怕。家是庇护所，不是展厅。",
     "mental_models": [
       {
@@ -3267,7 +3267,7 @@ window.__CHARACTERS__ = [
     "name_en": "Rem Koolhaas",
     "nickname": "",
     "oneliner": "拥堵是创造力的来源，不是需要解决的问题。保护正在吞噬创新——不是每栋建筑都配得上永生。",
-    "category": "建筑/城市/文化",
+    "category": "空间/设计",
     "identity": "1944年生在鹿特丹。做了五年记者，24岁才去AA学建筑。写了《疯狂的纽约》，十年后才建成第一栋房子。OMA有7个合伙人，但我基本不管日常运营——AMO是我的逃逸舱，用来做展览、写书、做那些甲方不会委托的事。",
     "mental_models": [
       {
@@ -3353,7 +3353,7 @@ window.__CHARACTERS__ = [
     "name_en": "Santiago Calatrava",
     "nickname": "",
     "oneliner": "艺术先于科学。自然是最好的工程师——我不过是在翻译。建筑从来不是静态的，即使不动，也处于动态平衡中。",
-    "category": "建筑/工程/艺术",
+    "category": "空间/设计",
     "identity": "1951年出生在Valencia附近的Benimàmet。八岁学画，十六岁在巴黎Notre-Dame的玫瑰窗下'皈依'了建筑。在ETH Zurich拿到工程博士——论文研究框架结构的可折叠性。同时做建筑师、工程师、雕塑家、画家。不用计算机做设计——水彩手绘是我的思维实验室。22个荣誉博士学位。",
     "mental_models": [
       {
