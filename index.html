@@ -431,6 +431,90 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   padding-bottom: 0.4rem; border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 
+/* ── Chat Widget ── */
+.chat-section {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+.chat-section h3 {
+  font-family: var(--serif-zh); font-size: 1.1rem;
+  font-weight: 600; color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.chat-hint {
+  font-family: var(--serif-zh); font-size: 0.78rem;
+  color: rgba(var(--ink-rgb), 0.4); margin-bottom: 1rem;
+}
+.chat-presets {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem;
+}
+.chat-preset-btn {
+  font-family: var(--serif-zh); font-size: 0.8rem;
+  color: var(--cinnabar); background: var(--cinnabar-bg);
+  border: 1px solid rgba(var(--ink-rgb), 0.06);
+  border-radius: 20px; padding: 0.45rem 1rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.chat-preset-btn:hover {
+  background: rgba(217,119,87,0.18); border-color: var(--cinnabar);
+}
+.chat-messages {
+  display: flex; flex-direction: column; gap: 0.8rem;
+  min-height: 60px; margin-bottom: 1rem;
+}
+.chat-msg {
+  max-width: 88%; padding: 0.7rem 1rem; border-radius: var(--radius-sm);
+  font-family: var(--serif-zh); font-size: 0.88rem; line-height: 1.65;
+  animation: fadeIn 0.3s ease;
+}
+.chat-msg.user {
+  align-self: flex-end; background: var(--ink);
+  color: var(--paper); border-bottom-right-radius: 2px;
+}
+.chat-msg.bot {
+  align-self: flex-start; background: rgba(var(--ink-rgb), 0.04);
+  color: var(--ink); border-bottom-left-radius: 2px;
+}
+.chat-msg .msg-label {
+  display: block; font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 0.25rem; opacity: 0.5;
+}
+.chat-msg.thinking {
+  opacity: 0.5; font-style: italic;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.chat-input-row {
+  display: flex; gap: 0.6rem;
+}
+.chat-input {
+  flex: 1; font-family: var(--serif-zh); font-size: 0.88rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border-radius: var(--radius-sm);
+  background: var(--paper); color: var(--ink);
+  outline: none; transition: border-color 0.2s;
+}
+.chat-input:focus { border-color: var(--cinnabar); }
+.chat-send {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.65rem 1.4rem;
+  background: var(--cinnabar); color: #fff;
+  border: none; border-radius: var(--radius-sm);
+  cursor: pointer; transition: all 0.2s;
+}
+.chat-send:hover { opacity: 0.85; }
+.chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+.chat-limit {
+  display: none; text-align: center;
+  font-family: var(--serif-zh); font-size: 0.8rem;
+  color: rgba(var(--ink-rgb), 0.45);
+  padding: 0.6rem; margin-top: 0.8rem;
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  border-radius: var(--radius-sm);
+}
+
 /* ── Mental Models ── */
 .model-list { display: flex; flex-direction: column; gap: 0.8rem; }
 .model-block {
@@ -986,7 +1070,17 @@ function renderDetail(ch) {
     h += '</ul></div>';
   }
 
-  h += '</div></div>';
+  h += '</div>';
+  h += '<div class="chat-section"><h3>与 ' + ch.name_cn + ' 对话</h3><p class="chat-hint">尝鲜版 · 单轮对话 · 每次独立提问</p>';
+  h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
+  h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
+  h += '<div class="chat-input-row">';
+  h += '<input class="chat-input" id="chat-input-' + ch.id + '" placeholder="向' + ch.name_cn + '提问..." onkeydown="if(event.key===\'Enter\')sendChat(\'' + ch.id + '\')">';
+  h += '<button class="chat-send" id="chat-send-' + ch.id + '" onclick="sendChat(\'' + ch.id + '\')">发送</button>';
+  h += '</div>';
+  h += '<div class="chat-limit" id="chat-limit-' + ch.id + '">聊了不少了，喝杯茶歇一下，一小时后再来。</div>';
+  h += '</div>';
+  h += '</div>';
   return h;
 }
 
@@ -997,6 +1091,98 @@ function showDetail(id) {
   document.getElementById('directory').classList.add('hidden');
   document.getElementById('detail-container').classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  var ch = findCharById(id);
+  if (ch) renderPresets(ch);
+}
+
+function findCharById(id) {
+  for (var i = 0; i < allCharacters.length; i++) {
+    if (allCharacters[i].id === id) return allCharacters[i];
+  }
+  return null;
+}
+
+function renderPresets(ch) {
+  var presets = [];
+  if (ch.mental_models && ch.mental_models.length) {
+    presets.push('关于「' + ch.mental_models[0].name + '」，多说一点？');
+    if (ch.mental_models.length > 1) {
+      presets.push('「' + ch.mental_models[0].name + '」和「' + ch.mental_models[1].name + '」之间有关联吗？');
+    }
+  }
+  presets.push('如果我想提升自己的判断力，你会怎么建议？');
+  presets.push('用一两句话概括你最重要的原则');
+  var container = document.getElementById('presets-' + ch.id);
+  if (!container) return;
+  container.innerHTML = presets.map(function(p) {
+    return '<button class="chat-preset-btn" onclick="askPreset(\'' + ch.id + '\',\'' + p.replace(/'/g, "\\'") + '\')">' + p + '</button>';
+  }).join('');
+}
+
+function askPreset(id, text) {
+  var input = document.getElementById('chat-input-' + id);
+  if (input) { input.value = text; sendChat(id); }
+}
+
+function sendChat(id) {
+  var input = document.getElementById('chat-input-' + id);
+  var sendBtn = document.getElementById('chat-send-' + id);
+  var msgs = document.getElementById('chat-msgs-' + id);
+  var limit = document.getElementById('chat-limit-' + id);
+  if (!input || !sendBtn || !msgs) return;
+  var msg = input.value.trim();
+  if (!msg) return;
+
+  // Rate limit: localStorage, 15 per hour
+  var now = Date.now();
+  var key = 'nw-chat-' + Math.floor(now / 3600000);
+  var count = parseInt(localStorage.getItem(key) || '0', 10);
+  if (count >= 15) { limit.style.display = 'block'; return; }
+
+  limit.style.display = 'none';
+  sendBtn.disabled = true;
+  input.disabled = true;
+
+  addMsg(msgs, msg, 'user');
+  var thinkDiv = addMsg(msgs, '...思考中...', 'bot thinking');
+  input.value = '';
+
+  var ch = findCharById(id);
+  var ctx = {
+    identity: ch.identity || '',
+    oneliner: ch.oneliner || '',
+    models: (ch.mental_models || []).map(function(m) { return { name: m.name, oneliner: m.oneliner, body: m.body || '' }; }),
+    expression_dna: ch.expression_dna || '',
+    quotes: ch.quotes || [],
+    values: ch.values || []
+  };
+
+  fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ characterId: ch.id, characterName: ch.name_cn, context: ctx, message: msg })
+  }).then(function(r) { return r.json(); })
+  .then(function(data) {
+    thinkDiv.remove();
+    addMsg(msgs, data.reply || '（对方沉默了片刻）', 'bot');
+    localStorage.setItem(key, count + 1);
+  }).catch(function() {
+    thinkDiv.remove();
+    addMsg(msgs, '对话暂时中断，请稍后再试。', 'bot');
+  }).finally(function() {
+    sendBtn.disabled = false;
+    input.disabled = false;
+    input.focus();
+  });
+}
+
+function addMsg(container, text, cls) {
+  var div = document.createElement('div');
+  div.className = 'chat-msg ' + cls;
+  div.textContent = text;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
 }
 
 function hideDetail() {
