@@ -998,8 +998,9 @@ footer {
 
 /* ═══════════════ RESPONSIVE ═══════════════ */
 @media (max-width: 768px) {
-  .hero { padding: 4rem 1.5rem 3rem; }
-  .hero h1 { font-size: 2.5rem; }
+  .hero { padding: 3rem 1.2rem 2.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero .eyebrow { margin-bottom: 1.2rem; }
   main { padding: 1rem 1rem 3rem; }
   .card-grid { grid-template-columns: 1fr; }
   .rec-grid { grid-template-columns: 1fr; }
@@ -1011,6 +1012,17 @@ footer {
   .model-block { padding: 1.2rem 1.2rem; }
   .quote-item { padding: 1.2rem 1.3rem; font-size: 1rem; }
   .timeline-strip { flex-direction: column; }
+  /* compact cat-nav for mobile */
+  .cat-nav-wrap { padding: 0 0.6rem; }
+  .cat-nav { gap: 0.3rem; padding: 0.6rem 0; }
+  .cat-nav button {
+    font-size: 0.7rem; padding: 0.35rem 0.6rem;
+    letter-spacing: 0.03em; border-radius: 14px;
+  }
+  .cat-nav-sep { font-size: 0.7rem; }
+  .cat-nav-board-btn, .cat-nav-sort-btn { font-size: 0.68rem !important; padding: 0.35rem 0.7rem !important; }
+  /* section-nav mobile — adjust top for possibly taller wrapped cat-nav */
+  .section-nav { top: 80px; }
 }
 
 /* ── Message Board (归藏水墨便签) ── */
