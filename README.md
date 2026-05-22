@@ -1,4 +1,4 @@
-# 女娲人物蒸馏 · 35位思维顾问
+# 女娲人物蒸馏 · 39位思维顾问
 
 基于公开信息蒸馏的思维操作系统。每个人物是独立可用的思维镜片——下载 SKILL.md，放入 Claude Code，即可进入那个人物的心智模式。
 
@@ -16,7 +16,7 @@ Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本
 
 ### 方式二：只下载一个人物
 
-不想下全部 35 个？两种办法：
+不想下全部 39 个？两种办法：
 
 **A) 网站可视化挑选（推荐）**：打开 [blackcamellia.xin](https://blackcamellia.xin) → 浏览人物卡片 → 点 **下载 ↓**，直接拿到文件。
 
@@ -78,6 +78,10 @@ curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
 | 沈奕斐 | `沈奕斐` `Shen Yifei` |
 | 唐纳德·特朗普 | `特朗普` `Trump` `Donald Trump` |
 | 设计师有余 | `有余` `Youyu` |
+| 艾伦·库珀 | `库珀` `Cooper` `Alan Cooper` |
+| 布雷特·维克托 | `维克托` `Bret Victor` |
+| 唐·诺曼 | `诺曼` `Norman` `Don Norman` |
+| 霍伊特·范·霍伊特玛 | `霍伊特` `Hoyte van Hoytema` |
 
 ## 按场景选人
 
@@ -90,12 +94,12 @@ curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
 | 写文章/做内容，提升传播力 | Paul Graham、奥格威、休格曼 |
 | 砍成本/优化流程 | 马斯克、芒格、乔布斯 |
 | 学一个新技术/新领域 | 费曼、Naval、卡帕西 |
-| 设计产品/用户体验 | 乔布斯、有余、卡帕西 |
+| 设计产品/用户体验 | 乔布斯、库珀、诺曼、卡帕西 |
 | 搞营销/增长/拉新 | 孙宇晨、MrBeast、霍普金斯 |
 | 职业迷茫，不知道做什么 | Naval、花叔、张雪峰 |
 | 谈判/博弈/权力局面 | 特朗普、塔勒布、张一鸣 |
-| 写代码/架构设计 | 卡帕西、宝玉、Zara Zhang |
-| 拍视频/影视创作 | Tim 潘、MrBeast、诺兰 |
+| 写代码/架构设计 | 卡帕西、宝玉、维克托 |
+| 拍视频/影视创作 | Tim 潘、霍伊特、诺兰 |
 | 教育/学习路径选择 | 费曼、张雪峰、吴恩达 |
 | 内容创作/公众号写作 | Paul Graham、奥格威、花叔 |
 
@@ -103,14 +107,14 @@ curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
 
 | 分类 | 人物 |
 |------|------|
-| 科技/AI | 卡帕西、吴恩达、张一鸣、Ilya Sutskever、Zara Zhang、宝玉、马斯克、花叔、Cat Wu |
+| 科技/AI | 卡帕西、吴恩达、张一鸣、Ilya Sutskever、Zara Zhang、宝玉、马斯克、花叔、Cat Wu、库珀、维克托 |
 | 科学/物理 | 费曼、爱因斯坦、霍金、James Burke、刘慈欣 |
 | 商业/投资 | 芒格、Naval、乔布斯 |
 | 风险/概率 | 塔勒布 |
 | 营销/广告 | 奥格威、霍普金斯、休格曼、孙宇晨、MrBeast、Rory Sutherland |
 | 内容/写作 | Paul Graham、花叔、张雪峰、Ben Smith |
-| 影视/创作 | 诺兰、Tim潘、汤浅政明、Villeneuve |
-| 社会/人文 | 特朗普、沈奕斐、Rory Sutherland、有余、Cat Wu |
+| 影视/创作 | 诺兰、Tim潘、汤浅政明、Villeneuve、霍伊特 |
+| 社会/人文 | 特朗普、沈奕斐、Rory Sutherland、有余、Cat Wu、诺曼 |
 
 ## Skill 结构
 
@@ -134,5 +138,5 @@ curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
 ## 来源
 
 - 蒸馏工具：[女娲.skill](https://github.com/wampeeHuang/nuwa-perspective-catalog/blob/master/skills/perspective-alchainhust.md) — 感谢花叔（AlchainHust / 陈云飞）的原创方法论与工具链，让每个人的思维模型可被结构化蒸馏
-- 数据截止：2026-04
+- 数据截止：2026-05
 - 所有内容基于公开信息提炼，非人物本人授权
