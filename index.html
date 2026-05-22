@@ -1884,8 +1884,8 @@ function askPreset(id, text) {
 }
 
 var ROUND_KEY = 'nw-rounds-total';
-var MAX_ROUNDS = 15;
-var COOLDOWN_MS = 1800000;
+var MAX_ROUNDS = 50;
+var COOLDOWN_MS = 3600000;
 
 function getRoundData() {
   var d = JSON.parse(localStorage.getItem(ROUND_KEY) || '{"c":0,"t":0}');
@@ -2033,7 +2033,7 @@ loadData();
 
 // ═══ Message Board ═══
 var BOARD_KEY = 'nw-board-posts';
-var BOARD_MAX_PER_HOUR = 5;
+var BOARD_MAX_PER_HOUR = 50;
 var LIKE_KEY = 'nw-board-likes';
 var TOKEN_KEY = 'nw-board-tokens';
 
@@ -2123,16 +2123,16 @@ function renderBoard(msgList, gridId) {
     var liked = likedSet.has(m.id);
     var owned = tokensMap.hasOwnProperty(m.id);
     var delBtn = owned ? '<button class="note-delete" onclick="event.stopPropagation();deleteMsg(\'' + m.id + '\',\'' + (filterCharId||'') + '\',\'' + gridId + '\')" title="删除">✕</button>' : '';
-    var repHTML = repCount ? '<div class="note-replies" id="replies-' + m.id + '" style="display:none">' +
+    var repHTML = (repCount ? '<div class="note-replies" id="replies-' + m.id + '" style="display:none">' +
       reps.map(function(r) {
         var rName = r.characterName ? '<span class="note-user">' + escHtml(r.characterName) + '</span>' : '';
         return '<div class="board-reply">' + rName + '<span class="reply-text">' + escHtml(r.text) + '</span><span class="note-time">' + fmtTime(r.time) + '</span></div>';
       }).join('') +
-      '</div>' +
+      '</div>' : '') +
       '<div class="reply-input-row" id="reply-row-' + m.id + '" style="display:none">' +
       '<input class="reply-input" id="reply-input-' + m.id + '" placeholder="回应..." maxlength="140" onkeydown="if(event.key===\'Enter\')postReply(\'' + m.id + '\')">' +
       '<button class="reply-send" onclick="postReply(\'' + m.id + '\')">回</button>' +
-      '</div>' : '';
+      '</div>';
     var toggle = repCount ? '<span class="note-toggle" onclick="toggleReplies(\'' + m.id + '\')">' + repCount + ' 条回应</span>' :
       '<span class="note-toggle" onclick="toggleReplies(\'' + m.id + '\')">回应</span>';
     return '<div class="board-note">' +
@@ -2184,12 +2184,12 @@ function likeMsg(msgId, btn) {
 }
 
 function toggleReplies(id) {
-  var reps = document.getElementById('replies-' + id);
   var row = document.getElementById('reply-row-' + id);
-  if (!reps && !row) return;
-  var show = reps ? (reps.style.display === 'none') : true;
+  if (!row) return;
+  var reps = document.getElementById('replies-' + id);
+  var show = row.style.display !== 'none' ? false : true;
+  row.style.display = show ? '' : 'none';
   if (reps) reps.style.display = show ? '' : 'none';
-  if (row) row.style.display = show ? '' : 'none';
 }
 
 function postReply(parentId, charId) {
