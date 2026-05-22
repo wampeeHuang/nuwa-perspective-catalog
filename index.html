@@ -1032,7 +1032,24 @@ footer {
   }
   .cat-nav-sep { font-size: 0.7rem; flex-shrink: 0; }
   .cat-nav-board-btn, .cat-nav-sort-btn { font-size: 0.68rem !important; padding: 0.35rem 0.7rem !important; }
-  .section-nav { top: 72px; }
+  /* section-nav: scrollable pills, sits below single-row cat-nav */
+  .section-nav {
+    top: 48px; flex-wrap: nowrap; overflow-x: auto;
+    gap: 0.2rem; padding: 0.35rem 0.5rem;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .section-nav-pill { font-size: 0.68rem; padding: 0.28rem 0.55rem; flex-shrink: 0; }
+  .section-nav-pill.ref { font-size: 0.64rem; padding: 0.24rem 0.5rem; }
+  .nav-sep { margin: 0 0.1rem; }
+  /* tighter chat on mobile */
+  .chat-zone { padding: 1.2rem 1rem; }
+  .chat-section-head { font-size: 1.2rem; padding: 0 0.5rem; }
+  .chat-msg { max-width: 92%; font-size: 0.8rem; }
+  /* detail nav: compact single-row */
+  .detail-nav { gap: 0.5rem; padding: 0.8rem 0; }
+  .detail-nav .dn-breadcrumb { font-size: 0.62rem; }
+  .detail-nav .dn-dl { font-size: 0.62rem; padding: 0.3rem 0.6rem; }
 }
 
 /* ── Message Board (归藏水墨便签) ── */
@@ -1231,6 +1248,9 @@ footer {
 @media (max-width: 768px) {
   .board-grid { gap: 0.7rem; }
   .board-note { max-width: 100%; }
+  .board-section { padding: 1.8rem 1rem 2rem; margin: 3rem auto 3rem; }
+  .detail-board { padding: 1.2rem 1rem 1.5rem; scroll-margin-top: 6rem; }
+  .board-write { padding: 0; }
 }
 
 /* detail-page embedded board */
