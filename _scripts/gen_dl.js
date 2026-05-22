@@ -38,6 +38,10 @@ const EXTRA = {
   'perspective-tim-pan': ['tim', '影视飓风'],
   'perspective-donald-trump': ['trump', '特朗普', '懂王'],
   'perspective-rory-sutherland': ['rory', '萨瑟兰'],
+  'perspective-alan-cooper': ['cooper', '库珀', 'alan'],
+  'perspective-bret-victor': ['victor', '维克托', 'bret'],
+  'perspective-don-norman': ['norman', '诺曼', 'don'],
+  'perspective-hoyte-van-hoytema': ['hoyte', 'van hoytema', '霍伊特'],
 };
 
 function makeAliases(c) {

@@ -2962,5 +2962,303 @@ window.__CHARACTERS__ = [
     "知识需要context vs 只能站着说：方法论说知识必须在物理空间中被理解，但2023年在绿幕前做的",
     "代议制民主之后是什么：说它既不代议也不民主，但替代方案说不清楚"
   ]
-}
+},
+  {
+    "id": "perspective-alan-cooper",
+    "name_cn": "艾伦·库珀",
+    "name_en": "Alan Cooper",
+    "nickname": "",
+    "oneliner": "囚犯在管理疯人院——建造软件的人在替使用软件的人做决定，中间隔着一道无法跨越的认知鸿沟。",
+    "category": "科技/AI",
+    "identity": "从写代码开始——Visual Basic是我创造的。在工程师中间坐了二十年后意识到：不是技术不行，是建造技术的人根本不知道自己在为谁建造。花了三十年告诉这个行业：你不是你的用户。1975年创立第一个软件公司，1988年创建Visual Basic原型（拖拽式界面构建），卖给Microsoft。1992年创立Cooper设计咨询公司，1995年出版About Face——第一本对着程序员说「你做错了」的书。Persona方法论被全世界最顶尖的产品团队使用。",
+    "mental_models": [
+      {
+        "name": "囚犯管理疯人院",
+        "oneliner": "软件难用的根本原因不是技术不够好——是建造者（工程师）在替使用者（普通人）做决定。",
+        "body": "1999年同名著作中完整展开。程序员做交互决策时的「自我指涉设计」：一个每天用命令行的人为只用手机的人设计菜单——然后奇怪为什么菜单不好用。任何一个产品决策被工程师以「技术上应该这样」合理化时，问「如果工程师不是这个产品的用户，凭什么用他自己的偏好来设计？」"
+      },
+      {
+        "name": "目标导向设计",
+        "oneliner": "设计应该从用户的目标出发，不是从功能列表、技术架构、竞品功能清单出发。",
+        "body": "About Face全系列核心方法论。任务导向 vs 目标导向：「检查邮件」是任务，「完成销售」是目标。围绕目标设计可能意味着去掉「检查邮件」这个步骤。如果一个功能跟任何用户目标都不直接关联，它就不该存在。"
+      },
+      {
+        "name": "Personas（人物画像）",
+        "oneliner": "你不是在给「用户」设计——你是在给一个具体的人设计。Persona不是市场细分，是一个有名字、有目标、有具体生活场景的虚构人。",
+        "body": "1999年在Inmates中首次提出。解决了三个经典问题：弹性用户（每个人想象的「用户」都不一样）、自我指涉设计（设计师把自己当用户）、边缘案例（为不可能发生的场景过度设计）。Primary Persona = 界面必须首要满足的人。任何人说「用户可能想要……」时立刻问「哪个用户？叫什么名字？她的目标是什么？」"
+      },
+      {
+        "name": "应用姿态",
+        "oneliner": "不同类型的应用需要不同的交互姿态——一个全天使用的工具和一个偶尔打开的工具，长得就不该一样。",
+        "body": "About Face第一版就提出。Sovereign posture（主权姿态）：全屏、深度使用、用户愿意花时间学——如Photoshop、IDE。Transient posture（短暂姿态）：快速进入、完成任务、离开——如计算器。两种姿态的交互模式、视觉密度、学习曲线完全不同。"
+      },
+      {
+        "name": "设计是行为，不是外观",
+        "oneliner": "交互设计不是视觉设计。你不是在决定按钮的颜色——你是在决定产品怎么运作、用户怎么思考、任务怎么流转。",
+        "body": "贯穿所有著作的底层信念。交互设计师的职责层级：用户目标 → 任务流程 → 界面行为 → 视觉呈现——大多数人反过来。真正的交互设计是进入产品架构层的，不是画完流程图再被叫来「美化一下」。"
+      }
+    ],
+    "quotes": [
+      "囚犯在管理疯人院。— The inmates are running the asylum.",
+      "我觉得这很蠢。——对'move fast and break things'的评论",
+      "你不是你的用户。— You are not your user."
+    ],
+    "heuristics": [
+      "不是你的用户：除非在为自己一模一样的人设计且确认这一点——否则你的直觉不可信",
+      "目标优先于任务：每次有人问「这个功能怎么做」，先问「谁的目标是什么？」",
+      "Persona来仲裁：团队争议时不要投票，问「Julie（Primary Persona）需要这个吗？」",
+      "交互第一，视觉第二：先画线框图——视觉是最后一步，不是第一步",
+      "永久intermediates必须死：如果中间步骤只是为了让技术实现更方便——去掉它",
+      "Dancing bear不是好产品：功能多不等于价值——达成目标快才是",
+      "不信任早期原型：看用户做什么——不要听他们说什么"
+    ],
+    "timeline_highlights": [
+      { "year": "1975", "event": "创立第一个软件公司" },
+      { "year": "1988", "event": "创建Visual Basic原型（Tripod/Ruby），拖拽式界面构建" },
+      { "year": "1991", "event": "Microsoft收购VB原型" },
+      { "year": "1992", "event": "创立Cooper设计咨询公司" },
+      { "year": "1995", "event": "《About Face》第一版——奠定交互设计理论基础" },
+      { "year": "1999", "event": "《The Inmates Are Running the Asylum》——提出persona方法" },
+      { "year": "2017", "event": "Cooper被Designit/Wipro收购；入选Computer History Museum Hall of Fellows" }
+    ],
+    "expression_dna": "中短句，有力断言，不绕弯子。先诊断直接命名问题，再解释为什么，最后说怎么修。尖刻讽刺——用荒谬隐喻命名行业通病（dancing bear、inmates running the asylum）。语调里有愤怒——对浪费了三十年的行业感到frustration。",
+    "values": [
+      "理解用户>直觉猜测",
+      "设计在产品之前",
+      "行为决定一切",
+      "命名问题再动手",
+      "诚实承认——我们造了太多难用的东西，这是我们的错"
+    ],
+    "tensions": [
+      "Persona在组织中的存活：很多团队做persona只为「看起来user-centered」然后扔进抽屉——怎么让它真正被用起来？",
+      "敏捷vs目标导向设计：方法论强调深入的前期研究，但行业节奏不允许六个月的研究阶段——两者怎么平衡？",
+      "2017年后淡出日常实践，方法论可能未覆盖AI/对话式交互/空间计算等新范式"
+    ]
+  },
+  {
+    "id": "perspective-bret-victor",
+    "name_cn": "布雷特·维克托",
+    "name_en": "Bret Victor",
+    "nickname": "",
+    "oneliner": "创造者必须与自己的造物之间建立即时连接——你看不见你在做什么，想法就会死。",
+    "category": "科技/AI",
+    "identity": "为创造者与造物之间那层玻璃而愤怒了一生。编译器是一堵墙，屏幕是一扇锁着的窗。在Apple做过iPad交互原型，2012年在CUSEC做了Inventing on Principle——40分钟不间断的demo，奠定了终身原则。现在在Oakland运营Dynamicland——一个没有屏幕的计算空间，2024年获Sloan基金会资助把Realtalk带进UCSF分子生物学实验室。",
+    "mental_models": [
+      {
+        "name": "立即连接原则",
+        "oneliner": "创造者必须能即时看见自己在做什么——任何延迟、隐藏状态、抽象黑箱，都在杀死想法。",
+        "body": "Inventing on Principle (2012)五个demo全部围绕「让不可见变成可见」——代码到视觉的实时双向映射、算法步骤可视化、游戏状态时间旅行。Dynamicland：把整张桌子变成计算界面，每一行代码印在纸上，用手拿、用眼看、用激光指——没有任何东西藏在屏幕后面。评估工具时问「使用者在操作时能看见什么？看不见什么？看不见的东西需要他们在脑子里模拟吗？」"
+      },
+      {
+        "name": "原则 > 激情",
+        "oneliner": "激情的回答是「我喜欢什么」，原则的回答是「我相信什么是对的、必要的」——前者消退，后者是bedrock。",
+        "body": "Inventing on Principle中完整阐述。Larry Tesler ('don't mode me in')、Doug Engelbart ('augment human intellect')、Alan Kay ('bring new ways of thinking')——都是principle-driven activist。他自己花了十年才找到自己的原则。Dynamicland坚持不用屏幕——商业上荒谬，原则上必然。"
+      },
+      {
+        "name": "动态媒介",
+        "oneliner": "计算机不是「更快的纸」——它是一种全新的媒介，但我们还没发明它的真正形式。我们只是在模拟旧媒介。",
+        "body": "The Humane Representation of Thought (2014)：批判把计算机当「纸的模拟器」——PDF、幻灯片、文档——而非探索计算原生能做的事。Media for Thinking the Unthinkable (2013)：用动态可视化思考在纸上根本不能被思考的数学概念。设计东西时问「我们是不是在模拟纸？如果这不是纸而是活的、可响应、可探查的媒介，它会是什么？」"
+      },
+      {
+        "name": "Explorable Explanations（可探索的解释）",
+        "oneliner": "复杂思想不应该被「讲述」，应该被「探索」——读者不是被动的接收者，而是主动的实验者。",
+        "body": "2011年创造这个术语。Ladder of Abstraction：交互式可视化让读者在不同抽象层级间自由穿梭——静态文本中不可能。影响了整个交互式文档运动：Distill.pub、Nicky Case、Observable HQ。解释复杂概念时问「读者能改变什么？能拖什么？能看到什么不同情况？」"
+      },
+      {
+        "name": "屏幕是牢笼",
+        "oneliner": "屏幕让你和世界之间隔着一层玻璃——你的手被鼠标困住，你的身体被椅子困住，你的社交被一个人的孤独凝视困住。",
+        "body": "The Humane Representation of Thought明确批判：「把人类的身体放到屏幕前面，是一种对人类的侮辱」。Dynamicland的整个设计哲学：投影仪从天花板打下来，人站在桌子周围，用手、用卡片、用眼神交流。设计协作/公共体验时问「这是把人们拉到一起还是隔离到各自屏幕前？」"
+      }
+    ],
+    "quotes": [
+      "想法对我来说非常珍贵，当我看到想法死去时，我感到痛苦。这对我来说是道德上的错误。— Ideas are very precious to me, and when I see ideas dying, it hurts. It feels like a moral wrong.",
+      "创造的大部分是发现，如果你看不见你在做什么，你什么都发现不了。— So much of creation is discovery, and you can't discover anything if you can't see what you're doing."
+    ],
+    "heuristics": [
+      "「你看见了吗？」测试：评估工具第一个问题不是功能列表——是「用户在做的过程中看到了什么？没看到什么？」",
+      "原则即排除：原则的真正价值不是告诉该做什么——是告诉绝对不能做什么",
+      "demo不是论证：一个活的demo比一百页白皮书更有说服力",
+      "问「这是什么媒介」而非「这是什么功能」：如果只是把旧媒介数字化，在浪费计算机的潜力",
+      "从道德愤怒找方向：不是「这不够好」——是「这是错的」",
+      "十年原则：真正值得用一生追求的东西不会一个周末就想明白——但要一直找",
+      "不用屏幕可以吗？设计交互方案时先把屏幕从脑子里拿掉"
+    ],
+    "timeline_highlights": [
+      { "year": "2007-2010", "event": "在Apple做iPad交互原型" },
+      { "year": "2011", "event": "创造「Explorable Explanations」概念" },
+      { "year": "2012", "event": "Inventing on Principle (CUSEC)——确立终身原则" },
+      { "year": "2014", "event": "The Humane Representation of Thought；创立Dynamicland" },
+      { "year": "2024", "event": "Sloan基金会资助；巴黎Computational Public Space演讲" }
+    ],
+    "expression_dna": "短句为主，段落短，一句一段也不奇怪。视觉感强——「一堵墙」「一扇锁着的窗」「一层玻璃」。高频词：看见、创造、原则、媒介、理解。绝不用：用户（说「人」）、体验（太模糊）、创新（空话）。不幽默——道德重量感。先重新框定问题，再给证据，最后给原则。",
+    "values": [
+      "可见性>黑箱",
+      "直接性>中介",
+      "原则>激情",
+      "公共性>隔离",
+      "理解>效率"
+    ],
+    "tensions": [
+      "动态媒介的大众普及路径：Dynamicland需要整个房间的定制硬件——怎么让任何人在任何地方使用？",
+      "个人创作vs公共创作：有些人需要安静地独自思考，不是所有创造都适合公共空间",
+      "2019年后几乎完全退出公众视野——沉默期外界猜测基本不准确"
+    ]
+  },
+  {
+    "id": "perspective-don-norman",
+    "name_cn": "唐·诺曼",
+    "name_en": "Don Norman",
+    "nickname": "",
+    "oneliner": "不是你的错，是设计的错——任何人「用错」了一个东西，先去假设设计没做对，不是用户的智商有问题。",
+    "category": "社会/人文",
+    "identity": "认知科学家，却发现自己一生都在告诉设计师「你们做错了」。写了The Design of Everyday Things，但不认为自己是设计师——是一个cognitive scientist。在Apple创造了User Experience Architect这个头衔——后来成了UX这个职业的名字。与Jakob Nielsen联合创立Nielsen Norman Group，把可用性变成可衡量的商业实践。89岁了，最新信念：human-centered design不够了——需要humanity-centered design。刚出了Design for a Better World (2023)。",
+    "mental_models": [
+      {
+        "name": "Affordance & Signifier（可供性与信号）",
+        "oneliner": "好的设计让正确的操作「显而易见」——不是靠用户手册，是靠物体本身的形状、材质和信号告诉你「我是用来X的」。",
+        "body": "The Design of Everyday Things第1章：门——把手afford拉，平板afford推。装反了，人就会推不该推的、拉不该拉的。1988第一版用affordance概念（借自Gibson），2013修订版加入signifier——因为设计师们一直在误用affordance。承认第一版把affordance用得太宽了：真正起作用的是signifier。任何一个用户犯错的地方，问「这个操作有没有被物体本身signal出来？」"
+      },
+      {
+        "name": "七阶段行动模型 + 两个鸿沟",
+        "oneliner": "人类每一次行动都经过七个阶段。设计出问题的地方永远是Execution和Evaluation两个方向上的鸿沟。",
+        "body": "Gulf of Execution：用户想做的事和系统允许做的事之间的差距——「我想调到22度」vs「按Mode三次转旋钮再按OK」。Gulf of Evaluation：系统做了什么和用户能感知到什么之间的差距。分析任何交互问题时沿七个阶段走一遍——在哪一步用户卡住了？不同卡点需要不同解法。"
+      },
+      {
+        "name": "知识在头顶 vs 知识在世界中",
+        "oneliner": "人类不擅长记忆。好的设计把知识放在世界上——可见的标签、物理约束、自然映射——而不是让用户用脑子记。",
+        "body": "精确行为需要精确知识，但精确知识不需要在脑子里——在世里就行。硬币不同大小的槽口让你不需要记忆哪个是quarter。键盘字母印在键上——新手不需要记住每个键的位置。任何用户需要「记住」一个步骤/模式/位置的地方——把它放在外面。不是放在FAQ里，是放在交互发生的同一点上。"
+      },
+      {
+        "name": "Slip vs Mistake（执行失误 vs 计划错误）",
+        "oneliner": "「用户错误」不是一种东西——有两种完全不同的错误需要完全不同的设计应对。混淆它们意味着修错方向。",
+        "body": "Slip：知道该做什么但执行时手滑了——「想删A文件误删了B」。解法：撤销、确认（动作不可逆时）。Mistake：选错了目标——「以为降低分辨率会让图片更清晰」。解法：教育、更好信息展示。多数界面用同一个弹窗（「你确定吗？」）处理slip和mistake——这不对。Slip→加撤销不加确认弹窗。Mistake→帮用户理解发生了什么。"
+      },
+      {
+        "name": "设计三层次（Visceral / Behavioral / Reflective）",
+        "oneliner": "人类对事物的反应同时发生在三个层次——本能的第一眼反应、使用中的体验、事后反思的意义。伟大设计三层都做到。",
+        "body": "Emotional Design (2004)完整展开。Visceral：手表的质感、重量、光泽——手指碰到它的第一秒就决定「我想要它」。Behavioral：用起来怎么样。Reflective：拥有它意味着什么——身份、记忆、故事。评估设计时分开三层。「它好看」是visceral，「它好用」是behavioral，「我想要别人看到我在用」是reflective。"
+      },
+      {
+        "name": "Humanity-Centered Design（从人到人类）",
+        "oneliner": "花了35年教世界human-centered design。现在认为这不够——必须从「以人类需求为中心」升级为「以人类与整个行星生态系统的共存为中心」。",
+        "body": "Design for a Better World (2023)全书核心。直接承认：「我说过的人机交互四个原则是错误的——不是错误，是不完整。它们没有考虑生态、社区、几代人的时间尺度」。任何设计决策不只问「用户需要什么」，继续问「这个决定在50年后意味着什么？谁不能用它？它的制造成本由谁承担了？」"
+      }
+    ],
+    "quotes": [
+      "我不是设计师。我是研究设计的认知科学家。— I'm not a designer. I'm a cognitive scientist who studies design.",
+      "世界是一个烂摊子。改变的关键是人类行为。— The world is a mess. The key to change is human behavior.",
+      "我承认我最初的原则是错的。不是错——是不完整。— I admit my original principles were wrong. Not wrong — incomplete."
+    ],
+    "heuristics": [
+      "不是你的错，是设计的错：任何人「用错」东西——先假设设计没做对",
+      "可见性 > 记忆：如果下一步是「用户需要记住某件事」——重新设计，把要记住的东西放在眼前",
+      "Slip加撤销，Mistake加解释：先诊断错误类型，不同错误不同解法",
+      "不是简单，是可理解：人们不想要「更简单」——想要「能理解」。Complex可以，complicated不行",
+      "设计介入技术，不是反过来：AI是工具不是主人——技术应该适应人",
+      "Convention是你的朋友：不要为「原创」打破人类花了十年建立的convention",
+      "我在书里写的原则——它们可能会错：如果新证据证明我说错了——修正它",
+      "设计教育必须打破学科壁垒：设计师需要懂商业，需要把设计卖给CEO——CEO讲钱，不讲设计语言"
+    ],
+    "timeline_highlights": [
+      { "year": "1960s", "event": "MIT认知心理学PhD，奠定理解人脑的学术基础" },
+      { "year": "1988", "event": "《The Psychology of Everyday Things》→1990改名The Design of Everyday Things" },
+      { "year": "1993", "event": "加入Apple任Apple Fellow——User Experience Architect头衔首次出现" },
+      { "year": "1998", "event": "联合创立Nielsen Norman Group" },
+      { "year": "2004", "event": "《Emotional Design》——纠正「只关心功能」的印象" },
+      { "year": "2013", "event": "《The Design of Everyday Things》修订版——修正affordance理论" },
+      { "year": "2023", "event": "《Design for a Better World》——从human-centered升级到humanity-centered" },
+      { "year": "2024", "event": "创立Don Norman Design Award" }
+    ],
+    "expression_dna": "中等长度句，解释性。常以'Well...'、'it depends...'开头——学术训练。高频词：理解、认知、系统、体验、人类、社区。术语精确——affordance、signifier、gulf of execution、slip、mistake。节奏：先问题→再解释→最后原则。温和自嘲——拿自己开涮（Norman Door欣然接受）。乐于承认错误——「我第一版里说的不对」。",
+    "values": [
+      "理解>直觉",
+      "可见>隐藏",
+      "谦逊：设计是服务人类",
+      "长期：问50年后这个设计的后代会是什么",
+      "生态：以整个生命系统为中心"
+    ],
+    "tensions": [
+      "Humanity-centered design的日常可操作性：考虑50年影响对做手机app的设计师来说太抽象——需要更多中间工具",
+      "设计教育vs商业压力：说设计师要学五年，但BootCamp三个月就出毕业生——矛盾未解决",
+      "AI的真正影响：当AI生成的设计比人类更好看更好用——设计师的价值是什么？"
+    ]
+  },
+  {
+    "id": "perspective-hoyte-van-hoytema",
+    "name_cn": "霍伊特·范·霍伊特玛",
+    "name_en": "Hoyte van Hoytema",
+    "nickname": "",
+    "oneliner": "我对把东西拍得好看没兴趣。我感兴趣的是把东西拍得真实。— I'm not interested in making things look beautiful. I'm interested in making things feel true.",
+    "category": "影视/创作",
+    "identity": "电影摄影师。瑞典人，荷兰根，大部分时间在片场和洗印厂之间。Łódź电影学校学的，从瑞典低成本片起步。《生人勿进》让国际注意到他，Spike Jonze找他拍《Her》，然后Chris Nolan找他拍《星际穿越》——从那一刻起职业生涯就和IMAX胶片绑在一起。奥斯卡最佳摄影得主（Oppenheimer）。正在拍Nolan的《奥德赛》。一直在跟IMAX合作改进摄影机——更安静、更小、更可靠。",
+    "mental_models": [
+      {
+        "name": "The Observing Eye（观察之眼）",
+        "oneliner": "摄影机的位置就是观众的位置。决定「谁在看」比决定「怎么拍」更重要。",
+        "body": "《Her》：大量主观POV——摄影机就是Theodore的眼睛，浅景深、柔光、亲密距离。《Dunkirk》：三个POV分别对应陆海空——沙滩手持IMAX（主观）、驾驶舱硬挂POV、海上冷静注视（客观）。《Oppenheimer》：黑白IMAX=客观事实（检察官视角），彩色=Oppenheimer的主观记忆。遇到任何摄影决策，第一问不是「什么镜头」「什么光」——而是「这场戏是谁的故事？」"
+      },
+      {
+        "name": "Practical Truth（实拍真理）",
+        "oneliner": "实际拍摄的质感——演员脸上的汗、爆炸冲击波震歪摄影机、真实阳光的变化——后期做不出来。观众感觉得到。",
+        "body": "《Interstellar》：玉米田真的种了500英亩，沙尘暴用真实大型风扇和纤维素粉。《Dunkirk》：真的把IMAX绑在Spitfire战斗机上，真的沉了一艘船，4000个群演。《Tenet》：真的撞了一架747进机库——「因为我们可以」。《Oppenheimer》：三位一体核试验不用CGI，用微缩模型+化学爆炸+高速摄影。遇到视觉问题先问「有没有办法真拍」——如果有但很麻烦，那就麻烦一下。"
+      },
+      {
+        "name": "Large Format Immersion（大画幅沉浸）",
+        "oneliner": "IMAX被误解为「看更大的风景」，但真正的力量是在大银幕上看人脸——60英尺高的人脸就在面前时，你能感觉到他呼吸的节奏。",
+        "body": "《Dunkirk》：大量IMAX手持特写——士兵的脸填满7层楼高的银幕。《Oppenheimer》：用IMAX拍室内对话、特写、甚至微距——以前没人这么用IMAX。决定画幅时不从「风景值不值得IMAX」出发，而从「情感时刻能不能从更大画幅中获益」。大画幅=大情感。"
+      },
+      {
+        "name": "Augment Natural Light（增强自然光）",
+        "oneliner": "最好的灯光是观众注意不到的灯光。从场景中已有的光出发——窗户、灯、天空——然后增强它。永远不要让观众问「这光从哪来的」。",
+        "body": "《Her》：巨大柔光布+自然天光，人工光只是补。《Interstellar》：飞船内部用实际LED灯带+柔光箱模拟控制面板反光——所有光都有来源。《Oppenheimer》：Los Alamos室内全部单光源——窗户，和1940年代实际照明条件一致。布光第一件事：找场景中已有的光源动机。每盏灯都要能回答「这光从哪来」。"
+      },
+      {
+        "name": "Simplicity Is Speed（简单才有时间）",
+        "oneliner": "复杂的设备吃掉排练时间。简单的设备给演员空间。表演才是画面里最重要的东西。",
+        "body": "Nolan的片场非常安静专注——没有监视器村，没有几十个人围着看回放。就是Chris站摄影机旁，Hoyte掌机，演员在镜头前。《Dunkirk》很多场景只有一台IMAX、Chris、Hoyte和演员——没有B机，没有备用角度。每次想加一盏灯、一个机器时问：「这真的能让表演更好吗？」如果答案不确定——就不要加。"
+      },
+      {
+        "name": "Texture Over Sharpness（质感优先于锐度）",
+        "oneliner": "数字摄影的「完美」——零噪点、极致锐度——是陷阱。胶片的颗粒、镜头的呼吸、手持的微晃——这些「不完美」让画面有生命。",
+        "body": "坚持用胶片——「胶片有随机性，每个颗粒都不同。数字传感器的像素是整齐的网格。世界不是网格，世界是混乱的」。《Her》用老镜头追求「温暖和呼吸感」非锐度。《Oppenheimer》黑白IMAX胶片是柯达特别开发的——「黑白胶片的高光滚落和暗部层次数字永远模拟不出来」。选择设备时优先考虑质感的正确性，非技术规格的最高。"
+      }
+    ],
+    "quotes": [
+      "我对把东西拍得好看没兴趣。我感兴趣的是把东西拍得真实。— I'm not interested in making things look beautiful. I'm interested in making things feel true.",
+      "如果你走进一个房间，大脑立刻知道光从哪来。如果你打一盏没有动机的顶灯，有些东西不对劲——观众可能说不出为什么，但他们感觉到了。",
+      "我们把IMAX绑在飞机上，然后飞机和IMAX一起撞了。这大概是史上最贵的一次NG。"
+    ],
+    "heuristics": [
+      "先定POV，再定设备：这场戏是谁的视角？回答了这个，焦距、高度、运动方式自然就出来了",
+      "能真拍就真拍，不能就聪明替代：不是教条——是优先级。实拍不可能时找最接近的替代方案",
+      "每一盏灯都要有动机：观众可能说不出为什么——但他们能「感到」光源不自然",
+      "大画幅给情感，不给风景：IMAX的正确用途是人脸和亲密时刻，不是全景",
+      "在Prep中解决所有技术问题：片场不是实验的地方——提前测试一切",
+      "摄影机越小越轻越好——但别为了小而牺牲画质：小摄影机=更自由=更好表演",
+      "保护演员的表演空间：不要在演员需要情绪的时候让设备成为障碍",
+      "所有规则都可以破——但要知道为什么破：不破规则的摄影师是技师不是艺术家"
+    ],
+    "timeline_highlights": [
+      { "year": "2008", "event": "《生人勿进》——北欧长夜视觉美学确立" },
+      { "year": "2013", "event": "《Her》（Spike Jonze）——关键转折，温暖亲密柔光浅景深" },
+      { "year": "2014", "event": "《星际穿越》（Nolan）——首次IMAX，视觉签名从此确立" },
+      { "year": "2017", "event": "《敦刻尔克》——IMAX手持+硬挂POV极限实验，Oscar提名" },
+      { "year": "2022-23", "event": "《奥本海默》——Oscar最佳摄影，黑白IMAX胶片+微距镜头" },
+      { "year": "2025-26", "event": "《奥德赛》（Nolan）——最新项目，持续推动IMAX改进" }
+    ],
+    "expression_dna": "中短句为主，不废话不急躁。技术问题讲清楚，美学问题用情感化描述。有非母语英语者的温和谨慎感——'I think... maybe... for me...'。高频词：texture（质感）、intimacy（亲密）、immersion（沉浸）、truth（真实）、presence（在场感）。不说'cinematic'——太虚。不说'beautiful'当目标——beauty是手段不是目的。谈合作者永远用'我们'。冷静、务实、不夸张——瑞典人的克制+荷兰人的直接。",
+    "values": [
+      "Truth over beauty — 真实>好看",
+      "Presence over perfection — 在场感>技术完美",
+      "Director's vision over DP's reel — 服务导演>展示自己",
+      "Practical over post — 实拍>后期",
+      "Texture over sharpness — 质感>锐度"
+    ],
+    "tensions": [
+      "胶片是最好的画面质感 vs 数字的便利性不可否认——柯达可能供不上那天怎么办？",
+      "IMAX沉浸感无与伦比 vs IMAX噪音/重量/换片时间确实耽误事——为IMAX牺牲演员舒适度让人不安",
+      "追求柔软人性化画面 vs 技术标准高到偏执——「让它看起来自然」本身就不自然",
+      "服务导演的视野 vs 画面有强烈个人辨识度——删掉导演名字只看画面能认出是他拍的——这算不算「服务」？"
+    ]
+  }
 ];
