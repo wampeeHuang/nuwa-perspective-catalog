@@ -597,8 +597,23 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 .credit-sub {
   font-family: var(--mono); font-size: 0.65rem;
   color: rgba(var(--ink-rgb), 0.35);
-  margin-top: 0.6rem; letter-spacing: 0.04em;
+  margin-top: 0.6rem; margin-bottom: 1.5rem; letter-spacing: 0.04em;
 }
+.disclaimer {
+  max-width: 640px; margin: 0 auto; text-align: left;
+  background: rgba(var(--ink-rgb),0.025); border: 1px solid rgba(var(--ink-rgb),0.06);
+  border-radius: var(--radius-sm); padding: 1.2rem 1.5rem;
+}
+.disclaimer-title {
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  color: rgba(var(--ink-rgb),0.55); margin-bottom: 0.6rem;
+}
+.disclaimer ul { margin: 0; padding-left: 1.2rem; }
+.disclaimer li {
+  font-family: var(--serif-zh); font-size: 0.78rem; line-height: 1.9;
+  color: rgba(var(--ink-rgb),0.4);
+}
+.disclaimer li strong { color: rgba(var(--ink-rgb),0.6); }
 
 /* ═══════════════ FOOTER ═══════════════ */
 footer {
@@ -684,6 +699,15 @@ footer {
   <p class="credit-text">蒸馏方法论与工具链来自 <a href="https://github.com/alchaincyf" target="_blank">花叔（AlchainHust / 陈云飞）</a></p>
   <p class="credit-text">花叔开源项目：<a href="https://github.com/alchaincyf/nuwa-skill" target="_blank">女娲.skill</a> · <a href="https://github.com/alchaincyf/huashu-skills" target="_blank">花叔 Skills 合集</a> · <a href="https://github.com/wampeeHuang/nuwa-perspective-catalog/blob/master/skills/perspective-alchainhust.md" target="_blank">花叔人物 SKILL</a></p>
   <p class="credit-sub">基于公开信息蒸馏，非人物本人授权 · 调研截止 2026-05</p>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠ 风险告知</div>
+    <ul>
+      <li>本目录内容基于公开访谈、著作、演讲蒸馏，<strong>非人物本人审核或授权</strong></li>
+      <li>人物视角 Skill 是思维框架的模拟推演，<strong>不代表人物本人的真实立场</strong></li>
+      <li>我们尊重每一位人物的名誉权与公开权，<strong>不冒充、不商用、不制造虚假背书</strong></li>
+      <li>如您是相关人物本人或授权代理，认为内容不妥，请联系下架 · 收到通知后 24 小时内处理</li>
+    </ul>
+  </div>
 </section>
 
 <footer>
