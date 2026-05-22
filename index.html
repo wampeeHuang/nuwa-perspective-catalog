@@ -276,12 +276,14 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   color: var(--cinnabar); border-color: var(--cinnabar);
   background: var(--cinnabar-bg);
 }
-.card .card-arrow {
-  text-align: right; font-family: var(--mono);
-  font-size: 0.68rem; color: rgba(var(--ink-rgb), 0.35);
-  letter-spacing: 0.06em; transition: color 0.2s;
+.card .card-act {
+  font-family: var(--mono); font-size: 0.66rem;
+  color: rgba(var(--ink-rgb), 0.35); letter-spacing: 0.04em;
+  cursor: pointer; transition: color 0.2s; white-space: nowrap;
 }
-.card:hover .card-arrow { color: var(--cinnabar); }
+.card .card-act:hover { color: var(--ink); }
+.card .card-act.card-chat-act { color: var(--cinnabar); }
+.card .card-act.card-chat-act:hover { color: var(--cinnabar); opacity: 0.7; }
 
 /* ═══════════════ FEATURE PANELS ═══════════════ */
 .feat-panel {
@@ -431,19 +433,42 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   padding-bottom: 0.4rem; border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 
+/* ── Detail Tabs ── */
+.detail-tabs {
+  display: flex; gap: 0; margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
+  max-width: var(--reader-width); margin-left: auto; margin-right: auto;
+  padding: 0 0.5rem;
+}
+.dt-tab {
+  font-family: var(--serif-zh); font-size: 0.95rem;
+  font-weight: 500; color: rgba(var(--ink-rgb), 0.35);
+  background: none; border: none; cursor: pointer;
+  padding: 0.8rem 1.4rem; transition: all 0.2s;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.dt-tab:hover { color: rgba(var(--ink-rgb), 0.6); }
+.dt-tab.active {
+  color: var(--ink); font-weight: 700;
+  border-bottom-color: var(--cinnabar);
+}
+.dt-tab.chat-tab {
+  font-family: var(--serif-zh); color: var(--cinnabar); opacity: 0.55;
+}
+.dt-tab.chat-tab.active { color: var(--cinnabar); opacity: 1; font-weight: 700; }
+.dt-panel { min-height: 300px; }
+
 /* ── Chat Widget ── */
 .chat-section {
-  margin-top: 3rem; padding-top: 2rem;
-  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+  padding: 1.5rem 0;
 }
 .chat-section h3 {
-  font-family: var(--serif-zh); font-size: 1.1rem;
-  font-weight: 600; color: var(--ink);
-  margin-bottom: 0.3rem;
+  display: none;
 }
 .chat-hint {
-  font-family: var(--serif-zh); font-size: 0.78rem;
-  color: rgba(var(--ink-rgb), 0.4); margin-bottom: 1rem;
+  font-family: var(--mono); font-size: 0.62rem;
+  color: rgba(var(--ink-rgb), 0.3); margin-bottom: 1.5rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
 .chat-presets {
   display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem;
@@ -472,13 +497,14 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
   color: var(--paper); border-bottom-right-radius: 2px;
 }
 .chat-msg.bot {
-  align-self: flex-start; background: rgba(var(--ink-rgb), 0.04);
+  align-self: flex-start; background: rgba(var(--ink-rgb), 0.03);
   color: var(--ink); border-bottom-left-radius: 2px;
+  border-left: 3px solid var(--cinnabar); padding-left: 0.9rem;
 }
 .chat-msg .msg-label {
-  display: block; font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 0.25rem; opacity: 0.5;
+  display: block; font-family: var(--serif-zh); font-size: 0.72rem;
+  font-weight: 700; color: var(--cinnabar);
+  margin-bottom: 0.3rem;
 }
 .chat-msg.thinking {
   opacity: 0.5; font-style: italic;
@@ -929,10 +955,10 @@ function renderDirectory(filterCat) {
     chars.forEach(function(ch) {
       var card = document.createElement('div');
       card.className = 'card';
-      card.onclick = function() { showDetail(ch.id); };
+      card.onclick = function() { showDetail(ch.id, 'read'); };
       var tags = (ch.mental_models || []).slice(0, 3).map(function(m) { return '<span>' + m.name + '</span>'; }).join('');
       var dlUrl = '/api/dl?name=' + encodeURIComponent(ch.name_cn);
-card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 .md → 放入 skills/ 目录即可用">下载 ↓</a><div class="card-arrow">浏览人物 →</div></div></div>';
+card.innerHTML = '<div class="card-bar"></div><div class="card-body"><div class="card-name">' + ch.name_cn + '</div><div class="card-en">' + ch.name_en + (ch.nickname ? ' &middot; ' + ch.nickname : '') + '</div><div class="card-line">' + ch.oneliner + '</div><div class="card-pills">' + tags + '</div><div class="card-actions"><a class="card-dl" href="' + dlUrl + '" onclick="event.stopPropagation()" title="下载 SKILL.md">下载 ↓</a><span class="card-act" onclick="event.stopPropagation();showDetail(\'' + ch.id + '\',\'read\')">浏览</span><span class="card-act card-chat-act" onclick="event.stopPropagation();showDetail(\'' + ch.id + '\',\'chat\')">对话</span></div></div>';
       grid.appendChild(card);
     });
     section.appendChild(grid);
@@ -1024,6 +1050,8 @@ function renderDetail(ch) {
   h += '<div class="dh-oneliner">' + ch.oneliner + '</div>';
   h += '<div class="dh-identity">' + (ch.identity || '') + '</div>';
   h += '</div>';
+  h += '<div class="detail-tabs"><button class="dt-tab active" id="tab-read-' + ch.id + '" onclick="switchTab(\'' + ch.id + '\',\'read\')">人物资料</button><button class="dt-tab chat-tab" id="tab-chat-' + ch.id + '" onclick="switchTab(\'' + ch.id + '\',\'chat\')">问' + ch.name_cn + '</button></div>';
+  h += '<div class="dt-panel" id="panel-read-' + ch.id + '">';
   h += '<div class="detail-body">';
 
   if (ch.mental_models && ch.mental_models.length) {
@@ -1071,6 +1099,8 @@ function renderDetail(ch) {
   }
 
   h += '</div>';
+  h += '</div>';
+  h += '<div class="dt-panel" id="panel-chat-' + ch.id + '" style="display:none">';
   h += '<div class="chat-section"><h3>与 ' + ch.name_cn + ' 对话</h3><p class="chat-hint">尝鲜版 · 单轮对话 · 每次独立提问</p>';
   h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
   h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
@@ -1081,10 +1111,26 @@ function renderDetail(ch) {
   h += '<div class="chat-limit" id="chat-limit-' + ch.id + '">聊了不少了，喝杯茶歇一下，一小时后再来。</div>';
   h += '</div>';
   h += '</div>';
+  h += '</div>';
   return h;
 }
 
-function showDetail(id) {
+function switchTab(id, tab) {
+  var readTab = document.getElementById('tab-read-' + id);
+  var chatTab = document.getElementById('tab-chat-' + id);
+  var readPanel = document.getElementById('panel-read-' + id);
+  var chatPanel = document.getElementById('panel-chat-' + id);
+  if (!readTab || !chatTab || !readPanel || !chatPanel) return;
+  if (tab === 'chat') {
+    readTab.classList.remove('active'); chatTab.classList.add('active');
+    readPanel.style.display = 'none'; chatPanel.style.display = 'block';
+  } else {
+    chatTab.classList.remove('active'); readTab.classList.add('active');
+    chatPanel.style.display = 'none'; readPanel.style.display = 'block';
+  }
+}
+
+function showDetail(id, tab) {
   document.querySelectorAll('.detail-pane').forEach(function(p) { p.style.display = 'none'; });
   var pane = document.getElementById('detail-' + id);
   if (pane) pane.style.display = 'block';
@@ -1093,6 +1139,7 @@ function showDetail(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   var ch = findCharById(id);
   if (ch) renderPresets(ch);
+  switchTab(id, tab || 'read');
 }
 
 function findCharById(id) {
@@ -1133,7 +1180,6 @@ function sendChat(id) {
   var msg = input.value.trim();
   if (!msg) return;
 
-  // Rate limit: localStorage, 15 per hour
   var now = Date.now();
   var key = 'nw-chat-' + Math.floor(now / 3600000);
   var count = parseInt(localStorage.getItem(key) || '0', 10);
@@ -1143,11 +1189,12 @@ function sendChat(id) {
   sendBtn.disabled = true;
   input.disabled = true;
 
-  addMsg(msgs, msg, 'user');
-  var thinkDiv = addMsg(msgs, '...思考中...', 'bot thinking');
+  var ch = findCharById(id);
+
+  addMsg(msgs, msg, 'user', '');
+  var thinkDiv = addMsg(msgs, '...思考中...', 'bot thinking', ch.name_cn);
   input.value = '';
 
-  var ch = findCharById(id);
   var ctx = {
     identity: ch.identity || '',
     oneliner: ch.oneliner || '',
@@ -1164,11 +1211,11 @@ function sendChat(id) {
   }).then(function(r) { return r.json(); })
   .then(function(data) {
     thinkDiv.remove();
-    addMsg(msgs, data.reply || '（对方沉默了片刻）', 'bot');
+    addMsg(msgs, data.reply || '（对方沉默了片刻）', 'bot', ch.name_cn);
     localStorage.setItem(key, count + 1);
   }).catch(function() {
     thinkDiv.remove();
-    addMsg(msgs, '对话暂时中断，请稍后再试。', 'bot');
+    addMsg(msgs, '对话暂时中断，请稍后再试。', 'bot', '');
   }).finally(function() {
     sendBtn.disabled = false;
     input.disabled = false;
@@ -1176,10 +1223,13 @@ function sendChat(id) {
   });
 }
 
-function addMsg(container, text, cls) {
+function addMsg(container, text, cls, label) {
   var div = document.createElement('div');
   div.className = 'chat-msg ' + cls;
-  div.textContent = text;
+  var h = '';
+  if (label) h += '<span class="msg-label">' + label + '</span>';
+  h += text;
+  div.innerHTML = h;
   container.appendChild(div);
   container.scrollTop = container.scrollHeight;
   return div;
