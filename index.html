@@ -50,10 +50,11 @@
   --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.06), 0 20px 32px rgba(0,0,0,0.06);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 17px; }
+html { scroll-behavior: smooth; font-size: 17px; overscroll-behavior-x: none; }
 body {
   background: var(--paper);
   color: var(--ink);
+  overscroll-behavior-x: none;
   font-family: var(--sans-zh);
   font-weight: 400;
   line-height: 1.7;
@@ -398,7 +399,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
 .rec-card .rec-names { font-family: var(--serif-zh); font-size: 0.82rem; color: rgba(var(--ink-rgb), 0.45); }
 
 /* ═══════════════ DETAIL VIEW ═══════════════ */
-#detail-container { display: none; }
+#detail-container { display: none; overscroll-behavior-x: contain; }
 #detail-container.active { display: block; }
 #directory.hidden { display: none; }
 
@@ -530,7 +531,7 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
 }
 
 /* ── Reader Body ── */
-.detail-body { max-width: var(--reader-width); margin: 0 auto; padding: 2rem 0 5rem; }
+.detail-body { max-width: var(--reader-width); margin: 0 auto; padding: 2rem 0 5rem; overscroll-behavior-x: contain; }
 
 .detail-body .d-section { margin-bottom: 3.5rem; scroll-margin-top: 9rem; }
 .detail-body .d-section h3 {
@@ -602,6 +603,21 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
   color: rgba(var(--ink-rgb), 0.3); margin-bottom: 1.5rem;
   letter-spacing: 0.06em; text-transform: uppercase;
 }
+/* recent board snippets in chat zone */
+.board-snippets { margin-bottom: 1rem; }
+.board-snippet {
+  font-family: var(--serif-zh); font-size: 0.82rem;
+  color: rgba(var(--ink-rgb), 0.5); line-height: 1.6;
+  padding: 0.55rem 0.8rem; margin-bottom: 0.4rem;
+  border-left: 2px solid rgba(var(--ink-rgb), 0.08);
+  background: rgba(var(--ink-rgb), 0.02);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.board-snippet:hover { border-left-color: var(--cinnabar); color: rgba(var(--ink-rgb), 0.7); }
+.board-snippet .sn-author { font-weight: 600; color: rgba(var(--ink-rgb), 0.55); }
+.board-snippet .sn-text { display: inline; }
 .chat-presets {
   display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;
 }
@@ -728,46 +744,6 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
   font-family: var(--mono); font-size: 0.65rem;
   color: rgba(var(--ink-rgb), 0.3); letter-spacing: 0.06em;
   white-space: nowrap; flex-shrink: 0;
-}
-
-/* ── Floating Back-to-Chat Button ── */
-.float-chat-btn {
-  position: fixed; right: 1.5rem; bottom: 2rem; z-index: 100;
-  font-family: var(--serif-zh); font-size: 0.88rem;
-  padding: 0.7rem 1.5rem;
-  background: var(--ink); color: var(--paper);
-  border: none; border-radius: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  opacity: 0; transform: translateY(12px); pointer-events: none;
-}
-.float-chat-btn.visible {
-  opacity: 1; transform: translateY(0); pointer-events: auto;
-}
-.float-chat-btn:hover {
-  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
-  transform: translateY(-2px);
-}
-
-.float-board-btn {
-  position: fixed; right: 1.5rem; bottom: 5.5rem; z-index: 100;
-  font-family: var(--serif-zh); font-size: 0.82rem;
-  padding: 0.55rem 1.3rem;
-  background: #fff; color: var(--cinnabar);
-  border: 1px solid rgba(217,119,87,0.3);
-  border-radius: 24px;
-  cursor: pointer;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  opacity: 0; transform: translateY(12px); pointer-events: none;
-}
-.float-board-btn.visible {
-  opacity: 1; transform: translateY(0); pointer-events: auto;
-}
-.float-board-btn:hover {
-  box-shadow: 0 6px 24px rgba(217,119,87,0.15);
-  border-color: var(--cinnabar);
 }
 
 /* ── Mental Models ── */
@@ -1034,7 +1010,7 @@ footer {
   .cat-nav {
     flex-wrap: nowrap; overflow-x: auto; gap: 0.35rem;
     padding: 0.55rem 0; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    scrollbar-width: none; overscroll-behavior-x: contain;
   }
   .cat-nav::-webkit-scrollbar { display: none; }
   .cat-nav button {
@@ -1686,6 +1662,7 @@ function renderDetail(ch) {
   h += '<h3 class="chat-section-head" id="chat-head-' + ch.id + '">→ 问' + ch.name_cn + '</h3>';
   h += '<div class="chat-zone" id="chat-zone-' + ch.id + '">';
   h += '<p class="chat-hint">尝鲜版 · 挑一位顾问，聊聊看</p>';
+  h += '<div class="board-snippets" id="board-snippets-' + ch.id + '"></div>';
   h += '<div class="chat-welcome" id="chat-welcome-' + ch.id + '"><div class="chat-msg bot"><span class="msg-label">' + ch.name_cn + '</span>有什么想聊的？直接问我。</div></div>';
   h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
   h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
@@ -1769,38 +1746,10 @@ function renderDetail(ch) {
   h += '</div>';
   h += '<div class="board-grid" id="detail-board-grid-' + ch.id + '"><div class="board-empty">加载中...</div></div>';
   h += '</div>';
-  h += '<button class="float-chat-btn" id="float-chat-' + ch.id + '" onclick="scrollToChat(\'' + ch.id + '\')">问' + ch.name_cn + '</button>';
-  h += '<button class="float-board-btn" id="float-board-' + ch.id + '" onclick="scrollToDetailBoard(\'' + ch.id + '\')">留言</button>';
   h += '</div>';
   return h;
 }
 
-// IntersectionObserver for floating chat buttons
-var floatObservers = {};
-function setupFloatObserver(id) {
-  var zone = document.getElementById('chat-zone-' + id);
-  var btn = document.getElementById('float-chat-' + id);
-  var board = document.getElementById('detail-board-' + id);
-  var boardBtn = document.getElementById('float-board-' + id);
-  if (floatObservers[id]) floatObservers[id].disconnect();
-  if (zone && btn) {
-    floatObservers[id] = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.target === zone) {
-          if (entry.isIntersecting) btn.classList.remove('visible');
-          else btn.classList.add('visible');
-        }
-        if (entry.target === board) {
-          // show board float when board is below viewport, hide when reached
-          if (entry.isIntersecting) boardBtn.classList.remove('visible');
-          else boardBtn.classList.add('visible');
-        }
-      });
-    }, { threshold: 0 });
-    floatObservers[id].observe(zone);
-    if (board && boardBtn) floatObservers[id].observe(board);
-  }
-}
 // IntersectionObserver for section nav pill highlighting
 var sectionObservers = {};
 function setupSectionObserver(id) {
@@ -1883,9 +1832,9 @@ function showDetail(id, noPush) {
   window.scrollTo({ top: 0, behavior: 'instant' });
   var ch = findCharById(id);
   if (ch) renderPresets(ch);
-  setupFloatObserver(id);
   setupSectionObserver(id);
   loadDetailBoard(id);
+  loadRecentBoardSnippets(id);
   updateAllRoundsDisplays();
   if (!noPush && location.hash !== '#' + id) {
     history.pushState({ detailId: id }, '', '#' + id);
@@ -2236,6 +2185,25 @@ function loadBoard(filterCharId, gridId) {
 
 function loadDetailBoard(charId) {
   loadBoard(charId, 'detail-board-grid-' + charId);
+}
+function loadRecentBoardSnippets(charId) {
+  var el = document.getElementById('board-snippets-' + charId);
+  if (!el) return;
+  var url = '/api/board?characterId=' + encodeURIComponent(charId) + '&limit=3';
+  fetch(url).then(function(r) { return r.json(); }).then(function(msgs) {
+    if (!msgs || !msgs.length) { el.style.display = 'none'; return; }
+    var html = '';
+    for (var i = 0; i < Math.min(msgs.length, 2); i++) {
+      var m = msgs[i];
+      if (!m.text) continue;
+      html += '<div class="board-snippet" onclick="scrollToDetailBoard(\'' + charId + '\')">';
+      html += '<span class="sn-author">' + escHtml(m.author || '匿名') + '：</span>';
+      html += '<span class="sn-text">' + escHtml(m.text.slice(0, 80)) + (m.text.length > 80 ? '…' : '') + '</span>';
+      html += '</div>';
+    }
+    if (html) { el.innerHTML = html; el.style.display = ''; }
+    else el.style.display = 'none';
+  }).catch(function() { el.style.display = 'none'; });
 }
 
 function likeMsg(msgId, btn) {
