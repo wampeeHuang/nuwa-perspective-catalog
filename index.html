@@ -1685,7 +1685,7 @@ function renderDetail(ch) {
 
   h += '<h3 class="chat-section-head" id="chat-head-' + ch.id + '">→ 问' + ch.name_cn + '</h3>';
   h += '<div class="chat-zone" id="chat-zone-' + ch.id + '">';
-  h += '<p class="chat-hint">尝鲜版 · 无对话记忆，所有人物共享提问额度</p>';
+  h += '<p class="chat-hint">尝鲜版 · 挑一位顾问，聊聊看</p>';
   h += '<div class="chat-welcome" id="chat-welcome-' + ch.id + '"><div class="chat-msg bot"><span class="msg-label">' + ch.name_cn + '</span>有什么想聊的？直接问我。</div></div>';
   h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
   h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
@@ -1974,12 +1974,13 @@ function updateAllRoundsDisplays() {
     var welcome = document.getElementById('chat-welcome-' + id);
     el.classList.remove('warning', 'exhausted');
     if (left <= 0) {
-      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:0%"></span></span> 提问次数用完 · ' + tStr;
+      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:0%"></span></span> 次数用完了 · ' + tStr;
       el.classList.add('exhausted');
       if (input) { input.disabled = true; input.placeholder = tStr + '再来'; }
       if (sendBtn) sendBtn.disabled = true;
     } else {
-      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:' + pct + '%"></span></span> 还能问 ' + left + ' 次';
+      var txt = left <= 5 ? '只剩 ' + left + ' 次了' : '还能问 ' + left + ' 次';
+      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:' + pct + '%"></span></span> ' + txt;
       if (left <= 5) el.classList.add('warning');
       if (input) { input.disabled = false; input.placeholder = '想说点什么？'; }
       if (sendBtn) sendBtn.disabled = false;
