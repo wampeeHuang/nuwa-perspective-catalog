@@ -685,8 +685,20 @@ main { max-width: var(--col-width); margin: 0 auto; padding: 3.5rem 2rem 6rem; }
   color: rgba(var(--ink-rgb), 0.28);
   margin-bottom: 0.5rem;
   transition: color 0.3s;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.45rem; flex-wrap: wrap;
+}
+.rounds-gauge {
+  width: 48px; height: 4px;
+  background: rgba(var(--ink-rgb), 0.08);
+  border-radius: 3px; overflow: hidden; flex-shrink: 0;
+}
+.rounds-gauge-fill {
+  height: 100%; background: var(--malachite);
+  border-radius: 3px; transition: width 0.6s ease;
 }
 .chat-rounds-left.warning { color: var(--cinnabar); }
+.chat-rounds-left.warning .rounds-gauge-fill { background: var(--cinnabar); }
 .chat-rounds-left.exhausted {
   color: var(--cinnabar); font-weight: 600;
   animation: fadeIn 0.4s ease;
@@ -1673,7 +1685,7 @@ function renderDetail(ch) {
 
   h += '<h3 class="chat-section-head" id="chat-head-' + ch.id + '">→ 问' + ch.name_cn + '</h3>';
   h += '<div class="chat-zone" id="chat-zone-' + ch.id + '">';
-  h += '<p class="chat-hint">尝鲜版 · 每轮独立提问</p>';
+  h += '<p class="chat-hint">尝鲜版 · 无对话记忆，所有人物共享提问额度</p>';
   h += '<div class="chat-welcome" id="chat-welcome-' + ch.id + '"><div class="chat-msg bot"><span class="msg-label">' + ch.name_cn + '</span>有什么想聊的？直接问我。</div></div>';
   h += '<div class="chat-presets" id="presets-' + ch.id + '"></div>';
   h += '<div class="chat-messages" id="chat-msgs-' + ch.id + '"></div>';
@@ -1939,9 +1951,22 @@ function getRoundData() {
   return d;
 }
 function roundsLeft() { return Math.max(0, MAX_ROUNDS - getRoundData().c); }
+function msUntilReset() {
+  var d = getRoundData();
+  return Math.max(0, COOLDOWN_MS - (Date.now() - d.t));
+}
+function fmtTimeLeft(ms) {
+  var m = Math.ceil(ms / 60000);
+  if (m <= 0) return '即将重置';
+  if (m < 60) return m + ' 分钟后重置';
+  return '1 小时后重置';
+}
 
 function updateAllRoundsDisplays() {
   var left = roundsLeft();
+  var pct = Math.round((left / MAX_ROUNDS) * 100);
+  var tLeft = msUntilReset();
+  var tStr = fmtTimeLeft(tLeft);
   document.querySelectorAll('[id^="chat-rounds-"]').forEach(function(el) {
     var id = el.id.replace('chat-rounds-', '');
     var input = document.getElementById('chat-input-' + id);
@@ -1949,13 +1974,13 @@ function updateAllRoundsDisplays() {
     var welcome = document.getElementById('chat-welcome-' + id);
     el.classList.remove('warning', 'exhausted');
     if (left <= 0) {
-      el.textContent = '今天聊了不少了，30 分钟后恢复';
+      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:0%"></span></span> 提问次数用完 · ' + tStr;
       el.classList.add('exhausted');
-      if (input) { input.disabled = true; input.placeholder = '30 分钟后再来'; }
+      if (input) { input.disabled = true; input.placeholder = tStr + '再来'; }
       if (sendBtn) sendBtn.disabled = true;
     } else {
-      el.textContent = '还可以对话 ' + left + ' 轮';
-      if (left <= 3) el.classList.add('warning');
+      el.innerHTML = '<span class="rounds-gauge"><span class="rounds-gauge-fill" style="width:' + pct + '%"></span></span> 还能问 ' + left + ' 次';
+      if (left <= 5) el.classList.add('warning');
       if (input) { input.disabled = false; input.placeholder = '想说点什么？'; }
       if (sendBtn) sendBtn.disabled = false;
     }
