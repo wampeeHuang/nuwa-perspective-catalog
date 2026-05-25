@@ -2,6 +2,8 @@
 
 基于公开信息蒸馏的思维操作系统。每个人物是独立可用的思维镜片——下载 SKILL.md，放入 Claude Code，即可进入那个人物的心智模式。
 
+![女娲人物视角目录](screenshot.png)
+
 > **不知道要哪个文件？** 打开 [blackcamellia.xin](https://blackcamellia.xin) 浏览人物卡片，点 **下载 ↓** 直接拿。不用记文件名。
 
 ## 快速开始
