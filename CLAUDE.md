@@ -3,7 +3,7 @@
 ## 项目
 - 35位人物思维顾问目录站，归藏水墨风
 - 单 HTML 文件 + JSON 数据，纯静态
-- 部署：Vercel，域名 blackcamellia.xin / nuwa-perspective-catalog.vercel.app
+- 部署：Vercel，域名 minds.evopearl.com / nuwa-perspective-catalog.vercel.app
 
 ## 结构
 ```

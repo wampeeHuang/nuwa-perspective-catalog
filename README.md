@@ -4,7 +4,7 @@
 
 ![女娲人物视角目录](screenshot.png)
 
-> **不知道要哪个文件？** 打开 [blackcamellia.xin](https://blackcamellia.xin) 浏览人物卡片，点 **下载 ↓** 直接拿。不用记文件名。
+> **不知道要哪个文件？** 打开 [minds.evopearl.com](https://minds.evopearl.com) 浏览人物卡片，点 **下载 ↓** 直接拿。不用记文件名。
 
 ## 快速开始
 
@@ -20,17 +20,17 @@ Clone 后在本地打开 `index.html` 即可可视化浏览全部人物（需本
 
 不想下全部 41 个？两种办法：
 
-**A) 网站可视化挑选（推荐）**：打开 [blackcamellia.xin](https://blackcamellia.xin) → 浏览人物卡片 → 点 **下载 ↓**，直接拿到文件。
+**A) 网站可视化挑选（推荐）**：打开 [minds.evopearl.com](https://minds.evopearl.com) → 浏览人物卡片 → 点 **下载 ↓**，直接拿到文件。
 
 **B) 命令行下载**：用中文名、英文名、简称都行，不用记文件名：
 
 ```bash
-curl -L -O "https://blackcamellia.xin/api/dl?name=卡帕西"
-curl -L -O "https://blackcamellia.xin/api/dl?name=karpathy"
-curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
+curl -L -O "https://minds.evopearl.com/api/dl?name=卡帕西"
+curl -L -O "https://minds.evopearl.com/api/dl?name=karpathy"
+curl -L -O "https://minds.evopearl.com/api/dl?name=张一鸣"
 ```
 
-记不住全名？打开 [blackcamellia.xin](https://blackcamellia.xin) 浏览人物卡片。
+记不住全名？打开 [minds.evopearl.com](https://minds.evopearl.com) 浏览人物卡片。
 
 ### 安装
 
@@ -151,7 +151,7 @@ curl -L -O "https://blackcamellia.xin/api/dl?name=张一鸣"
 
 ## 在线浏览
 
-完整的人物目录可在 [blackcamellia.xin](https://blackcamellia.xin) 浏览，按分类筛选、按场景推荐、点击卡片查看每个人物的完整心智模型。
+完整的人物目录可在 [minds.evopearl.com](https://minds.evopearl.com) 浏览，按分类筛选、按场景推荐、点击卡片查看每个人物的完整心智模型。
 
 ## 交流
 
