@@ -48,6 +48,8 @@ const EXTRA = {
   'perspective-bret-victor': ['victor', '维克托', 'bret'],
   'perspective-don-norman': ['norman', '诺曼', 'don'],
   'perspective-hoyte-van-hoytema': ['hoyte', 'van hoytema', '霍伊特'],
+  'perspective-panluan': ['panluan', '潘乱', '乱翻书', '腾讯没有梦想'],
+  'perspective-lks': ['lks', '李晨阳', '-LKs-', '什锦区', '漂流相机'],
 };
 
 function makeAliases(c) {
