@@ -57,6 +57,10 @@ const MAP = [
   ['perspective-joseph-campbell.md', '约瑟夫·坎贝尔', 'Joseph Campbell', '约瑟夫', '坎贝尔', 'Joseph', 'joseph', 'Campbell', 'campbell'],
   ['perspective-panluan.md', '潘乱', 'Pan Luan', 'Pan', 'pan', 'Luan', 'luan', 'panluan', '乱翻书', '腾讯没有梦想'],
   ['perspective-lks.md', '李晨阳(LKs)', 'LKs', 'lks', '李晨阳', '-LKs-', '什锦区', '漂流相机'],
+  ['perspective-wittgenstein.md', '维特根斯坦', 'Ludwig Wittgenstein', 'Ludwig', 'ludwig', 'Wittgenstein', 'wittgenstein'],
+  ['perspective-foucault.md', '米歇尔·福柯', 'Michel Foucault', '米歇尔', '福柯', 'Michel', 'michel', 'Foucault', 'foucault', '米歇尔福柯'],
+  ['perspective-mcluhan.md', '马歇尔·麦克卢汉', 'Marshall McLuhan', '马歇尔', '麦克卢汉', 'Marshall', 'marshall', 'McLuhan', 'mcluhan'],
+  ['perspective-mao-zedong.md', '毛泽东', 'Mao Zedong', 'Mao', 'mao', 'Zedong', 'zedong', '毛主席', 'mao zedong', 'maoism'],
 ];
 
 const LOOKUP = {};

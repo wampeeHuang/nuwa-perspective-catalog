@@ -199,6 +199,8 @@ body {
 .cat-nav button:hover { background: var(--paper-tint); color: var(--ink); border-color: rgba(var(--ink-rgb), 0.3); }
 .cat-nav button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .cat-nav-sep { color: rgba(var(--ink-rgb), 0.15); font-size: 0.85rem; align-self: center; user-select: none; }
+.cat-nav-count { font-size: 0.7rem; opacity: 0.5; margin-left: 1px; }
+.cat-nav button.active .cat-nav-count { opacity: 0.7; }
 .cat-nav-board-btn {
   font-family: var(--serif-zh) !important;
   font-weight: 500 !important; letter-spacing: 0.03em !important;
@@ -1333,19 +1335,8 @@ footer {
 <!-- ═══════════════ CAT NAV ═══════════════ -->
 <div class="cat-nav-wrap" id="catNavWrap">
   <div class="cat-nav" id="catNav">
-    <button data-cat="all" class="active">全部</button>
-    <button data-cat="人工智能">人工智能</button>
-    <button data-cat="科学/技术">科学/技术</button>
-    <button data-cat="商业/经济">商业/经济</button>
-    <button data-cat="营销/传播">营销/传播</button>
-    <button data-cat="写作/内容">写作/内容</button>
-    <button data-cat="影视/创作">影视/创作</button>
-    <button data-cat="设计/艺术">设计/艺术</button>
-    <button data-cat="社会/政治">社会/政治</button>
-    <button data-cat="教育/学习">教育/学习</button>
-    <button data-cat="哲学/思想">哲学/思想</button>
-    <button data-cat="心理/认知">心理/认知</button>
-    <button data-cat="文学/人文">文学/人文</button>
+    <button data-cat="all" class="active">全部 <span class="cat-nav-count" id="catNavCountAll"></span></button>
+    <!-- category buttons dynamically built by buildCatNav() -->
     <span class="cat-nav-sep">|</span>
     <button class="cat-nav-sort-btn" id="sortToggle" onclick="toggleSort()" title="按留言数量排序">热度</button>
     <button class="cat-nav-board-btn" onclick="scrollToBoard()">留言广场 ↓</button>
@@ -1414,7 +1405,7 @@ footer {
 
 <script src="_data/data.js"></script>
 <script>
-var CATEGORIES = ['人工智能','科学/技术','商业/经济','营销/传播','写作/内容','影视/创作','设计/艺术','社会/政治','教育/学习','哲学/思想','心理/认知','文学/人文'];
+var CATEGORIES = []; // dynamically derived from data in loadData()
 var _sortMode = 'category'; // 'category' | 'heat'
 var _heatStats = {}; // { characterId: count }
 
@@ -1475,13 +1466,40 @@ function loadData() {
     return;
   }
   allCharacters = window.__CHARACTERS__;
+  // Derive categories from data (sorted by count desc, with populated cats first)
+  var catCounts = {};
+  allCharacters.forEach(function(c) { catCounts[c.category] = (catCounts[c.category] || 0) + 1; });
+  CATEGORIES = Object.keys(catCounts).sort(function(a, b) { return catCounts[b] - catCounts[a]; });
   // Populate dynamic counts
   var countEls = document.querySelectorAll('.char-count');
   for (var i = 0; i < countEls.length; i++) countEls[i].textContent = allCharacters.length;
   document.title = allCharacters.length + ' 位人物思维顾问 · 女娲蒸馏目录';
+  buildCatNav();
   fetchHeatStats();
   renderDirectory();
   setupDetailSections();
+}
+
+function buildCatNav() {
+  var nav = document.getElementById('catNav');
+  if (!nav) return;
+  var catCounts = {};
+  allCharacters.forEach(function(c) { catCounts[c.category] = (catCounts[c.category] || 0) + 1; });
+  document.getElementById('catNavCountAll').textContent = allCharacters.length;
+  // Remove old dynamic buttons (skip 'all', sep, sortToggle, boardBtn)
+  var existing = nav.querySelectorAll('button[data-cat]');
+  existing.forEach(function(b) {
+    if (b.dataset.cat !== 'all') b.remove();
+  });
+  // Build category buttons
+  var sep = nav.querySelector('.cat-nav-sep');
+  CATEGORIES.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.dataset.cat = cat;
+    btn.innerHTML = cat + ' <span class="cat-nav-count">' + (catCounts[cat] || 0) + '</span>';
+    if (sep) nav.insertBefore(btn, sep);
+    else nav.appendChild(btn);
+  });
 }
 
 function renderDirectory(filterCat) {

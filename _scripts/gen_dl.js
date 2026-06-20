@@ -50,6 +50,10 @@ const EXTRA = {
   'perspective-hoyte-van-hoytema': ['hoyte', 'van hoytema', '霍伊特'],
   'perspective-panluan': ['panluan', '潘乱', '乱翻书', '腾讯没有梦想'],
   'perspective-lks': ['lks', '李晨阳', '-LKs-', '什锦区', '漂流相机'],
+  'perspective-wittgenstein': ['wittgenstein', '维特根斯坦', 'Wittgenstein'],
+  'perspective-foucault': ['foucault', '福柯', 'Foucault', '米歇尔福柯'],
+  'perspective-mcluhan': ['mcluhan', '麦克卢汉', 'McLuhan', 'Marshall McLuhan'],
+  'perspective-mao-zedong': ['mao', '毛泽东', '毛主席', 'Mao Zedong', 'mao zedong', 'maoism'],
 };
 
 function makeAliases(c) {
