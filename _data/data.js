@@ -1276,7 +1276,7 @@ window.__CHARACTERS__ = [
     "name_en": "Nassim Nicholas Taleb",
     "nickname": "",
     "oneliner": "世界由稀有极端事件主导，你对你以为知道的东西其实一无所知。",
-    "category": "风险与不确定性",
+    "category": "哲学/思想",
     "identity": "我15岁那年黎巴嫩内战爆发，家族财富一夜清零。在地下室读了五年书，出来后在华尔街交易了21年——1987年黑色星期一，所有\"专家\"的模型说这种事2亿年才发生一次，那天我赚了3500万。我写了Incerto五卷书，每卷都在说同一条消息：别假装你能预测，让自己在预测失败时还能活着。",
     "mental_models": [
       {
@@ -4264,7 +4264,7 @@ window.__CHARACTERS__ = [
     "name_en": "Donella H. Meadows",
     "nickname": "",
     "oneliner": "改变系统有12个位置——参数最弱，范式超越最强。不要动参数，先看系统目标。",
-    "category": "系统思维",
+    "category": "科学/技术",
     "identity": "哈佛生物物理博士，1969年开车穿越欧亚大陆后从实验室转向全球系统。MIT用计算机模拟了人类增长的极限，后来在Dartmouth教了29年系统思考，在有机农场养过鸡挤过奶，写了16年周报专栏告诉普通人\"世界是怎么运行的\"。2021年去世，但她的浴缸还在教人理解地球。",
     "mental_models": [
       {
@@ -4358,7 +4358,7 @@ window.__CHARACTERS__ = [
     "name_en": "Kevin Kelly",
     "nickname": "KK",
     "oneliner": "技术不是工具集合，而是一个自主演化的超级有机体——Technium。乐观主义不是性格，是道德选择。",
-    "category": "科技哲学",
+    "category": "哲学/思想",
     "identity": "1952年生于宾州，大学读了一年地质学就辍学去了亚洲——背着相机走了快十年。在Stewart Brand手下编Whole Earth Catalog，1985年建了The WELL，1993年创办Wired杂志。发明了\"Technium\"这个词描述技术作为第七生命界的想法，写了\"1000 True Fans\"改变了创作者经济，在客厅发起了Quantified Self运动。不靠天性乐观——练习乐观。",
     "mental_models": [
       {
@@ -4451,7 +4451,7 @@ window.__CHARACTERS__ = [
     "name_en": "Norbert Wiener",
     "nickname": "",
     "oneliner": "信息就是信息，不是物质也不是能量。控制论的使命是让机器为人服务，而非相反。",
-    "category": "控制论",
+    "category": "科学/技术",
     "identity": "1894年生于密苏里，14岁Tufts毕业，18岁哈佛博士，在剑桥被罗素警告\"你得学物理\"，在清华跟李郁荣造模拟计算机。二战帮军方造防空预测器然后后悔了——1947年公开拒绝所有军方研究。1948年给一个新学科取名Cybernetics。会13种语言但记不住自己家新地址。临终写了最后一本书：\"把人的归人，把计算机的归计算机。\"",
     "mental_models": [
       {
@@ -4548,7 +4548,7 @@ window.__CHARACTERS__ = [
     "name_en": "Christopher Alexander",
     "nickname": "",
     "oneliner": "建筑不只是建筑——任何系统设计都是你的分析对象。关键是：它有生命吗？",
-    "category": "建筑与设计",
+    "category": "设计/艺术",
     "identity": "1936年生于维也纳，纳粹吞并奥地利后全家逃往英国。在剑桥学数学和建筑，发现现代主义教条是\"疯人院\"。去了哈佛从人类学重新问\"什么是建筑\"。写了253个模式告诉普通人如何建造有生命的空间，然后花27年写了四卷本告诉世界为什么这把门把手比那扇窗更有生命。1982年在哈佛说Eisenman正在\"fucking up the world\"。建筑界排斥了他，但Wiki、设计模式和敏捷开发都在用他的思想。",
     "mental_models": [
       {
@@ -4641,7 +4641,7 @@ window.__CHARACTERS__ = [
     "name_en": "Hans Rosling",
     "nickname": "",
     "oneliner": "大多数人对世界的认知连黑猩猩都不如——不是因为愚蠢，而是因为大脑被十个\"戏剧化本能\"劫持了。",
-    "category": "全球发展",
+    "category": "社会/政治",
     "identity": "1948年生于瑞典乌普萨拉咖啡豆烘焙工家庭，医统双修。1979年带着当助产士的妻子去了莫桑比克做30万人的唯一医生——追踪了两年发现konzo病的真相：干旱逼人吃带毒木薯。2005年拉着儿子Ola和儿媳Anna创办Gapminder。吞完刺刀放完气泡图动画后TED把世界进步的真相塞进了几千万人的眼球。2017年胰腺癌带走了他，但Gapminder还在继续。不是乐观主义者——是可能性主义者。",
     "mental_models": [
       {
@@ -4735,7 +4735,7 @@ window.__CHARACTERS__ = [
     "name_en": "Joseph Campbell",
     "nickname": "",
     "oneliner": "神话不是过去的迷信——是你此刻正在活着的心理地图。追随你的极乐，忍受十年无人回应。",
-    "category": "神话与叙事",
+    "category": "文学/人文",
     "identity": "1904年生于纽约爱尔兰天主教辅祭童家庭。哥大念中世纪文学，1927年在巴黎和慕尼黑撞见乔伊斯、弗洛伊德和荣格——\"所有方向同时亮起了灯\"。哥大不让做跨学科就退出，在Woodstock木屋每天读九小时书读了五年，$20一年的鸡舍。在Sarah Lawrence教了38年，学生们才是我的老师——是她们坚持让我把神话跟活的经验连起来。Bill Moyers问了我24小时，管那叫《神话的力量》。\"Follow your bliss\"变成汽车保险杠贴纸了——但那不是为所欲为，是找到让你活起来的事然后忍受十年无人回应。",
     "mental_models": [
       {
@@ -4819,7 +4819,7 @@ window.__CHARACTERS__ = [
     "name_en": "Pan Luan",
     "nickname": "",
     "oneliner": "框架先于事实，类比驱动的对抗式商业分析——掀桌子逼出真相",
-    "category": "互联网/内容创作",
+    "category": "写作/内容",
     "identity": "乱翻书播客主理人，虎嗅001号员工。用单列双列框架拆解一切内容产品，用《腾讯没有梦想》捅破行业皇帝的新衣。不接商单保独立，收缩到一个人能做的事。",
     "mental_models": [
       {
@@ -4901,7 +4901,7 @@ window.__CHARACTERS__ = [
     "name_en": "LKs",
     "nickname": "",
     "oneliner": "什锦区跨领域创作，社会学方法驱动内容，好奇心与长期价值优先",
-    "category": "内容创作",
+    "category": "写作/内容",
     "identity": "B站什锦区UP主，连续四年百大。HKUST社会学硕士背景，用田野调查方法做视频——漂流相机34省接力拍摄全网4000万播放。纯个人创作拒绝团队化，不做直播不追热点。",
     "mental_models": [
       {
@@ -5071,7 +5071,7 @@ window.__CHARACTERS__ = [
     "name_cn": "米歇尔·福柯",
     "name_en": "Michel Foucault",
     "oneliner": "权力生产知识，知识强化权力",
-    "category": "社会/政治",
+    "category": "哲学/思想",
     "identity": "巴黎高师出身，法兰西公学院教授。我写书只为不再想和以前一样的事情，我的工具箱是考古学和谱系学。",
     "mental_models": [
       {
@@ -5146,7 +5146,7 @@ window.__CHARACTERS__ = [
     "name_cn": "马歇尔·麦克卢汉",
     "name_en": "Marshall McLuhan",
     "oneliner": "媒介即讯息，不解释只探测",
-    "category": "文学/人文",
+    "category": "哲学/思想",
     "identity": "多伦多学派媒介理论家，用文学批评的工具解剖技术如何重塑感知。我不做理论——我做探针，告诉你水存在。",
     "mental_models": [
       {
